@@ -12,10 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+
+Route::group(['prefix' => 'mAdmin',], function() {
+  Route::get('posts', 'mAdmin\PostController@index')->name('mAdmin.posts.index');
+  Route::get('posts/create', 'mAdmin\PostController@create')->name('mAdmin.posts.create');
+});
