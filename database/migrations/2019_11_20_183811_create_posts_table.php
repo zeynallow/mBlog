@@ -17,7 +17,10 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->boolean('publish');
             $table->string('slug');
+            $table->string('cover');
             $table->integer('user_id')->unsigned()->index();
+            $table->integer('category_id')->index();
+            $table->integer('subcategory_id')->nullable();
             $table->boolean('featured');
             $table->timestamps();
         });

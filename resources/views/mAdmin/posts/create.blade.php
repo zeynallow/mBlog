@@ -25,14 +25,19 @@
 
                 <div class="form-group">
                   <label for="category">Category</label>
-                  <select class="form-control" id="category">
+                  <select class="form-control" name="category_id" id="category">
                     <option value="">Select...</option>
+                    @if($categories)
+                      @foreach ($categories as $key => $value)
+                        <option value="{{$value->id}}">{{($value->category_data[0]) ? $value->category_data[0]->title : ''}}</option>
+                      @endforeach
+                    @endif
                   </select>
                 </div>
 
                 <div class="form-group">
                   <label for="subcategory">Sub-Category</label>
-                  <select class="form-control" id="subcategory">
+                  <select class="form-control" name="subcategory_id" id="subcategory">
                     <option value="">Select...</option>
                   </select>
                 </div>
@@ -55,7 +60,7 @@
 
                     <div class="form-group">
                       <label for="text_en">Content</label>
-                      <textarea class="form-control" name="text[en]" id="text_en">{{ old('text.en') }}</textarea>
+                      <textarea name="text[en]" class="form-control my-editor">{!! old('text.en') !!}</textarea>
                     </div>
 
                     <div class="form-group">
@@ -63,7 +68,7 @@
                       <input type="text" class="form-control" name="keywords[en]" value="{{ old('keywords.en') }}" id="keywords_en" placeholder="With comma">
                     </div>
                   </div>
-                  
+
                 </div>
 
 
@@ -88,9 +93,25 @@
                   </label>
                 </div>
 
+                <div class="row" style="padding-bottom:20px;">
+                  <div class="col-md-8">
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                        <button type="button" id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                          <i class="fa fa-picture-o"></i> Cover image
+                        </button>
+                      </span>
+                      <input id="thumbnail" class="form-control" type="text" name="filepath">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <img id="holder" style="margin-top:15px;max-height:100px;">
+                  </div>
+                </div>
 
-                <button type="submit" class="btn btn-primary mr-2">Create</button>
-                <button class="btn btn-light">Cancel</button>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary mr-2">Create</button>
+                </div>
               </form>
 
             </div>
@@ -101,46 +122,77 @@
   </div>
 @endsection
 @push('js')
-  <script type="text/javascript">
+  <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js')}}"></script>
+  <script src="{{ asset('/mAdmin/vendors/ckeditor/ckeditor.js')}}"></script>
+  <script src="{{ asset('/mAdmin/vendors/ckeditor/adapters/jquery.js')}}"></script>
+  <script>
+  $('#lfm').filemanager('image');
+  var options = {
+    filebrowserImageBrowseUrl: '/mAdmin/filemanager?type=Images',
+    filebrowserImageUploadUrl: '/mAdmin/filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/mAdmin/filemanager?type=Files',
+    filebrowserUploadUrl: '/mAdmin/filemanager/upload?type=Files&_token='
+  };
+  $('textarea.my-editor').ckeditor(options);
+</script>
+<script type="text/javascript">
 
-  function slugify(string) {
-    const a = 'àáâäæãåāăąəçćčđďèéêëēėęěğǵḧîïíīįìıłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
-    const b = 'aaaaaaaaaaecccddeeeeeeeegghiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
-    const p = new RegExp(a.split('').join('|'), 'g')
+/* Slug Generator (slugify) */
+function slugify(string) {
+  const a = 'àáâäæãåāăąəçćčđďèéêëēėęěğǵḧîïíīįìıłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
+  const b = 'aaaaaaaaaaecccddeeeeeeeegghiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
+  const p = new RegExp(a.split('').join('|'), 'g')
 
-    return string.toString().toLowerCase()
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
-    .replace(/^-+/, '') // Trim - from start of text
-    .replace(/-+$/, '') // Trim - from end of text
-  }
+  return string.toString().toLowerCase()
+  .replace(/\s+/g, '-') // Replace spaces with -
+  .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+  .replace(/&/g, '-and-') // Replace & with 'and'
+  .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+  .replace(/\-\-+/g, '-') // Replace multiple - with single -
+  .replace(/^-+/, '') // Trim - from start of text
+  .replace(/-+$/, '') // Trim - from end of text
+}
 
-  $("#title_en").keyup(function(){
-    var slug = slugify($(this).val());
-    $("#slug").val(slug);
-  });
+/* Slug Generate */
+$("#title_en").keyup(function(){
+  var slug = slugify($(this).val());
+  $("#slug").val(slug);
+});
 
-  function addLang(obj,lang,lang_name){
-    $(obj).remove();
-    $("#selectLang").append('<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#'+ lang +'-content">'+ lang_name +'</a></li>');
-    $("#selectLangContent").append('<div id="'+ lang +'-content" class="tab-pane fade">\
-    <div class="form-group">\
-    <label for="title_'+ lang +'">Title</label>\
-    <input type="text" class="form-control" name="title['+ lang +']" id="title_'+ lang +'" placeholder="Title">\
-    </div>\
-    <div class="form-group">\
-    <label for="text_tr">Content</label>\
-    <textarea class="form-control" name="text['+ lang +']" id="text_'+ lang +'"></textarea>\
-    </div>\
-    <div class="form-group">\
-    <label for="keywords_tr">Keywords</label>\
-    <input type="text" class="form-control" name="keywords['+ lang +']" id="keywords_'+ lang +'" placeholder="With comma">\
-    </div>\
-    </div>');
-  }
+/* Add Language */
+function addLang(obj,lang,lang_name){
+  $(obj).remove();
+  $("#selectLang").append('<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#'+ lang +'-content">'+ lang_name +'</a></li>');
+  $("#selectLangContent").append('<div id="'+ lang +'-content" class="tab-pane fade">\
+  <div class="form-group">\
+  <label for="title_'+ lang +'">Title</label>\
+  <input type="text" class="form-control" name="title['+ lang +']" id="title_'+ lang +'" placeholder="Title">\
+  </div>\
+  <div class="form-group">\
+  <label for="text_tr">Content</label>\
+  <textarea class="form-control my-editor" name="text['+ lang +']" id="text_'+ lang +'"></textarea>\
+  </div>\
+  <div class="form-group">\
+  <label for="keywords_tr">Keywords</label>\
+  <input type="text" class="form-control" name="keywords['+ lang +']" id="keywords_'+ lang +'" placeholder="With comma">\
+  </div>\
+  </div>');
+}/vendor/unisharp/laravel-ckeditor/adapters/jquery.js
 
-  </script>
+/* Category Select */
+$('#category').change(function(){
+  var category_id = $(this).val();
+  $("#subcategory").empty().html('<option value="">Select...</option>');
+  $.ajax({
+    url:"{{ route('mAdmin.categories.getSubCategoryForSelect',['category_id'=>'']) }}/"+ category_id,
+    success:function(data){
+      $("#subcategory").append('<option value="'+ data.id +'">'+ data.title +'</option>');
+    },
+    error:function(data){
+      console.log("error",data);
+    }
+  })
+});
+
+</script>
 @endpush

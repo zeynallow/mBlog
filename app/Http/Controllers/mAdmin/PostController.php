@@ -8,6 +8,7 @@ use App;
 use Auth;
 use App\Post;
 use App\PostData;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -29,7 +30,8 @@ class PostController extends Controller
   */
   public function create()
   {
-    return view('mAdmin.posts.create');
+    $categories = Category::all();
+    return view('mAdmin.posts.create',compact('categories'));
   }
 
   /**
@@ -46,14 +48,18 @@ class PostController extends Controller
     $request->validate([
       'title.*'=>'required|max:255',
       'text.*'=>'required',
-      'slug'=>'required'
+      'slug'=>'required',
+      'category_id'=>'required'
     ]);
 
     //Create Post
     $post = Post::create([
       'featured'=>($request->featured) ? 1 : 0,
       'publish'=> ($request->publish) ? 1 : 0,
+      'category_id'=> ($request->category_id) ? $request->category_id : 0,
+      'subcategory_id'=> ($request->subcategory_id) ? $request->subcategory_id : 0,
       'user_id'=> $user->id,
+      'cover'=> ($request->cover) ? $request->cover : '',
       'slug'=>$request->slug
     ]);
 

@@ -26,4 +26,8 @@ Route::group(['prefix' => 'mAdmin','middleware'=>'auth'], function() {
   Route::get('posts', 'mAdmin\PostController@index')->name('mAdmin.posts.index');
   Route::get('posts/create', 'mAdmin\PostController@create')->name('mAdmin.posts.create');
   Route::post('posts/store', 'mAdmin\PostController@store')->name('mAdmin.posts.store');
+
+  // Categories
+  Route::get('categories/getSubCategoryForSelect/{category_id}', 'mAdmin\CategoryController@getSubCategoryForSelect')->name('mAdmin.categories.getSubCategoryForSelect');
+
 });
