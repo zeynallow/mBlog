@@ -63,7 +63,7 @@
                         <label for="title_{{$category_data->locale}}">Category Name</label>
                         <input value="{{$category_data->title}}" type="text" class="form-control" name="title[{{$category_data->locale}}]" id="title_{{$category_data->locale}}" placeholder="Title">
                       </div>
-
+                      <input value="{{$category_data->id}}" type="hidden" name="cat_data_id[{{$category_data->locale}}]">
                       <div class="form-group">
                         <label for="meta_description_{{$category_data->locale}}">Meta Description</label>
                         <input value="{{$category_data->meta_description}}" type="text" class="form-control" name="meta_description[{{$category_data->locale}}]" id="meta_description_{{$category_data->locale}}" placeholder="Meta Description">
@@ -124,15 +124,15 @@
     $("#selectLangContent").append('<div id="'+ lang +'-content" class="tab-pane fade">\
     <div class="form-group">\
     <label for="title_'+ lang +'">Category Name</label>\
-    <input type="text" class="form-control" name="title['+ lang +']" id="title_'+ lang +'" placeholder="Title">\
+    <input type="text" class="form-control" name="n_title['+ lang +']" id="title_'+ lang +'" placeholder="Title">\
     </div>\
     <div class="form-group">\
     <label for="meta_description_'+ lang +'">Meta Description</label>\
-    <input type="text" class="form-control" name="meta_description['+ lang +']" id="meta_description_'+ lang +'" placeholder="Meta Description">\
+    <input type="text" class="form-control" name="n_meta_description['+ lang +']" id="meta_description_'+ lang +'" placeholder="Meta Description">\
     </div>\
     <div class="form-group">\
     <label for="meta_keywords_'+ lang +'">Meta Keywords</label>\
-    <input type="text" class="form-control" name="meta_keywords['+ lang +']" id="meta_keywords_'+ lang +'" placeholder="With comma">\
+    <input type="text" class="form-control" name="n_meta_keywords['+ lang +']" id="meta_keywords_'+ lang +'" placeholder="With comma">\
     </div>\
     </div>');
 

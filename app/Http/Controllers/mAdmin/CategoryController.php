@@ -130,41 +130,54 @@ class CategoryController extends Controller
     if($category){
       //Update Category Data
       foreach ($request->title as $key => $title) {
-        // CategoryData::where('category_id',$id)->where('locale',$key)
-        // ->update([
-        //   'title'=> $title,
-        //   'meta_description'=> $request->meta_description[$key],
-        //   'meta_keywords'=> ($request->meta_keywords[$key]) ? $request->meta_keywords[$key] : '',
-        //   'locale'=> $key
-        // ]);
+        CategoryData::where('id',$request->cat_data_id[$key])->where('locale',$key)
+        ->update([
+          'title'=> $title,
+          'meta_description'=> $request->meta_description[$key],
+          'meta_keywords'=> ($request->meta_keywords[$key]) ? $request->meta_keywords[$key] : '',
+          'locale'=> $key
+        ]);
       }
-      return redirect()->back();
-    }else{
-      return redirect()->back()->withErrors(['message'=>'Something went error...']);
-    }
+      //Insert New Category Data
+      if($request->n_title){
+        foreach ($request->n_title as $key => $n_title) {
+          CategoryData::create([
+            'title'=> $n_title,
+            'meta_description'=> $request->n_meta_description[$key],
+            'meta_keywords'=> ($request->n_meta_keywords[$key]) ? $request->n_meta_keywords[$key] : '',
+            'locale'=> $key,
+            'category_id'=> $id
+          ]);
+        }
+      }
 
+    return redirect()->back();
+  }else{
+    return redirect()->back()->withErrors(['message'=>'Something went error...']);
   }
 
-  /**
-  * Remove the specified resource from storage.
-  *
-  * @param  int  $id
-  * @return \Illuminate\Http\Response
-  */
-  public function destroy($id)
-  {
-    //
-  }
+}
 
-  /**
-  * Get Sub Categories for Select
-  *
-  * @param  int  $category_id
-  * @return Json
-  */
-  public function getSubCategoryForSelect($category_id){
-    $getCategory = Category::select('id')->where('parent_id',$category_id)->firstOrFail();
-    $getSubCategory = $getCategory->category_data[0];
-    return response()->json($getSubCategory,201);
-  }
+/**
+* Remove the specified resource from storage.
+*
+* @param  int  $id
+* @return \Illuminate\Http\Response
+*/
+public function destroy($id)
+{
+  //
+}
+
+/**
+* Get Sub Categories for Select
+*
+* @param  int  $category_id
+* @return Json
+*/
+public function getSubCategoryForSelect($category_id){
+  $getCategory = Category::select('id')->where('parent_id',$category_id)->firstOrFail();
+  $getSubCategory = $getCategory->category_data[0];
+  return response()->json($getSubCategory,201);
+}
 }
