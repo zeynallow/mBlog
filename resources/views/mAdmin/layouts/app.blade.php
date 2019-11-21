@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="{{ asset('mAdmin/css/style.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('mAdmin/images/favicon.png') }}">
+  @stack('css')
 </head>
 
 <body>
@@ -255,7 +256,7 @@
   <script src="{{asset('mAdmin/js/off-canvas.js') }}"></script>
   <script src="{{asset('mAdmin/js/hoverable-collapse.js') }}"></script>
   <script src="{{asset('mAdmin/js/template.js') }}"></script>
-
+  @stack('js')
 </body>
 
 </html>

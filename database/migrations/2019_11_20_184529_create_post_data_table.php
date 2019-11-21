@@ -20,7 +20,7 @@ class CreatePostDataTable extends Migration
 
       $table->string('title');
       $table->text('text');
-      $table->string('keywords');
+      $table->string('keywords')->nullable();
 
       $table->unique(['post_id','locale']);
 

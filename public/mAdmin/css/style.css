@@ -20,7 +20,7 @@
     + Color Functions Mixins
     + Badge Mixins
     + Blockquote Mixins
-    
+
   * Core Styles
     + Reset Styles
     + Fonts
@@ -43,7 +43,7 @@
     + Lists
     + Tables
   * Plugin overrides
-    + Data-tables  
+    + Data-tables
   * Landing screens
     + Auth
   * Layout
@@ -17822,6 +17822,10 @@ button.bg-dark:focus {
 
 .text-right {
   text-align: right !important;
+}
+
+.pull-right {
+  float: right !important;
 }
 
 .text-center {

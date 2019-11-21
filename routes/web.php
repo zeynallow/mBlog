@@ -21,7 +21,9 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 
-Route::group(['prefix' => 'mAdmin',], function() {
+Route::group(['prefix' => 'mAdmin','middleware'=>'auth'], function() {
+  // Posts
   Route::get('posts', 'mAdmin\PostController@index')->name('mAdmin.posts.index');
   Route::get('posts/create', 'mAdmin\PostController@create')->name('mAdmin.posts.create');
+  Route::post('posts/store', 'mAdmin\PostController@store')->name('mAdmin.posts.store');
 });
