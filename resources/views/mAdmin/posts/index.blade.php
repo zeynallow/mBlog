@@ -60,12 +60,15 @@
                           '<span class="badge badge-danger"><i class="mdi mdi-eye"></i></span>'
                           !!}
 
-                          {!!$post->featured ? '<span class="badge badge-success">Featured</span>' : '<span class="badge badge-info">Set as Feature</span>'!!}
+                          {!!$post->featured ?
+                            '<a href="'.route('mAdmin.posts.removeFeature',$post->id).'"  class="badge badge-success">Remove Featured</a>' :
+                            '<a href="'.route('mAdmin.posts.setAsFeature',$post->id).'" class="badge badge-info">Set as Feature</a>'
+                          !!}
 
                         </td>
                         <td>{{$post->created_at}}</td>
                         <td>
-                          <a href="#" class="badge badge-success"><i class="mdi mdi-pencil"></i></a>
+                          <a href="{{ route('mAdmin.posts.edit',$post->id)}}" class="badge badge-success"><i class="mdi mdi-pencil"></i></a>
                           <a href="{{ route('mAdmin.posts.destroy',$post->id)}}" class="badge badge-danger confirm-delete-alert"><i class="mdi mdi-delete"></i></a>
                         </td>
                       </tr>

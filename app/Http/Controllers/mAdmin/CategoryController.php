@@ -77,17 +77,6 @@ class CategoryController extends Controller
   }
 
   /**
-  * Display the specified resource.
-  *
-  * @param  int  $id
-  * @return \Illuminate\Http\Response
-  */
-  public function show($id)
-  {
-    //
-  }
-
-  /**
   * Show the form for editing the specified resource.
   *
   * @param  int  $id
@@ -184,8 +173,11 @@ class CategoryController extends Controller
   * @return Json
   */
   public function getSubCategoryForSelect($category_id){
-    $getCategory = Category::select('id')->where('parent_id',$category_id)->firstOrFail();
-    $getSubCategory = $getCategory->category_data[0];
+    $getSubCategory=[];
+    $getCategory = Category::select('id')->where('parent_id',$category_id)->get();
+    foreach ($getCategory as $key => $category) {
+      $getSubCategory[] = $category->category_data[0];
+    }
     return response()->json($getSubCategory,201);
   }
 

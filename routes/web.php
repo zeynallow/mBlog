@@ -26,7 +26,12 @@ Route::group(['prefix' => 'mAdmin','middleware'=>'auth'], function() {
   Route::get('posts', 'mAdmin\PostController@index')->name('mAdmin.posts.index');
   Route::get('posts/create', 'mAdmin\PostController@create')->name('mAdmin.posts.create');
   Route::post('posts/store', 'mAdmin\PostController@store')->name('mAdmin.posts.store');
+  Route::get('posts/edit/{post_id}', 'mAdmin\PostController@edit')->name('mAdmin.posts.edit');
+  Route::post('posts/update/{post_id}', 'mAdmin\PostController@update')->name('mAdmin.posts.update');
   Route::get('posts/delete/{post_id}', 'mAdmin\PostController@destroy')->name('mAdmin.posts.destroy');
+  Route::get('posts/setAsFeature/{post_id}', 'mAdmin\PostController@setAsFeature')->name('mAdmin.posts.setAsFeature');
+  Route::get('posts/removeFeature/{post_id}', 'mAdmin\PostController@removeFeature')->name('mAdmin.posts.removeFeature');
+
 
   // Categories
   Route::get('categories', 'mAdmin\CategoryController@index')->name('mAdmin.categories.index');

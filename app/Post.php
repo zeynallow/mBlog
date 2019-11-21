@@ -29,4 +29,9 @@ class Post extends Model
   public function subcategory(){
     return $this->belongsTo('App\Category','subcategory_id');
   }
+
+  public function post_check_locale($locale){
+    return PostData::where('post_id',$this->id)->where('locale',$locale)->count();
+  }
+
 }
