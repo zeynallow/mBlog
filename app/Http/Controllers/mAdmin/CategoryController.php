@@ -95,7 +95,11 @@ class CategoryController extends Controller
   */
   public function edit($id)
   {
-    //
+    $categories = Category::where('parent_id',0)->get();
+    $category = Category::findOrFail($id);
+
+
+    return view('mAdmin.categories.edit',compact('categories','category'));
   }
 
   /**
@@ -107,7 +111,38 @@ class CategoryController extends Controller
   */
   public function update(Request $request, $id)
   {
-    //
+    $locale = App::getLocale();
+
+    $request->validate([
+      'title.*'=>'required|max:255',
+      'slug'=>'required'
+    ]);
+
+    //Update Category
+    $category = Category::where('id',$id)
+    ->update([
+      'show_on_menu'=> ($request->show_on_menu) ? 1 : 0,
+      'parent_id'=> ($request->parent_id) ? $request->parent_id : 0,
+      'menu_position'=> ($request->menu_position) ? $request->menu_position : 1,
+      'slug'=>$request->slug
+    ]);
+
+    if($category){
+      //Update Category Data
+      foreach ($request->title as $key => $title) {
+        // CategoryData::where('category_id',$id)->where('locale',$key)
+        // ->update([
+        //   'title'=> $title,
+        //   'meta_description'=> $request->meta_description[$key],
+        //   'meta_keywords'=> ($request->meta_keywords[$key]) ? $request->meta_keywords[$key] : '',
+        //   'locale'=> $key
+        // ]);
+      }
+      return redirect()->back();
+    }else{
+      return redirect()->back()->withErrors(['message'=>'Something went error...']);
+    }
+
   }
 
   /**

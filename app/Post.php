@@ -18,6 +18,10 @@ class Post extends Model
     return $this->hasMany('App\PostData','post_id')->where('locale',App::getLocale());
   }
 
+  public function post_data_all(){
+    return $this->hasMany('App\PostData','post_id');
+  }
+
   public function category(){
     return $this->belongsTo('App\Category','category_id');
   }

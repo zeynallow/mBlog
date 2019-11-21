@@ -53,7 +53,7 @@
                         </td>
                         <td>{{$category->menu_position}}</td>
                         <td>
-                          <a href="#" class="badge badge-success"><i class="mdi mdi-pencil"></i></a>
+                          <a href="{{ route('mAdmin.categories.edit',$category->id)}}" class="badge badge-success"><i class="mdi mdi-pencil"></i></a>
                           <a href="#" class="badge badge-danger"><i class="mdi mdi-delete"></i></a>
                         </td>
                       </tr>

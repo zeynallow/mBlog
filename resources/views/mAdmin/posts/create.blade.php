@@ -42,34 +42,40 @@
               </div>
 
               <ul class="nav nav-tabs" id="selectLang">
-                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#en-content">English</a></li>
+                @if(getDefaultLocale())
+                  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#en-content">{{getDefaultLocale()->name}}</a></li>
+                @endif
               </ul>
 
-              <ul class="nav pull-right">
-                <li class="nav-item"><a style="margin: 5px;" onclick="addLang(this,'tr','Turkish')" class="btn btn-primary btn-sm" href="javascript:void(0)"><i class="mdi mdi-plus menu-icon"></i> Add Turkish</a></li>
-                <li class="nav-item"><a style="margin: 5px;" onclick="addLang(this,'az','Azeri')" class="btn btn-primary btn-sm" href="javascript:void(0)"><i class="mdi mdi-plus menu-icon"></i> Add Azerbaijani</a></li>
-              </ul>
+              @if(getOtherLocales())
+                <ul class="nav pull-right">
+                  @foreach (getOtherLocales() as $key => $locale)
+                    <li class="nav-item"><a style="margin: 5px;" onclick="addLang(this,'{{$locale->code}}','{{$locale->name}}')" class="btn btn-primary btn-sm" href="javascript:void(0)"><i class="mdi mdi-plus menu-icon"></i> Add {{$locale->name}}</a></li>
+                  @endforeach
+                </ul>
+              @endif
 
               <div class="tab-content" style="padding:20px;" id="selectLangContent">
-                <div id="en-content" class="tab-pane fade in active show">
+                @if(getDefaultLocale())
+                <div id="{{getDefaultLocale()->code}}-content" class="tab-pane fade in active show">
                   <div class="form-group">
-                    <label for="title_en">Title</label>
-                    <input value="{{ old('title.en') }}" type="text" class="form-control" name="title[en]" id="title_en" placeholder="Title">
+                    <label for="title_{{getDefaultLocale()->code}}">Title</label>
+                    <input value="{{ old('title.'.getDefaultLocale()->code) }}" type="text" class="form-control" name="title[{{getDefaultLocale()->code}}]" id="title_{{getDefaultLocale()->code}}" placeholder="Title">
                   </div>
 
                   <div class="form-group">
-                    <label for="text_en">Content</label>
-                    <textarea name="text[en]" class="form-control my-editor">{!! old('text.en') !!}</textarea>
+                    <label for="text_{{getDefaultLocale()->code}}">Content</label>
+                    <textarea name="text[{{getDefaultLocale()->code}}]" class="form-control my-editor">{!! old('text.en'.getDefaultLocale()->code) !!}</textarea>
                   </div>
 
                   <div class="form-group">
-                    <label for="keywords_en">Keywords</label>
-                    <input type="text" class="form-control" name="keywords[en]" value="{{ old('keywords.en') }}" id="keywords_en" placeholder="With comma">
+                    <label for="keywords_{{getDefaultLocale()->code}}">Keywords</label>
+                    <input type="text" class="form-control" name="keywords[{{getDefaultLocale()->code}}]" value="{{ old('keywords.'.getDefaultLocale()->code) }}" id="keywords_{{getDefaultLocale()->code}}" placeholder="With comma">
                   </div>
                 </div>
+              @endif
 
               </div>
-
 
               <div class="form-group">
                 <label for="slug">Slug</label>

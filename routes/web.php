@@ -31,6 +31,8 @@ Route::group(['prefix' => 'mAdmin','middleware'=>'auth'], function() {
   Route::get('categories', 'mAdmin\CategoryController@index')->name('mAdmin.categories.index');
   Route::get('categories/create', 'mAdmin\CategoryController@create')->name('mAdmin.categories.create');
   Route::post('categories/store', 'mAdmin\CategoryController@store')->name('mAdmin.categories.store');
+  Route::get('categories/edit/{category_id}', 'mAdmin\CategoryController@edit')->name('mAdmin.categories.edit');
+  Route::post('categories/update/{category_id}', 'mAdmin\CategoryController@update')->name('mAdmin.categories.update');
 
   Route::get('categories/getSubCategoryForSelect/{category_id}', 'mAdmin\CategoryController@getSubCategoryForSelect')->name('mAdmin.categories.getSubCategoryForSelect');
 
