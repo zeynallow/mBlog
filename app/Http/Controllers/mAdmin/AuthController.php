@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\mAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Request;
 use Auth;
 
-class LoginController extends Controller
+class AuthController extends Controller
 {
   /*
   |--------------------------------------------------------------------------
@@ -37,6 +37,14 @@ class LoginController extends Controller
   public function __construct()
   {
     $this->middleware('guest')->except('logout');
+  }
+
+  /**
+  * showLoginForm.
+  */
+  public function showLoginForm()
+  {
+    return view('mAdmin.auth.login');
   }
 
   /**
