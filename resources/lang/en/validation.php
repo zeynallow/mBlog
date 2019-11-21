@@ -146,6 +146,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+      'slug'=>'Slug',
+      'category_id'=>'Category',
+      'title.*'=>'Title',
+      'text.*'=>'Content',
+    ],
 
 ];

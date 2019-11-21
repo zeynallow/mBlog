@@ -20,7 +20,9 @@ class PostController extends Controller
   */
   public function index()
   {
-    return view('mAdmin.posts.index');
+    $posts=Post::paginate(10);
+
+    return view('mAdmin.posts.index',compact('posts'));
   }
 
   /**
@@ -30,7 +32,7 @@ class PostController extends Controller
   */
   public function create()
   {
-    $categories = Category::all();
+    $categories = Category::where('parent_id',0)->get();
     return view('mAdmin.posts.create',compact('categories'));
   }
 
