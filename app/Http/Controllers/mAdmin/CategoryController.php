@@ -4,7 +4,7 @@ namespace App\Http\Controllers\mAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App;
 use App\Category;
 use App\CategoryData;
 
@@ -18,7 +18,9 @@ class CategoryController extends Controller
   */
   public function index()
   {
-    return view('mAdmin.posts.index');
+    $categories = Category::paginate(10);
+
+    return view('mAdmin.categories.index',compact('categories'));
   }
 
   /**
@@ -28,6 +30,9 @@ class CategoryController extends Controller
   */
   public function create()
   {
+    $categories = Category::where('parent_id',0)->get();
+    return view('mAdmin.categories.create',compact('categories'));
+
   }
 
   /**
@@ -38,6 +43,36 @@ class CategoryController extends Controller
   */
   public function store(Request $request)
   {
+    $locale = App::getLocale();
+
+    $request->validate([
+      'title.*'=>'required|max:255',
+      'slug'=>'required'
+    ]);
+
+    //Create Category
+    $category = Category::create([
+      'show_on_menu'=> ($request->show_on_menu) ? 1 : 0,
+      'parent_id'=> ($request->parent_id) ? $request->parent_id : 0,
+      'menu_position'=> ($request->menu_position) ? $request->menu_position : 1,
+      'slug'=>$request->slug
+    ]);
+
+    if($category){
+      //Insert Category Data
+      foreach ($request->title as $key => $title) {
+        CategoryData::create([
+          'title'=> $title,
+          'meta_description'=> $request->meta_description[$key],
+          'meta_keywords'=> ($request->meta_keywords[$key]) ? $request->meta_keywords[$key] : '',
+          'locale'=> $key,
+          'category_id'=> $category->id
+        ]);
+      }
+      return redirect()->back();
+    }else{
+      return redirect()->back()->withErrors(['message'=>'Something went error...']);
+    }
 
   }
 
