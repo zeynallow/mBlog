@@ -69,9 +69,9 @@ class CategoryController extends Controller
           'category_id'=> $category->id
         ]);
       }
-      return redirect()->back();
+      return redirect()->route('mAdmin.categories.index')->with('success','Category created successfully!');
     }else{
-      return redirect()->back()->withErrors(['message'=>'Something went error...']);
+      return redirect()->back()->with('error','Something went error...');
     }
 
   }
@@ -151,33 +151,76 @@ class CategoryController extends Controller
         }
       }
 
-    return redirect()->back();
-  }else{
-    return redirect()->back()->withErrors(['message'=>'Something went error...']);
+      return redirect()->route('mAdmin.categories.index')->with('success','Category updated successfully!');
+    }else{
+      return redirect()->back()->with('error','Something went error...');
+    }
+
   }
 
-}
+  /**
+  * Remove the specified resource from storage.
+  *
+  * @param  int  $id
+  * @return \Illuminate\Http\Response
+  */
+  public function destroy($id)
+  {
+    $delete = Category::where('id',$id)->delete();
 
-/**
-* Remove the specified resource from storage.
-*
-* @param  int  $id
-* @return \Illuminate\Http\Response
-*/
-public function destroy($id)
-{
-  //
-}
+    if($delete){
+      CategoryData::where('category_id',$id)->delete();
+    }else{
+      return redirect()->back()->with('error','Something went error...');
+    }
 
-/**
-* Get Sub Categories for Select
-*
-* @param  int  $category_id
-* @return Json
-*/
-public function getSubCategoryForSelect($category_id){
-  $getCategory = Category::select('id')->where('parent_id',$category_id)->firstOrFail();
-  $getSubCategory = $getCategory->category_data[0];
-  return response()->json($getSubCategory,201);
-}
+    return redirect()->back()->with('success','Category deleted successfully!');
+  }
+
+  /**
+  * Get Sub Categories for Select
+  *
+  * @param  int  $category_id
+  * @return Json
+  */
+  public function getSubCategoryForSelect($category_id){
+    $getCategory = Category::select('id')->where('parent_id',$category_id)->firstOrFail();
+    $getSubCategory = $getCategory->category_data[0];
+    return response()->json($getSubCategory,201);
+  }
+
+  /**
+  * Show On Menu
+  *
+  * @param  int  $category_id
+  * @return Back
+  */
+  public function showOnMenu($category_id){
+    $update = Category::where('id',$category_id)
+    ->update(['show_on_menu'=>1]);
+
+    if($update){
+      return redirect()->back()->with('success','Category added to menu successfully!');
+    }else{
+      return redirect()->back()->with('error','Something went error...');
+    }
+  }
+
+  /**
+  * Hide From Menu
+  *
+  * @param  int  $category_id
+  * @return Back
+  */
+  public function hideFromMenu($category_id){
+    $update = Category::where('id',$category_id)
+    ->update(['show_on_menu'=>0]);
+
+    if($update){
+      return redirect()->back()->with('success','Category hidden to menu successfully!');
+    }else{
+      return redirect()->back()->with('error','Something went error...');
+    }
+  }
+
 }

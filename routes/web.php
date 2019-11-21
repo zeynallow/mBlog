@@ -26,6 +26,7 @@ Route::group(['prefix' => 'mAdmin','middleware'=>'auth'], function() {
   Route::get('posts', 'mAdmin\PostController@index')->name('mAdmin.posts.index');
   Route::get('posts/create', 'mAdmin\PostController@create')->name('mAdmin.posts.create');
   Route::post('posts/store', 'mAdmin\PostController@store')->name('mAdmin.posts.store');
+  Route::get('posts/delete/{post_id}', 'mAdmin\PostController@destroy')->name('mAdmin.posts.destroy');
 
   // Categories
   Route::get('categories', 'mAdmin\CategoryController@index')->name('mAdmin.categories.index');
@@ -33,6 +34,9 @@ Route::group(['prefix' => 'mAdmin','middleware'=>'auth'], function() {
   Route::post('categories/store', 'mAdmin\CategoryController@store')->name('mAdmin.categories.store');
   Route::get('categories/edit/{category_id}', 'mAdmin\CategoryController@edit')->name('mAdmin.categories.edit');
   Route::post('categories/update/{category_id}', 'mAdmin\CategoryController@update')->name('mAdmin.categories.update');
+  Route::get('categories/delete/{category_id}', 'mAdmin\CategoryController@destroy')->name('mAdmin.categories.destroy');
+  Route::get('categories/showOnMenu/{category_id}', 'mAdmin\CategoryController@showOnMenu')->name('mAdmin.categories.showOnMenu');
+  Route::get('categories/hideFromMenu/{category_id}', 'mAdmin\CategoryController@hideFromMenu')->name('mAdmin.categories.hideFromMenu');
 
   Route::get('categories/getSubCategoryForSelect/{category_id}', 'mAdmin\CategoryController@getSubCategoryForSelect')->name('mAdmin.categories.getSubCategoryForSelect');
 

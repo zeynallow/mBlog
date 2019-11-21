@@ -47,14 +47,14 @@
                       <td>
                         {!!
                           $category->show_on_menu ?
-                          '<span class="badge badge-success">Show Menu</span>' :
-                          '<span class="badge badge-info">Add to menu</span>'
+                          '<a href="'.route('mAdmin.categories.hideFromMenu',$category->id).'" class="badge badge-success">Hide from Menu</a>' :
+                          '<a href="'.route('mAdmin.categories.showOnMenu',$category->id).'" class="badge badge-info">Add to menu</a>'
                           !!}
                         </td>
                         <td>{{$category->menu_position}}</td>
                         <td>
                           <a href="{{ route('mAdmin.categories.edit',$category->id)}}" class="badge badge-success"><i class="mdi mdi-pencil"></i></a>
-                          <a href="#" class="badge badge-danger"><i class="mdi mdi-delete"></i></a>
+                          <a href="{{ route('mAdmin.categories.destroy',$category->id)}}" class="badge badge-danger confirm-delete-alert"><i class="mdi mdi-delete"></i></a>
                         </td>
                       </tr>
                     @endforeach

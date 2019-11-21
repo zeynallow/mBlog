@@ -66,14 +66,14 @@
                         <td>{{$post->created_at}}</td>
                         <td>
                           <a href="#" class="badge badge-success"><i class="mdi mdi-pencil"></i></a>
-                          <a href="#" class="badge badge-danger"><i class="mdi mdi-delete"></i></a>
+                          <a href="{{ route('mAdmin.posts.destroy',$post->id)}}" class="badge badge-danger confirm-delete-alert"><i class="mdi mdi-delete"></i></a>
                         </td>
                       </tr>
                     @endforeach
                   @endif
                 </tbody>
               </table>
-              
+
               <div style="padding:10px;">
                 {{$posts}}
               </div>

@@ -12,6 +12,7 @@
   <!-- endinject -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('mAdmin/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('mAdmin/vendors/sweetalert2/sweetalert2.min.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('mAdmin/images/favicon.png') }}">
   @stack('css')
@@ -95,7 +96,46 @@
   <!-- inject:js -->
   <script src="{{asset('mAdmin/js/off-canvas.js') }}"></script>
   <script src="{{asset('mAdmin/js/hoverable-collapse.js') }}"></script>
+  <script src="{{asset('mAdmin/vendors/sweetalert2/sweetalert2.min.js')}}"></script>
   <script src="{{asset('mAdmin/js/template.js') }}"></script>
+
+  @if($message = Session::get('success'))
+    <script type="text/javascript">
+    Toast.fire({
+      icon: 'success',
+      title: '{{$message}}'
+    })
+    </script>
+  @endif
+
+  @if($message = Session::get('error'))
+    <script type="text/javascript">
+    Toast.fire({
+      icon: 'error',
+      title: '{{$message}}'
+    })
+    </script>
+  @endif
+
+  @if($message = Session::get('warning'))
+    <script type="text/javascript">
+    Toast.fire({
+      icon: 'warning',
+      title: '{{$message}}'
+    })
+    </script>
+  @endif
+
+  @if($message = Session::get('info'))
+    <script type="text/javascript">
+    Toast.fire({
+      icon: 'info',
+      title: '{{$message}}'
+    })
+    </script>
+  @endif
+
+
   @stack('js')
 </body>
 

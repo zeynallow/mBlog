@@ -76,9 +76,9 @@ class PostController extends Controller
           'post_id'=> $post->id
         ]);
       }
-      return redirect()->back();
+      return redirect()->back()->with('success','Post created successfully!');
     }else{
-      return redirect()->back()->withErrors(['message'=>'Something went error...']);
+      return redirect()->back()->with('error','Something went error...');
     }
 
   }
@@ -125,6 +125,14 @@ class PostController extends Controller
   */
   public function destroy($id)
   {
-    //
+    $delete = Post::where('id',$id)->delete();
+
+    if($delete){
+      PostData::where('post_id',$id)->delete();
+    }else{
+      return redirect()->back()->with('error','Something went error...');
+    }
+
+    return redirect()->back()->with('success','Post deleted successfully!');
   }
 }
