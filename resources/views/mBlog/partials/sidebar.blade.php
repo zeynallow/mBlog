@@ -4,15 +4,15 @@
       <h4 class="mb-5">Categories</h4>
     </div>
     <div class="category">
-      <ul>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Development</a></li>
-        <li><a href="#">HTML</a></li>
-        <li><a href="#">WordPress</a></li>
-        <li><a href="#">Minimal</a></li>
-        <li><a href="#">Corporate</a></li>
-        <li><a href="#">Business</a></li>
-      </ul>
+      @if(getMainCategories())
+        <ul>
+          @foreach (getMainCategories() as $key => $s_bar_category)
+            @isset($s_bar_category->category_data[0])
+              <li><a href="{{route('category.index', $s_bar_category->slug)}}">{{ $s_bar_category->category_data[0]->title }}</a></li>
+            @endisset
+          @endforeach
+        </ul>
+      @endif
     </div>
   </div>
   <div class="widget mb-40">

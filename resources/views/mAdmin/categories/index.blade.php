@@ -37,9 +37,9 @@
                     <tr>
                       <td>{{$category->id}}</td>
                       <td>
-                        @if($category->category_data)
-                          {{$category->category_data[0]->title}}
-                        @endif
+                        @isset($category->category_data_all[0])
+                          {{$category->category_data_all[0]->title}}
+                        @endisset
                       </td>
                       <td>
                         {{($category->subcategory_data()) ? $category->subcategory_data()->title : ''}}

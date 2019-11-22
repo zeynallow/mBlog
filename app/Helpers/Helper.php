@@ -1,6 +1,7 @@
 <?php
 
 use App\Locale;
+use App\Category;
 
 /**
 * get other locales
@@ -30,5 +31,27 @@ if (!function_exists('getLocaleName')) {
   {
     $get =  Locale::select('name')->where('code',$code)->first();
     return $get->name;
+  }
+}
+
+/**
+* get main categories
+*/
+if (!function_exists('getMainCategories')) {
+  function getMainCategories()
+  {
+    $get = Category::where('parent_id',0)->get();
+    return $get;
+  }
+}
+
+/**
+* get nav categories
+*/
+if (!function_exists('getNavCategories')) {
+  function getNavCategories()
+  {
+    $get = Category::where('parent_id',0)->where('show_on_menu',1)->get();
+    return $get;
   }
 }

@@ -7,43 +7,32 @@
     </button>
   </div>
   <div class="navbar-collapse collapse ">
-    <ul class="navigation ">
-      <!-- HOME START -->
-      <li><a href="index.html">Home</a></li>
-      <!-- HOME END -->
-      <li><a href="about.html">About Us</a>
-      </li>
-      <!-- PORTFOLIO START -->
-      <li class="dropdown"><a href="javascript:void(0)">Portfolio</a>
-        <ul>
-          <li class="sub-dropdown">
-            <a href="javascript:void(0)">2 Columns <i class="zmdi zmdi-caret-right"></i></a>
-            <ul class="sub-menu">
-              <li><a href="portfolio-2-style-1.html">Style 1</a>
+    <ul class="navigation">
+      <li><a href="{{ route('home') }}">Home</a></li>
+      @if(getNavCategories())
+        @foreach (getNavCategories() as $key => $nav_category)
+          @isset($nav_category->category_data[0])
+            <li {!!($nav_category->subcategories) ? 'class="dropdown"' : ''!!}>
+              <a href="{{route('category.index', $nav_category->slug)}}">{{ $nav_category->category_data[0]->title }}</a>
+              @if($nav_category->subcategories)
+                <ul>
+                  @foreach ($nav_category->subcategories as $key => $nav_subcategory)
+                    @isset($nav_subcategory->category_data[0])
+                      <li>
+                        <a href="{{route('subcategory.index', ['category_slug'=>$nav_category->slug,'subcategory_slug'=>$nav_subcategory->slug])}}">
+                          {{ $nav_subcategory->category_data[0]->title }}</a>
+                        </li>
+                      @endisset
+                    @endforeach
+                  </ul>
+                @endif
               </li>
-            </ul>
-          </li>
-          <li class="sub-dropdown">
-            <a href="javascript:void(0)">3 Columns <i class="zmdi zmdi-caret-right"></i></a>
-            <ul class="sub-menu">
-              <li><a href="portfolio-3-style-1.html">Style 1</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <!-- PORTFOLIO END -->
-      <!-- BLOG START -->
-      <li class="dropdown"><a href="blog.html">Blog</a>
-        <ul>
-          <li><a href="blog.html">Style 1</a>
-          </li>
-          <!-- DETAILS START -->
-        </ul>
-      </li>
-      <!-- BLOG END -->
-      <li><a href="javascript:void(0)">Contact Us</a></li>
-      <!-- CONTACT END -->
-    </ul>
-  </div>
-</nav>
+            @endisset
+          @endforeach
+        @endif
+        <!-- BLOG END -->
+        <li><a href="javascript:void(0)">Contact Us</a></li>
+        <!-- CONTACT END -->
+      </ul>
+    </div>
+  </nav>

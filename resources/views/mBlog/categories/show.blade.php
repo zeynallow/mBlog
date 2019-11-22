@@ -16,9 +16,9 @@
             <div class="col-xs-12">
               <div class="breadcrumbs-menu">
                 <h2>
-                  @if($category->category_data)
+                  @isset($category->category_data[0])
                     {{$category->category_data[0]->title}}
-                  @endif
+                  @endisset
                 </h2>
                 <ul class="clearfix">
                   <li><a href="index.html">Home</a><span>|</span> </li>
