@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('/', 'HomeController@home')->name('home');
-Route::get('/home', 'HomeController@home')->name('home');
-
-// Posts
-Route::get('/post/{post_id}/{slug}', 'PostController@show')->name('post.show');
-
 
 //mAdmin Routes
 Route::group(['prefix' => 'mAdmin'], function() {
@@ -57,3 +51,14 @@ Route::group(['prefix' => 'mAdmin'], function() {
   });
 
 });
+
+
+
+Route::get('/', 'HomeController@home')->name('home');
+Route::get('/home', 'HomeController@home')->name('home');
+
+// Posts
+Route::get('/post/{post_id}/{slug}', 'PostController@show')->name('post.show');
+
+// Categories
+Route::get('/{slug}', 'CategoryController@index')->name('category.index');

@@ -6,7 +6,7 @@
         <div class="col-xs-12 col-sm-2 col-md-3">
           <div class="left">
             <div class="logo">
-              <a href="index.html">
+              <a href="/">
                 <img src="{{ asset('assets/img/logo.svg') }}" alt="mazzBlog" />
               </a>
             </div>

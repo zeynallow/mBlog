@@ -75,7 +75,7 @@ img {
   clear: both
 }
 .logo {
-    width: 100px;
+  width: 100px;
 }
 /* Link style
 ============== */
@@ -937,6 +937,13 @@ h6 {
   .horizontal-line.center hr {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .alert-info {
+    color: #22242a;
+    border-radius: 0px;
+    background-color: #a7a7a733;
+    border-color: #777777;
   }
 
   hr.line {

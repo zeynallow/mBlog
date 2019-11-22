@@ -1,38 +1,23 @@
 @extends('mBlog.layouts.app')
 @section('content')
 
-  <section class="pb-50">
-    <div id="one-item" class="one-item project-image">
-      <div class="item" style="background-image:url('assets/img/portfolio/details/l1.jpg')">
-        <a class="" href="blog-details.html">
-          <h3>Aperiam I Will Give you a Must</h3>
-          <h6>March 15, 2018 By Admin</h6>
-          <p>I will give you a complete ofe system expound ttual teachi struth...</p>
-        </a>
+  @if($featuredPosts)
+    <section class="pb-50">
+      <div id="one-item" class="one-item project-image">
+        @foreach ($featuredPosts as $key => $fpost)
+          @isset($post->post_data[0])
+            <div class="item" style="background-image:url('{{$fpost->cover}}')">
+              <a href="{{ route('post.show',['post_id'=>$fpost->id,'slug'=>$fpost->slug]) }}">
+                <h3>{{$fpost->post_data[0]->title}}</h3>
+                <h6>{{$fpost->created_at->diffForHumans()}} | {{($fpost->author) ? $fpost->author->name : ''}}</h6>
+                <p>{!! str_limit($fpost->post_data[0]->text,100) !!}</p>
+              </a>
+            </div>
+          @endisset
+        @endforeach
       </div>
-      <div class="item" style="background-image:url('assets/img/portfolio/details/l1.jpg')">
-        <a class="" href="blog-details.html">
-          <h3>Aperiam I Will Give you a Must</h3>
-          <h6>March 15, 2018 By Admin</h6>
-          <p>I will give you a complete ofe system expound ttual teachi struth...</p>
-        </a>
-      </div>
-      <div class="item" style="background-image:url('assets/img/portfolio/details/l2.jpg')">
-        <a class="" href="blog-details.html">
-          <h3>Aperiam I Will Give you a Must</h3>
-          <h6>March 15, 2018 By Admin</h6>
-          <p>I will give you a complete ofe system expound ttual teachi struth...</p>
-        </a>
-      </div>
-      <div class="item" style="background-image:url('assets/img/portfolio/details/l3.jpg')">
-        <a class="" href="blog-details.html">
-          <h3>Aperiam I Will Give you a Must</h3>
-          <h6>March 15, 2018 By Admin</h6>
-          <p>I will give you a complete ofe system expound ttual teachi struth...</p>
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
+  @endif
 
   <div class="blog-area white-bg">
     <div class="container">
@@ -41,7 +26,6 @@
         <div class="col-xs-12 col-sm-4 col-md-3 hide-mobile">
           @include('mBlog.partials.sidebar')
         </div>
-        <!-- Sidebar End -->
 
         <div class="col-xs-12 col-sm-8 col-md-9 mobi-mb-50">
 
@@ -49,30 +33,16 @@
             <h2>Last posts</h2>
           </div>
 
-          @if($lastPosts)
+          @if($lastPosts && count($lastPosts))
             <div class="row">
               @foreach ($lastPosts as $key => $post)
                 @isset($post->post_data[0])
-                  <!--post-->
-                  <div class="col-md-4">
-                    <div class="blog-post mt-25">
-                      <div class="thumb">
-                        <a href="{{ route('post.show',['post_id'=>$post->id,'slug'=>$post->slug]) }}"><img src="{{ $post->cover }}" alt="{{$post->post_data[0]->title}}" /></a>
-                      </div>
-                      <div class="blog-text pt-25">
-                        <a href="{{ route('post.show',['post_id'=>$post->id,'slug'=>$post->slug]) }}"><h3>{{$post->post_data[0]->title}}</h3></a>
-                        <h6>{{$post->created_at->diffForHumans()}} By Admin</h6>
-                        <p>{!! str_limit($post->post_data[0]->text,100) !!}</p>
-                        <a class="read-more mt-25" href="{{ route('post.show',['post_id'=>$post->id,'slug'=>$post->slug]) }}">read more</a>
-                      </div>
-                    </div>
-                  </div>
-                  <!--post end-->
+                  @include('mBlog.partials.post_grid')
                 @endisset
               @endforeach
             </div>
           @else
-            <div class="alert alert-info">
+            <div class="alert alert-info mt-40">
               No Posts
             </div>
           @endif

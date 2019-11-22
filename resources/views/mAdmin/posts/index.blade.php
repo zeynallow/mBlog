@@ -44,9 +44,9 @@
                         @endif
                       </td>
                       <td>
-                        @if($post->post_data)
+                        @isset($post->post_data[0])
                           {{$post->post_data[0]->title}}
-                        @endif
+                        @endisset
                       </td>
                       <td>
                         {{($post->category) ? $post->category->category_data[0]->title : ''}}
