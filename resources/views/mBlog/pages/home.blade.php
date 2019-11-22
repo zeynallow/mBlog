@@ -5,7 +5,7 @@
     <section class="pb-50">
       <div id="one-item" class="one-item project-image">
         @foreach ($featuredPosts as $key => $fpost)
-          @isset($post->post_data[0])
+          @isset($fpost->post_data[0])
             <div class="item" style="background-image:url('{{$fpost->cover}}')">
               <a href="{{ route('post.show',['post_id'=>$fpost->id,'slug'=>$fpost->slug]) }}">
                 <h3>{{$fpost->post_data[0]->title}}</h3>

@@ -1,6 +1,11 @@
+/*==========================================================
+    mBlog 1.0
+    Created by mazzAPP
+    Envato Profile: https://themeforest.net/user/mazzapp
+    Website: http://mazzapp.com
+============================================================*/
 
-/* Large Devices, Wide Screens :1200px
-====================================*/
+/* 1200px */
 @media (min-width: 1200px) and (max-width: 1500px) {
 	.style2 .hero-text {
 	  margin-top: 0;
@@ -10,8 +15,7 @@
 	}
 }
 
-/* Normal desktop :992px
-====================================*/
+/* 992px */
 @media (min-width: 992px) and (max-width: 1200px) {
 	.mainmenu .navigation > li:last-child > ul {
 	  left: inherit;
@@ -23,7 +27,7 @@
 	.pb-250 {
 	  padding-bottom: 185px;
 	}
-	
+
 	/* Pages */
 	.style1 .thumb.mr-40 {
 	  margin-right: 15px;
@@ -78,7 +82,7 @@
 /* Tablet desktop :768px
 ===================================*/
 @media (min-width: 768px) and (max-width: 991px) {
-	
+
 	.pb-205,
 	.pt-140 {
 	  padding-top: 100px;
@@ -98,7 +102,7 @@
 	.portfolio-area.column-4 .percent-25{
 		width: 33.33%;
 	}
-	
+
 	.navbar-header {
 		float: none;
 	}
@@ -111,7 +115,7 @@
 	.navbar-nav {
 		float: none!important;
 	}
-	.navbar-collapse.collapse.in { 
+	.navbar-collapse.collapse.in {
 		display: block!important;
 	}
 	.collapsing {
@@ -136,7 +140,7 @@
 	.search-box form {
 	  margin-top: 50px;
 	}
-	
+
 	.cta-content .pull-right {
 	  float: left !important;
 	  margin: 15px 0 0;
@@ -190,10 +194,9 @@
 
 }
 
-/* Small Mobile :320px. 
-====================================*/
+/* 320px */
 @media (max-width: 767px) {
-	
+
 	.container{
 		width:300px;
 	}
@@ -287,8 +290,7 @@
 
 }
 
-/* Large Mobile :480px
-=====================================*/
+/* 480px */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 
 	.container {width:480px}

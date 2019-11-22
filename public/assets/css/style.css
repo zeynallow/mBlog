@@ -1,28 +1,9 @@
-
 /*==========================================================
-Template Name: Gimri Minimal Portfolio Template
-Created By: WebPuls
-Envato Profile: https://themeforest.net/user/WebPuls
-Website: http://webpuls.org
-Description: Gimri is Fully Responsive Minimal Portfolio Template with awesome features.
-Version: v1.0
-Support: http://webpuls.org/support
+    mBlog 1.0
+    Created by mazzAPP
+    Envato Profile: https://themeforest.net/user/mazzapp
+    Website: http://mazzapp.com
 ============================================================*/
-/*===========================================================
-CSS INDEX
-===================
-
-[ 1. General Code ]
-[ 2. Typography ]
-[ 3. Global Classes ]
-[ 4. Home Version's ]
-[ 5. Pages ]
-[ 6. Loding Bar ]
-[ 7. ScrollUp ]
-==============================================================*/
-/*
-[ 1. General Code ]
-================ */
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -77,8 +58,7 @@ img {
 .logo {
   width: 100px;
 }
-/* Link style
-============== */
+
 a {
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
@@ -98,8 +78,7 @@ a:hover {
   outline: none;
   text-decoration: none;
 }
-/* Transition
-=============== */
+
 
 a h2,
 a h3,
@@ -112,9 +91,6 @@ a,
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/*
-[ 2. Typography ]
-==========================*/
 
 p {
   font-family: 'Poppins', sans-serif;
@@ -161,9 +137,7 @@ h6 {
   font-size: 13px;
 }
 
-/*
-[ 3. Global Classes ]
-====================================== */
+
 .poppins {
   font-family: 'Poppins', sans-serif;
 }
@@ -216,8 +190,7 @@ h6 {
   position: relative;
 }
 
-/* percentage
---------------*/
+
 .percent-20 {
   width: 20%;
 }
@@ -252,14 +225,12 @@ h6 {
   }
 }
 
-/*margin top bottom
--------------*/
 
 .mtb-60 {
   margin-top: 60px;
   margin-bottom: 60px;
 }
-/* Screen Support */
+
 
 @media screen and (max-width: 767px) {
   .mtb-60 {
@@ -267,8 +238,6 @@ h6 {
     margin-bottom: 40px;
   }
 }
-/*margin top
--------------*/
 
 .mt-10 {
   margin-top: 10px;
@@ -300,6 +269,7 @@ h6 {
 .mt-145 {
   margin-top: 145px;
 }
+
 /* Screen Support */
 
 @media screen and (max-width: 767px) {
@@ -2808,6 +2778,7 @@ h6 {
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     height:400px;
+    background-size: cover;
   }
 
   .style1 .project-image li {
@@ -2875,9 +2846,6 @@ h6 {
   }
 
 
-  /*
-  [ 6. Loding Bar ]
-  ===================================*/
   #loading-wrap {
     background-color: #ffffff;
     height: 100%;
@@ -2926,9 +2894,6 @@ h6 {
     }
   }
 
-  /*
-  [ 6. ScrollUp ]
-  ===================================*/
 
   #scrollUp {
     background: #1c1e23  none repeat scroll 0 0;
@@ -2949,6 +2914,3 @@ h6 {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
-  /*====================================================================
-  [ END ]
-  ======================================================================*/

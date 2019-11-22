@@ -20,7 +20,8 @@ class HomeController extends Controller
     $featuredPosts = Post::where('publish',1)
     ->where('featured',1)
     ->orderBy('created_at','desc')
-    ->limit(6)->get();
+    ->limit(6)
+    ->get();
 
     return view('mBlog.pages.home',compact('lastPosts','featuredPosts'));
   }

@@ -21,35 +21,6 @@
     }
 }());
 
-/*
-Countdown Clock
-================================== */
-function makeTimer() {
-	var endTime = new Date("29 April 2019 9:56:00 GMT+01:00");			
-	endTime = (Date.parse(endTime) / 1000);
-
-	var now = new Date();
-	now = (Date.parse(now) / 1000);
-
-	var timeLeft = endTime - now;
-
-	var days = Math.floor(timeLeft / 86400); 
-	var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
-	var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
-	var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
-
-	if (hours < "10") { hours = "0" + hours; }
-	if (minutes < "10") { minutes = "0" + minutes; }
-	if (seconds < "10") { seconds = "0" + seconds; }
-
-	$("#days").html(days + "<h4>Days</h4>");
-	$("#hours").html(hours + "<h4>Hours</h4>");
-	$("#minutes").html(minutes + "<h4>Minutes</h4>");
-	$("#seconds").html(seconds + "<h4>Seconds</h4>");
-}
-setInterval(function() { makeTimer(); }, 1000);
-
-// Place any jQuery/helper plugins in here.
 
 /*!
  * scrollup v2.4.1
@@ -58,8 +29,8 @@ setInterval(function() { makeTimer(); }, 1000);
  * License: MIT
  */
 !function(l,o,e){"use strict";l.fn.scrollUp=function(o){l.data(e.body,"scrollUp")||(l.data(e.body,"scrollUp",!0),l.fn.scrollUp.init(o))},l.fn.scrollUp.init=function(r){var s,t,c,i,n,a,d,p=l.fn.scrollUp.settings=l.extend({},l.fn.scrollUp.defaults,r),f=!1;switch(d=p.scrollTrigger?l(p.scrollTrigger):l("<a/>",{id:p.scrollName,href:"#top"}),p.scrollTitle&&d.attr("title",p.scrollTitle),d.appendTo("body"),p.scrollImg||p.scrollTrigger||d.html(p.scrollText),d.css({display:"none",position:"fixed",zIndex:p.zIndex}),p.activeOverlay&&l("<div/>",{id:p.scrollName+"-active"}).css({position:"absolute",top:p.scrollDistance+"px",width:"100%",borderTop:"1px dotted"+p.activeOverlay,zIndex:p.zIndex}).appendTo("body"),p.animation){case"fade":s="fadeIn",t="fadeOut",c=p.animationSpeed;break;case"slide":s="slideDown",t="slideUp",c=p.animationSpeed;break;default:s="show",t="hide",c=0}i="top"===p.scrollFrom?p.scrollDistance:l(e).height()-l(o).height()-p.scrollDistance,n=l(o).scroll(function(){l(o).scrollTop()>i?f||(d[s](c),f=!0):f&&(d[t](c),f=!1)}),p.scrollTarget?"number"==typeof p.scrollTarget?a=p.scrollTarget:"string"==typeof p.scrollTarget&&(a=Math.floor(l(p.scrollTarget).offset().top)):a=0,d.click(function(o){o.preventDefault(),l("html, body").animate({scrollTop:a},p.scrollSpeed,p.easingType)})},l.fn.scrollUp.defaults={scrollName:"scrollUp",scrollDistance:300,scrollFrom:"top",scrollSpeed:300,easingType:"linear",animation:"fade",animationSpeed:200,scrollTrigger:!1,scrollTarget:!1,scrollText:"Scroll to top",scrollTitle:!1,scrollImg:!1,activeOverlay:!1,zIndex:2147483647},l.fn.scrollUp.destroy=function(r){l.removeData(e.body,"scrollUp"),l("#"+l.fn.scrollUp.settings.scrollName).remove(),l("#"+l.fn.scrollUp.settings.scrollName+"-active").remove(),l.fn.jquery.split(".")[1]>=7?l(o).off("scroll",r):l(o).unbind("scroll",r)},l.scrollUp=l.fn.scrollUp}(jQuery,window,document);
- 
- 
+
+
 /*
  * VenoBox - jQuery Plugin
  * version: 1.8.3
