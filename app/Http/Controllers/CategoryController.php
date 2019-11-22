@@ -9,16 +9,43 @@ use App\Post;
 class CategoryController extends Controller
 {
 
-    public function index($slug){
+  /*
+  * Get Category
+  */
+  public function get_category($slug){
 
-      $category = Category::where('slug',$slug)->firstOrFail();
+    $category = Category::where('slug',$slug)
+    ->where('parent_id',0)
+    ->firstOrFail();
 
-      $posts = Post::where('category_id',$category->id)
-      ->where('publish',1)
-      ->orderBy('created_at','desc')
-      ->paginate(10);
+    $posts = Post::where('category_id',$category->id)
+    ->where('publish',1)
+    ->orderBy('created_at','desc')
+    ->paginate(10);
 
-      return view('mBlog.categories.show',compact('category','posts'));
-    }
+    return view('mBlog.categories.show',compact('category','posts'));
+  }
+
+  /*
+  * Get Sub Category
+  */
+  public function get_subcategory($category_slug,$subcategory_slug){
+
+    $category = Category::where('slug',$category_slug)
+    ->where('parent_id',0)
+    ->firstOrFail();
+
+    $subcategory = Category::where('slug',$subcategory_slug)
+    ->where('parent_id',$category->id)
+    ->firstOrFail();
+
+    $posts = Post::where('category_id',$category->id)
+    ->where('subcategory_id',$subcategory->id)
+    ->where('publish',1)
+    ->orderBy('created_at','desc')
+    ->paginate(10);
+
+    return view('mBlog.categories.show',compact('category','posts'));
+  }
 
 }

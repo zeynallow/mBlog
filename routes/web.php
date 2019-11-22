@@ -61,4 +61,5 @@ Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/post/{post_id}/{slug}', 'PostController@show')->name('post.show');
 
 // Categories
-Route::get('/{slug}', 'CategoryController@index')->name('category.index');
+Route::get('/{category_slug}', 'CategoryController@get_category')->name('category.index');
+Route::get('/{category_slug}/{subcategory_slug}', 'CategoryController@get_subcategory')->name('subcategory.index');
