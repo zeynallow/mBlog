@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-  return view('welcome');
-});
+Route::get('/', 'HomeController@home')->name('home');
+Route::get('/home', 'HomeController@home')->name('home');
+
+// Posts
+Route::get('/post/{post_id}/{slug}', 'PostController@show')->name('post.show');
 
 
 //mAdmin Routes

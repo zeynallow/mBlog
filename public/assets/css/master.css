@@ -1,0 +1,26 @@
+
+/*==========================================================
+    Template Name: Gimri Minimal Portfolio Template
+    Created By: WebPuls
+    Envato Profile: https://themeforest.net/user/webpuls
+    Website: http://webpuls.org
+    Description: Gimri is Fully Responsive Minimal Portfolio Template with awesome features.
+    Version: v1.0
+    Support: http://webpuls.org/support
+============================================================*/
+
+
+/* google fonts
+========================== */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600');
+
+/* css files
+====================== */
+@import url('bootstrap.min.css');
+@import url('material-design-iconic-font.min.css');
+@import url('et-lineicons.min.css');
+@import url('venobox.css');
+@import url('slick.min.css');
+@import url('style.css');
+@import url('responsive.css');
