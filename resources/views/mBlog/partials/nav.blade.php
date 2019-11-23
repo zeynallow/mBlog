@@ -39,13 +39,18 @@
         <!-- CONTACT END -->
 
         <li class="dropdown">
-          <a href="javascript:void(0);"> English <span class="caret"></span></a>
+          <a href="javascript:void(0);">
+            {{mb_strtoupper(\App::getLocale())}} <span class="caret"></span>
+          </a>
+          @if(getLocalesWithout(\App::getLocale()))
             <ul>
-              <li><a href="javascript:void(0);">Azərbaycanca</a></li>
+              @foreach (getLocalesWithout(\App::getLocale()) as $key => $locale)
+                <li><a href="{{route('change.lang',$locale->code)}}">{{$locale->name}}</a></li>
+              @endforeach
             </ul>
           </li>
+        @endif
+      </ul>
 
-        </ul>
-
-      </div>
-    </nav>
+    </div>
+  </nav>

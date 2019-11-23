@@ -14,6 +14,17 @@ if (!function_exists('getOtherLocales')) {
 }
 
 /**
+* get locales without
+*/
+if (!function_exists('getLocalesWithout')) {
+  function getLocalesWithout($without)
+  {
+    return Locale::where('code','!=',$without)->get();
+  }
+}
+
+
+/**
 * get default locale
 */
 if (!function_exists('getDefaultLocale')) {

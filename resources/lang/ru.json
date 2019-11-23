@@ -1,1 +1,4 @@
-[]
+{
+    "test": "Test",
+    "laravel-filemanager::lfm": ""
+}
