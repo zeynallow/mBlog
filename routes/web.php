@@ -56,6 +56,7 @@ Route::group(['prefix' => 'mAdmin'], function() {
 
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/changeLang/{locale}', 'HomeController@changeLang')->name('change.lang');
 
 // Posts
 Route::get('/post/{post_id}/{slug}', 'PostController@show')->name('post.show');

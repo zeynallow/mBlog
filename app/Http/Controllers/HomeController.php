@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Session;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,14 @@ class HomeController extends Controller
     ->get();
 
     return view('mBlog.pages.home',compact('lastPosts','featuredPosts'));
+  }
+
+  /*
+  * Change Language (Locale Change)
+  */
+  public function changeLang($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
   }
 
 }

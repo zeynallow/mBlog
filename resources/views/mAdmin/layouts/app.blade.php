@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>mAdmin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('mAdmin/vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -15,6 +16,7 @@
   <link rel="stylesheet" href="{{ asset('mAdmin/vendors/sweetalert2/sweetalert2.min.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('mAdmin/images/favicon.png') }}">
+
   @stack('css')
 </head>
 
@@ -72,6 +74,7 @@
       <!-- partial -->
       <div class="main-panel">
 
+        @yield('body')
         @yield('content')
 
 

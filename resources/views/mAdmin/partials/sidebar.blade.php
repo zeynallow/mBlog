@@ -36,5 +36,19 @@
       </div>
     </li>
 
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#languages" aria-expanded="false" aria-controls="ui-basic">
+        <i class="mdi mdi-circle-outline menu-icon"></i>
+        <span class="menu-title">Languages</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="languages">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{ route('languages.index') }}">{{ __('translation::translation.languages') }}</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('languages.translations.index', config('app.locale')) }}">{{ __('translation::translation.translations') }}</a></li>
+        </ul>
+      </div>
+    </li>
+
   </ul>
 </nav>

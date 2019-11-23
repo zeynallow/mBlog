@@ -13,8 +13,12 @@
         @foreach (getNavCategories() as $key => $nav_category)
           @isset($nav_category->category_data[0])
             <li {!!($nav_category->subcategories) ? 'class="dropdown"' : ''!!}>
-              <a href="{{route('category.index', $nav_category->slug)}}">{{ $nav_category->category_data[0]->title }}</a>
-              @if($nav_category->subcategories)
+              <a href="{{route('category.index', $nav_category->slug)}}">{{ $nav_category->category_data[0]->title }}
+                @if($nav_category->subcategories && count($nav_category->subcategories) > 0)
+                  <span class="caret"></span>
+                @endif
+              </a>
+              @if($nav_category->subcategories && count($nav_category->subcategories) > 0)
                 <ul>
                   @foreach ($nav_category->subcategories as $key => $nav_subcategory)
                     @isset($nav_subcategory->category_data[0])
@@ -33,6 +37,15 @@
         <!-- BLOG END -->
         <li><a href="javascript:void(0)">Contact Us</a></li>
         <!-- CONTACT END -->
-      </ul>
-    </div>
-  </nav>
+
+        <li class="dropdown">
+          <a href="javascript:void(0);"> English <span class="caret"></span></a>
+            <ul>
+              <li><a href="javascript:void(0);">Azərbaycanca</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
