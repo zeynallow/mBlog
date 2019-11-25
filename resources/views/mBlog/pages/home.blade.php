@@ -5,12 +5,12 @@
     <section class="pb-50">
       <div id="one-item" class="one-item project-image">
         @foreach ($featuredPosts as $key => $fpost)
-          @isset($fpost->post_data[0])
+          @isset($fpost->post_data()[0])
             <div class="item" style="background-image:url('{{$fpost->cover}}')">
               <a href="{{ route('post.show',['post_id'=>$fpost->id,'slug'=>$fpost->slug]) }}">
-                <h3>{{$fpost->post_data[0]->title}}</h3>
+                <h3>{{$fpost->post_data()[0]->title}}</h3>
                 <h6>{{$fpost->created_at->diffForHumans()}} | {{($fpost->author) ? $fpost->author->name : ''}}</h6>
-                <p>{!! str_limit($fpost->post_data[0]->text,100) !!}</p>
+                <p>{!! str_limit($fpost->post_data()[0]->text,100) !!}</p>
               </a>
             </div>
           @endisset
@@ -36,7 +36,7 @@
           @if($lastPosts && count($lastPosts))
             <div class="row">
               @foreach ($lastPosts as $key => $post)
-                @isset($post->post_data[0])
+                @isset($post->post_data()[0])
                   @include('mBlog.partials.post_grid')
                 @endisset
               @endforeach

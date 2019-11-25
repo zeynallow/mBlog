@@ -7,8 +7,8 @@
       @if(getMainCategories())
         <ul>
           @foreach (getMainCategories() as $key => $s_bar_category)
-            @isset($s_bar_category->category_data[0])
-              <li><a href="{{route('category.index', $s_bar_category->slug)}}">{{ $s_bar_category->category_data[0]->title }}</a></li>
+            @isset($s_bar_category->category_data()[0])
+              <li><a href="{{route('category.index', $s_bar_category->slug)}}">{{ $s_bar_category->category_data()[0]->title }}</a></li>
             @endisset
           @endforeach
         </ul>

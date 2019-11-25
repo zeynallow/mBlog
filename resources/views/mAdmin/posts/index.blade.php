@@ -44,13 +44,13 @@
                         @endif
                       </td>
                       <td>
-                        @isset($post->post_data[0])
-                          {{$post->post_data[0]->title}}
+                        @isset($post->post_data()[0])
+                          {{$post->post_data()[0]->title}}
                         @endisset
                       </td>
                       <td>
-                        {{($post->category) ? $post->category->category_data[0]->title : ''}}
-                        {{($post->subcategory) ? '/' . $post->subcategory->category_data[0]->title : ''}}
+                        {{($post->category) ? $post->category->category_data()[0]->title : ''}}
+                        {{($post->subcategory) ? '/' . $post->subcategory->category_data()[0]->title : ''}}
                       </td>
                       <td>{{($post->author) ? $post->author->name : ''}}</td>
                       <td>

@@ -29,7 +29,7 @@
 
                   @if($categories)
                     @foreach ($categories as $key => $value)
-                      <option value="{{$value->id}}" {{($category->parent_id == $value->id) ? 'selected' : ''}}>{{($value->category_data[0]) ? $value->category_data[0]->title : ''}}</option>
+                      <option value="{{$value->id}}" {{($category->parent_id == $value->id) ? 'selected' : ''}}>{{($value->category_data()[0]) ? $value->category_data()[0]->title : ''}}</option>
                     @endforeach
                   @endif
                 </select>

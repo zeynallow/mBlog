@@ -11,9 +11,9 @@
       <li><a href="{{ route('home') }}">Home</a></li>
       @if(getNavCategories())
         @foreach (getNavCategories() as $key => $nav_category)
-          @isset($nav_category->category_data[0])
+          @isset($nav_category->category_data()[0])
             <li {!!($nav_category->subcategories) ? 'class="dropdown"' : ''!!}>
-              <a href="{{route('category.index', $nav_category->slug)}}">{{ $nav_category->category_data[0]->title }}
+              <a href="{{route('category.index', $nav_category->slug)}}">{{ $nav_category->category_data()[0]->title }}
                 @if($nav_category->subcategories && count($nav_category->subcategories) > 0)
                   <span class="caret"></span>
                 @endif
@@ -21,10 +21,10 @@
               @if($nav_category->subcategories && count($nav_category->subcategories) > 0)
                 <ul>
                   @foreach ($nav_category->subcategories as $key => $nav_subcategory)
-                    @isset($nav_subcategory->category_data[0])
+                    @isset($nav_subcategory->category_data()[0])
                       <li>
                         <a href="{{route('subcategory.index', ['category_slug'=>$nav_category->slug,'subcategory_slug'=>$nav_subcategory->slug])}}">
-                          {{ $nav_subcategory->category_data[0]->title }}</a>
+                          {{ $nav_subcategory->category_data()[0]->title }}</a>
                         </li>
                       @endisset
                     @endforeach

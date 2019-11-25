@@ -16,13 +16,13 @@
             <div class="col-xs-12">
               <div class="breadcrumbs-menu">
                 <h2>
-                  @isset($category->category_data[0])
-                    {{$category->category_data[0]->title}}
+                  @isset($category->category_data()[0])
+                    {{$category->category_data()[0]->title}}
                   @endisset
                 </h2>
                 <ul class="clearfix">
                   <li><a href="index.html">Home</a><span>|</span> </li>
-                  <li>{{($category->category_data) ? $category->category_data[0]->title : ''}}</li>
+                  <li>{{($category->category_data()) ? $category->category_data()[0]->title : ''}}</li>
                 </ul>
               </div>
             </div>
@@ -31,7 +31,7 @@
           @if($posts && count($posts) > 0)
             <div class="row">
               @foreach ($posts as $key => $post)
-                @isset($post->post_data[0])
+                @isset($post->post_data()[0])
                   @include('mBlog.partials.post_grid')
                 @endisset
               @endforeach

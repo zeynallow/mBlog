@@ -16,12 +16,12 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="breadcrumbs-menu">
-                <h2>{{$post->post_data[0]->title}}</h2>
+                <h2>{{$post->post_data()[0]->title}}</h2>
                 <ul class="clearfix">
                   <li>{{$post->created_at->diffForHumans()}}<span>|</span></li>
                   <li>{!!($post->author) ? $post->author->name . '<span>|</span>' : ''!!}</li>
-                  <li>{{($post->category) ? $post->category->category_data[0]->title : ''}}</li>
-                  <li>{!!($post->subcategory) ? '<span>|</span>' . $post->subcategory->category_data[0]->title : ''!!}</li>
+                  <li>{{($post->category) ? $post->category->category_data()[0]->title : ''}}</li>
+                  <li>{!!($post->subcategory) ? '<span>|</span>' . $post->subcategory->category_data()[0]->title : ''!!}</li>
                 </ul>
               </div>
             </div>
@@ -31,13 +31,13 @@
 
             @if($post->cover)
               <div class="thumb mb-60">
-                <img src="{{$post->cover}}" alt="{{$post->post_data[0]->title}}" />
+                <img src="{{$post->cover}}" alt="{{$post->post_data()[0]->title}}" />
               </div>
             @endif
 
             <div class="blog-text mb-70">
 
-              {!!$post->post_data[0]->text!!}
+              {!!$post->post_data()[0]->text!!}
 
               <div class="tag mt-50">
                 <strong>Tags:</strong> <a href="#">Corporate,</a> <a href="#">HTML,</a><a href="#">WordPress,</a><a href="#">Design</a>

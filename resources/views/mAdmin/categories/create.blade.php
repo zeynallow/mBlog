@@ -28,7 +28,7 @@
                   <option value="0">Main category</option>
                   @if($categories)
                     @foreach ($categories as $key => $value)
-                      <option value="{{$value->id}}">{{($value->category_data[0]) ? $value->category_data[0]->title : ''}}</option>
+                      <option value="{{$value->id}}">{{($value->category_data()[0]) ? $value->category_data()[0]->title : ''}}</option>
                     @endforeach
                   @endif
                 </select>

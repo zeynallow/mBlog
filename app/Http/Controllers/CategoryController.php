@@ -18,7 +18,7 @@ class CategoryController extends Controller
     ->where('parent_id',0)
     ->firstOrFail();
 
-    if(!isset($category->category_data[0])){
+    if(!isset($category->category_data()[0])){
       abort(404);
     }
 
@@ -39,7 +39,7 @@ class CategoryController extends Controller
     ->where('parent_id',0)
     ->firstOrFail();
 
-    if(!isset($category->category_data[0])){
+    if(!isset($category->category_data()[0])){
       abort(404);
     }
 
@@ -47,7 +47,7 @@ class CategoryController extends Controller
     ->where('parent_id',$category->id)
     ->firstOrFail();
 
-    if(!isset($subcategory->category_data[0])){
+    if(!isset($subcategory->category_data()[0])){
       abort(404);
     }
 
