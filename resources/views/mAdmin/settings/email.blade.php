@@ -19,8 +19,12 @@
                 </ul>
               </div>
             @endif
-
-            <form class="forms-sample" method="post" action="{{ route('mAdmin.categories.store') }}">
+@php
+  $email_protocols = [
+    'SMTP','Mail'
+  ];
+@endphp
+            <form class="forms-sample" method="post" action="{{ route('mAdmin.settings.emailUpdate') }}">
               @csrf
 
               <div class="row">
@@ -29,8 +33,9 @@
                 </div>
                 <div class="col-md-8">
                   <select class="form-control" name="email_protocol">
-                    <option value="SMTP">SMTP</option>
-                    <option value="Mail">Mail</option>
+                    @foreach ($email_protocols as $key => $email_protocol)
+                      <option value="{{$email_protocol}}" {{(getSetting('email_protocol') == $email_protocol) ? 'selected' : ''}}>{{$email_protocol}}</option>
+                    @endforeach
                   </select>
                 </div>
               </div>
@@ -40,7 +45,7 @@
                   Title
                 </div>
                 <div class="col-md-8">
-                  <input type="text" class="form-control" name="email_title" value="" placeholder="">
+                  <input type="text" class="form-control" name="email_title" value="{{getSetting('email_title')}}" placeholder="">
                 </div>
               </div>
 
@@ -49,7 +54,7 @@
                   Host
                 </div>
                 <div class="col-md-8">
-                  <input type="text" class="form-control" name="email_host" value="" placeholder="">
+                  <input type="text" class="form-control" name="email_host" value="{{getSetting('email_host')}}" placeholder="">
                 </div>
               </div>
 
@@ -58,7 +63,7 @@
                   Port
                 </div>
                 <div class="col-md-8">
-                  <input type="text" class="form-control" name="email_port" value="" placeholder="">
+                  <input type="text" class="form-control" name="email_port" value="{{getSetting('email_title')}}" placeholder="">
                 </div>
               </div>
 
@@ -67,7 +72,7 @@
                   Username
                 </div>
                 <div class="col-md-8">
-                  <input type="text" class="form-control" name="email_username" value="" placeholder="">
+                  <input type="text" class="form-control" name="email_username" value="{{getSetting('email_username')}}" placeholder="">
                 </div>
               </div>
 
@@ -76,10 +81,9 @@
                   Password
                 </div>
                 <div class="col-md-8">
-                  <input type="password" class="form-control" name="email_password" value="" placeholder="">
+                  <input type="password" class="form-control" name="email_password" value="{{getSetting('email_password')}}" placeholder="">
                 </div>
               </div>
-
 
               <div class="form-group">
                 <button type="submit" class="btn btn-success mr-2">Save</button>
@@ -103,7 +107,7 @@
             </div>
           </div>
         </div>
-        
+
 
       </div>
 

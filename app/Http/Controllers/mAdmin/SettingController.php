@@ -51,6 +51,26 @@ class SettingController extends Controller
   }
 
   /*
+  * visualUpdate
+  */
+  public function visualUpdate(Request $request)
+  {
+
+    $updateSetting = $this->updateSetting([
+      'primary_font',
+      'secondary_font',
+      'site_color'],$request->all()
+    );
+
+    if($updateSetting){
+      return redirect()->back()->with('success','Settings updated successfully!');
+    }
+
+  }
+
+
+
+  /*
   * social
   */
   public function social()
@@ -87,6 +107,23 @@ class SettingController extends Controller
   }
 
   /*
+  * otherUpdate
+  */
+  public function otherUpdate(Request $request)
+  {
+
+    $updateSetting = $this->updateSetting([
+      'google_analytics',
+      'custom_head_code'],$request->all()
+    );
+
+    if($updateSetting){
+      return redirect()->back()->with('success','Settings updated successfully!');
+    }
+
+  }
+
+  /*
   * email
   */
   public function email()
@@ -96,18 +133,40 @@ class SettingController extends Controller
 
 
   /*
-  * updateSetting
+  * emailUpdate
   */
-  private function updateSetting($datas,$request){
+  public function emailUpdate(Request $request)
+  {
 
-    if(count($datas)){
-      foreach ($datas as $data) {
-        Setting::where('key',$data)->update(['value'=>$request[$data]]);
-      }
-      return true;
-    }else{
-      return false;
-    }
+    $updateSetting = $this->updateSetting([
+      'email_protocol',
+      'email_title',
+      'email_host',
+      'email_title',
+      'email_username',
+      'email_password'
+    ],$request->all()
+  );
+
+  if($updateSetting){
+    return redirect()->back()->with('success','Settings updated successfully!');
   }
+
+}
+
+/*
+* updateSetting
+*/
+private function updateSetting($datas,$request){
+
+  if(count($datas)){
+    foreach ($datas as $data) {
+      Setting::where('key',$data)->update(['value'=>$request[$data]]);
+    }
+    return true;
+  }else{
+    return false;
+  }
+}
 
 }

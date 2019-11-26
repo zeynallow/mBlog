@@ -50,12 +50,16 @@ Route::group(['prefix' => 'mAdmin'], function() {
     // Settings
     Route::group(['prefix' => 'settings'], function() {
       Route::get('/', 'mAdmin\SettingController@general')->name('mAdmin.settings.general');
-      Route::post('/', 'mAdmin\SettingController@generalUpdate')->name('mAdmin.settings.generalUpdate');
       Route::get('/visual', 'mAdmin\SettingController@visual')->name('mAdmin.settings.visual');
       Route::get('/social', 'mAdmin\SettingController@social')->name('mAdmin.settings.social');
-      Route::post('/social', 'mAdmin\SettingController@socialUpdate')->name('mAdmin.settings.socialUpdate');
-      Route::get('/other', 'mAdmin\SettingController@other')->name('mAdmin.settings.other');
       Route::get('/email', 'mAdmin\SettingController@email')->name('mAdmin.settings.email');
+      Route::get('/other', 'mAdmin\SettingController@other')->name('mAdmin.settings.other');
+
+      Route::post('/', 'mAdmin\SettingController@generalUpdate')->name('mAdmin.settings.generalUpdate');
+      Route::post('/visual', 'mAdmin\SettingController@visualUpdate')->name('mAdmin.settings.visualUpdate');
+      Route::post('/social', 'mAdmin\SettingController@socialUpdate')->name('mAdmin.settings.socialUpdate');
+      Route::post('/other', 'mAdmin\SettingController@otherUpdate')->name('mAdmin.settings.otherUpdate');
+      Route::post('/email', 'mAdmin\SettingController@emailUpdate')->name('mAdmin.settings.emailUpdate');
     });
 
   });

@@ -19,7 +19,7 @@
               </div>
             @endif
 
-            <form class="forms-sample" method="post" action="{{ route('mAdmin.categories.store') }}">
+            <form class="forms-sample" method="post" action="{{ route('mAdmin.settings.otherUpdate') }}">
               @csrf
 
               <div class="row mt-5">
@@ -27,7 +27,7 @@
                   Google Analytics Code
                 </div>
                 <div class="col-md-8">
-                  <textarea class="form-control" rows="8" name="google_analytics"></textarea>
+                  <textarea class="form-control" rows="8" name="google_analytics">{{ getSetting('google_analytics') }}</textarea>
                 </div>
               </div>
 
@@ -36,7 +36,7 @@
                   Custom Head Code
                 </div>
                 <div class="col-md-8">
-                  <textarea class="form-control" rows="8" name="custom_head_code"></textarea>
+                  <textarea class="form-control" rows="8" name="custom_head_code">{{ getSetting('custom_head_code') }}</textarea>
                 </div>
               </div>
 
