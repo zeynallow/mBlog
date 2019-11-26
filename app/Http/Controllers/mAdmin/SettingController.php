@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App;
 use Auth;
+use Validator;
+use Image;
+
 use App\Setting;
 
 class SettingController extends Controller
@@ -55,11 +58,40 @@ class SettingController extends Controller
   */
   public function visualUpdate(Request $request)
   {
+    $site_logo=[];
+    $site_favicon=[];
+    $s_site_logo=[];
+    $s_site_favicon=[];
 
-    $updateSetting = $this->updateSetting([
-      'primary_font',
-      'secondary_font',
-      'site_color'],$request->all()
+    $_site_logo = $this->imageStore($request->file('site_logo'));
+    $_site_favicon = $this->imageStore($request->file('site_favicon'));
+
+    if($_site_logo){
+      $s_site_logo = ['site_logo'];
+      $site_logo = ['site_logo'=>$_site_logo];
+    }
+
+    if($_site_favicon){
+      $s_site_favicon = ['site_favicon'];
+      $site_favicon = ['site_favicon'=>$_site_favicon];
+    }
+
+    $updateSetting = $this->updateSetting(
+      array_merge([
+        'primary_font',
+        'secondary_font',
+        'site_color'
+      ],
+      $s_site_logo,
+      $s_site_favicon),
+
+      array_merge([
+        'primary_font'=>$request->primary_font,
+        'secondary_font'=>$request->secondary_font,
+        'site_color'=>$request->site_color
+      ],
+      $site_logo,
+      $site_favicon)
     );
 
     if($updateSetting){
@@ -167,6 +199,26 @@ private function updateSetting($datas,$request){
   }else{
     return false;
   }
+}
+
+/*
+* imageStore
+*/
+private function imageStore($file){
+  //Validation
+  $validator = Validator::make(['f'=>$file], [
+    'f' => 'max:10000|mimes:jpg,jpeg,gif,bmp,png,svg'
+  ]);
+
+  if($validator->fails()){
+    return false;
+  }
+
+  $fileName = $file->getClientOriginalName();
+  $fileExt = strtolower($file->getClientOriginalExtension());
+  $directory = '/files/site';
+  $file->move(public_path($directory),$fileName);
+  return "$directory/$fileName";
 }
 
 }

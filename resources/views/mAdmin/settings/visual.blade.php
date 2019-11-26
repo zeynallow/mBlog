@@ -49,7 +49,7 @@
               </div>
             @endif
 
-            <form class="forms-sample" method="post" action="{{ route('mAdmin.settings.visualUpdate') }}">
+            <form class="forms-sample" method="post" action="{{ route('mAdmin.settings.visualUpdate') }}" enctype="multipart/form-data">
               @csrf
               @php
               $fonts = [
@@ -159,7 +159,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <a class="btn btn-default btn-sm btn-file-upload">
-                      <input type="file" name="site_logo" accept=".png, .jpg, .jpeg, .gif">
+                      <input type="file" name="site_logo" accept=".png, .jpg, .jpeg, .gif, .svg">
                     </a>
                   </div>
                 </div>
@@ -179,7 +179,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <a class="btn btn-default btn-sm btn-file-upload">
-                      <input type="file" name="site_favicon" accept=".png, .jpg, .jpeg, .gif">
+                      <input type="file" name="site_favicon" accept=".png, .jpg, .jpeg, .gif, .svg">
                     </a>
                   </div>
                 </div>
