@@ -2,6 +2,7 @@
 
 use App\Locale;
 use App\Category;
+use App\Setting;
 
 /**
 * get other locales
@@ -64,5 +65,16 @@ if (!function_exists('getNavCategories')) {
   {
     $get = Category::where('parent_id',0)->where('show_on_menu',1)->get();
     return $get;
+  }
+}
+
+/**
+* get setting
+*/
+if (!function_exists('getSetting')) {
+  function getSetting($key)
+  {
+    $get = Setting::where('key',$key)->first();
+    return $get->value;
   }
 }

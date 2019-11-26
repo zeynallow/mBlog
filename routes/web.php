@@ -45,7 +45,17 @@ Route::group(['prefix' => 'mAdmin'], function() {
       Route::get('showOnMenu/{category_id}', 'mAdmin\CategoryController@showOnMenu')->name('mAdmin.categories.showOnMenu');
       Route::get('hideFromMenu/{category_id}', 'mAdmin\CategoryController@hideFromMenu')->name('mAdmin.categories.hideFromMenu');
       Route::get('getSubCategoryForSelect/{category_id}', 'mAdmin\CategoryController@getSubCategoryForSelect')->name('mAdmin.categories.getSubCategoryForSelect');
+    });
 
+    // Settings
+    Route::group(['prefix' => 'settings'], function() {
+      Route::get('/', 'mAdmin\SettingController@general')->name('mAdmin.settings.general');
+      Route::post('/', 'mAdmin\SettingController@generalUpdate')->name('mAdmin.settings.generalUpdate');
+      Route::get('/visual', 'mAdmin\SettingController@visual')->name('mAdmin.settings.visual');
+      Route::get('/social', 'mAdmin\SettingController@social')->name('mAdmin.settings.social');
+      Route::post('/social', 'mAdmin\SettingController@socialUpdate')->name('mAdmin.settings.socialUpdate');
+      Route::get('/other', 'mAdmin\SettingController@other')->name('mAdmin.settings.other');
+      Route::get('/email', 'mAdmin\SettingController@email')->name('mAdmin.settings.email');
     });
 
   });
