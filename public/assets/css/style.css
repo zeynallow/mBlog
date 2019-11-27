@@ -1,8 +1,8 @@
 /*==========================================================
-    mBlog 1.0
-    Created by mazzAPP
-    Envato Profile: https://themeforest.net/user/mazzapp
-    Website: http://mazzapp.com
+mBlog 1.0
+Created by mazzAPP
+Envato Profile: https://themeforest.net/user/mazzapp
+Website: http://mazzapp.com
 ============================================================*/
 
 body {
@@ -748,6 +748,12 @@ h6 {
   button:focus {
     outline: none !important;
   }
+  .sm-btn {
+    color:#ff214f;
+    font-size:12px;
+    background-color:transparent;
+    border:none;
+  }
   .btn.theme-btn {
     background-color: #ff214f;
     border: none;
@@ -914,6 +920,10 @@ h6 {
     border-radius: 0px;
     background-color: #a7a7a733;
     border-color: #777777;
+  }
+  .alert-with-btn{
+    top: 15px;
+    position: relative;
   }
 
   hr.line {
@@ -2455,6 +2465,10 @@ h6 {
   }
   .comment-box .custom-input textarea{
     margin-top: 10px;
+  }
+  .comment-view{
+    box-shadow: -1px 1px 7px 1px #e6e6e6;
+    padding:10px;
   }
 
   /* Pricing Section */

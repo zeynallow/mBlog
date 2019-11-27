@@ -8,6 +8,11 @@ use App;
 class Post extends Model
 {
 
+  /**
+  * The attributes that are mass assignable.
+  *
+  * @var array
+  */
   protected $fillable = ['publish','slug','user_id','featured','category_id','subcategory_id','cover'];
 
   /*
@@ -55,6 +60,13 @@ class Post extends Model
   */
   public function post_check_locale($locale){
     return PostData::where('post_id',$this->id)->where('locale',$locale)->count();
+  }
+
+  /*
+  * comments
+  */
+  public function comments(){
+    return $this->hasMany('App\PostComment')->whereNull('parent_id');
   }
 
 }

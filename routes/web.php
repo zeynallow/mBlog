@@ -74,6 +74,7 @@ Route::get('/changeLang/{locale}', 'HomeController@changeLang')->name('change.la
 
 // Posts
 Route::get('/post/{post_id}/{slug}', 'PostController@show')->name('post.show');
+Route::post('/post/commentStore', 'PostController@commentStore')->name('post.commentStore');
 
 // Categories
 Route::get('/{category_slug}', 'CategoryController@get_category')->name('category.index');

@@ -51,22 +51,43 @@
               </div>
             </div>
 
+            @if(getSetting('comment_system'))
+              <div class="comment-box">
+                <h3 class="mb-30">Comments</h3>
 
-            <div class="comment-box plr-50">
-              <h3 class="mb-30">Leave a Comment</h3>
-              <form class="custom-input" action="#">
-                <div class="row">
-                  <div class="col-xs-12 col-md-6">
-                    <input type="text" name="name" placeholder="Your Name" />
+                @if($post->comments)
+                  @include('mBlog.posts._comments', ['comments' => $post->comments, 'post_id' => $post->id])
+                @endif
+
+
+                <h3 class="mb-30 mt-30">Leave a Comment</h3>
+
+                @if(auth()->check())
+
+                  <form class="custom-input" action="{{ route('post.commentStore') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="post_id" value="{{ $post->id }}" />
+                    <textarea name="body" id="comment" rows="2" placeholder="Your Comment"></textarea>
+                    <button class="btn theme-btn mt-20" type="submit" name="submit">Post a Comment</button>
+                  </form>
+                @else
+
+                  <div class="alert alert-info">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <strong class="alert-with-btn">Please login website</strong>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="contact.html" class="btn theme-btn"><i class="zmdi zmdi-account"></i> Login</a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-12 col-md-6">
-                    <input type="email" name="email" placeholder="Your Email" />
-                  </div>
-                </div>
-                <textarea name="message" id="comment" rows="2" placeholder="Your Massage"></textarea>
-                <button class="btn theme-btn mt-20" type="submit" name="submit">Post a Comment</button>
-              </form>
-            </div>
+
+                @endif
+
+              </div>
+            @endif
+
           </div>
           <!-- Single Post End -->
         </div>

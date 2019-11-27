@@ -7,7 +7,11 @@ use App;
 
 class Category extends Model
 {
-
+  /**
+  * The attributes that are mass assignable.
+  *
+  * @var array
+  */
   protected $fillable = ['slug','parent_id','menu_position','show_on_menu'];
 
   /*
