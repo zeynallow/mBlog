@@ -53,9 +53,9 @@
 
             @if(getSetting('comment_system'))
               <div class="comment-box">
-                <h3 class="mb-30">Comments</h3>
 
-                @if($post->comments)
+                @if($post->comments && count($post->comments))
+                  <h3 class="mb-30">Comments</h3>
                   @include('mBlog.posts._comments', ['comments' => $post->comments, 'post_id' => $post->id])
                 @endif
 
@@ -63,7 +63,6 @@
                 <h3 class="mb-30 mt-30">Leave a Comment</h3>
 
                 @if(auth()->check())
-
                   <form class="custom-input" action="{{ route('post.commentStore') }}" method="post">
                     @csrf
                     <input type="hidden" name="post_id" value="{{ $post->id }}" />
@@ -96,24 +95,4 @@
     </div>
   </div>
   <!-- Blog Section End -->
-
-  <!-- Call To Action Section Start -->
-  <div class="cta-one black-bg ptb-75">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="cta-content clearfix">
-            <div class="pull-left">
-              <h1>We'd love to hear about your project</h1>
-            </div>
-            <div class="pull-right mr-100">
-              <a href="contact.html" class="btn">Start project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Call To Action Section End -->
-
 @endsection

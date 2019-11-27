@@ -17,14 +17,17 @@
   </div>
   <div class="widget mb-40">
     <div class="widget-title mb-10">
-      <h4 class="mb-5">Recent Post</h4>
+      <h4 class="mb-5">Popular Posts</h4>
     </div>
     <div class="posts">
       <ul>
-        <li><a href="#"><i class="zmdi zmdi-chevron-right"></i> will give you a must</a></li>
-        <li><a href="#"><i class="zmdi zmdi-chevron-right"></i> when an unknown printer took</a></li>
-        <li><a href="#"><i class="zmdi zmdi-chevron-right"></i> as opposed to using</a></li>
-        <li><a href="#"><i class="zmdi zmdi-chevron-right"></i> simply dummy text of the prin</a></li>
+        @if(getPopularPosts())
+          @foreach (getPopularPosts() as $key => $popular_post)
+            @isset($popular_post->post_data()[0])
+              <li><a href="{{route('post.show',[$popular_post->id,$popular_post->slug])}}"><i class="zmdi zmdi-chevron-right"></i> {{$popular_post->post_data()[0]->title}}</a></li>
+            @endisset
+          @endforeach
+        @endif
       </ul>
     </div>
   </div>

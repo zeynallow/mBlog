@@ -1,6 +1,7 @@
 <?php
 
 use App\Locale;
+use App\Post;
 use App\Category;
 use App\Setting;
 
@@ -54,6 +55,16 @@ if (!function_exists('getMainCategories')) {
   {
     $get = Category::where('parent_id',0)->get();
     return $get;
+  }
+}
+
+/**
+* get popular posts
+*/
+if (!function_exists('getPopularPosts')) {
+  function getPopularPosts()
+  {
+    return Post::orderBy('views','desc')->take(10)->get();
   }
 }
 

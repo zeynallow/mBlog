@@ -38,6 +38,21 @@
         @endif
         <li><a href="javascript:void(0)">Contact Us</a></li>
 
+        @if(getSetting('multilingual_system'))
+          <li class="dropdown">
+            <a href="javascript:void(0);">
+              {{mb_strtoupper(\App::getLocale())}} <span class="caret"></span>
+            </a>
+            @if(getLocalesWithout(\App::getLocale()))
+              <ul>
+                @foreach (getLocalesWithout(\App::getLocale()) as $key => $locale)
+                  <li><a href="{{route('change.lang',$locale->code)}}">{{$locale->name}}</a></li>
+                @endforeach
+              </ul>
+            </li>
+          @endif
+        @endif
+
         @if(auth()->user())
           <li class="dropdown">
             <a href="javascript:void(0);">
@@ -51,5 +66,6 @@
         @endif
 
       </ul>
+
     </div>
   </nav>
