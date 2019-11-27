@@ -4,6 +4,7 @@ namespace App\Http\Controllers\mAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Config;
 use App;
 use Auth;
 use Validator;
@@ -160,6 +161,7 @@ class SettingController extends Controller
   */
   public function email()
   {
+    // $this->setEnv('MAIL_PORT',465);
     return view('mAdmin.settings.email');
   }
 
@@ -173,6 +175,7 @@ class SettingController extends Controller
     $updateSetting = $this->updateSetting([
       'email_protocol',
       'email_title',
+      'email_address',
       'email_host',
       'email_title',
       'email_username',
@@ -220,5 +223,6 @@ private function imageStore($file){
   $file->move(public_path($directory),$fileName);
   return "$directory/$fileName";
 }
+
 
 }

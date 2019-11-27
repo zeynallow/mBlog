@@ -24,6 +24,11 @@
   @endif
   <!-- modernizr js -->
   <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+  @if(getSetting('custom_head_code'))
+    {!!getSetting('custom_head_code')!!}
+  @endif
+
   @stack('css')
 </head>
 
@@ -57,6 +62,11 @@
   <script src="{{ asset('assets/js/plugins.js') }}"></script>
   <script src="{{ asset('assets/js/main.js') }}"></script>
   @stack('js')
+
+  @if(getSetting('google_analytics'))
+    {!!getSetting('google_analytics')!!}
+  @endif
+
 </body>
 
 
