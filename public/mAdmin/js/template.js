@@ -9,7 +9,6 @@
       sidebar.find('.collapse.show').collapse('hide');
     });
 
-
     //Change sidebar
     $('[data-toggle="minimize"]').on("click", function() {
       body.toggleClass('sidebar-icon-only');
