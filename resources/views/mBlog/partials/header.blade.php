@@ -7,7 +7,11 @@
           <div class="left">
             <div class="logo">
               <a href="/">
-                <img src="{{ asset('assets/img/logo.svg') }}" alt="mazzBlog" />
+                @if(getSetting('site_logo'))
+                  <img src="{{getSetting('site_logo')}}" alt="{{getSetting('site_name')}}" />
+                @else
+                  {{getSetting('site_name')}}
+                @endif
               </a>
             </div>
           </div>
@@ -27,8 +31,6 @@
                 <button data-toggle="modal" data-target="#loginModal"><i class="zmdi zmdi-account"></i></button>
               @endif
             </div>
-
-
             @include('mBlog.partials.nav')
           </div>
 

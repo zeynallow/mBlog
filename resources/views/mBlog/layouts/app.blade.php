@@ -13,10 +13,15 @@
   <title>mBlog</title>
 
   <!-- favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}">
+  @if(getSetting('site_favicon'))
+    <link rel="shortcut icon" type="image/x-icon" href="{{getSetting('site_favicon')}}">
+  @endif
 
   <!-- style css -->
   <link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
+  @if(getSetting('site_color') && getSetting('site_color') != "default")
+    <link rel="stylesheet" href="{{ asset('assets/css/colors') .'/'. getSetting('site_color') .'.css'}}">
+  @endif
   <!-- modernizr js -->
   <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
   @stack('css')

@@ -1,0 +1,57 @@
+a:hover,
+.theme-color,
+.sm-btn,
+.social-icon li a:hover,
+.portfolio-menu ul li.active,
+.portfolio-area .project-title h4:hover,
+.style-2 .project-title a:hover i,
+.footer-widget.address li a:hover,
+.breadcrumbs-menu li a:hover,
+.widget .tags a:hover,
+.widget .posts li a:hover,
+.widget .category li a:hover,
+.widget .tags > a:hover,
+.widget .posts a h5:hover,
+.blog-text a:hover h3,
+.blog-text a.read-more:hover,
+.search button:hover i,
+.blog-details .tag > a:hover,
+.single-pricing.standard h2,
+.error-text a:hover,
+.info-box p a:hover,
+.pagination>li>a, .pagination>li>span {
+  color: #f2d438!important;
+}
+
+.theme-bg,.btn.theme-btn,.slick-dots .slick-active button {
+  background-color: #f2d438!important;
+}
+.social-icon.style1 li a::after,.menu-hover-1 li a:after {
+  background: #f2d438 none repeat scroll 0 0;
+}
+.slick-dots button {
+  border: 2px solid #f2d438;
+}
+.style-1 .project-title,.style-3 .project-title {
+  background-color: #ffffff;
+  border-bottom: 2px solid #f2d438;
+}
+.blog-text a.read-more:hover {
+  border-color: #f2d438;
+}
+.single-pricing .btn.theme-btn:hover {
+  background-color: #f2d438;
+}
+.star-mark::before {
+  border-left: 60px solid #f2d438;
+}
+.loading-effect {
+  border-left: 3px solid #f2d438;
+}
+#scrollUp:hover {
+  background: #f2d438 none repeat scroll 0 0;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  background-color: #f2d438;
+  border-color: #f2d438;
+}
