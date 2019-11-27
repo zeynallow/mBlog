@@ -9,6 +9,8 @@ use App;
 use Auth;
 use Validator;
 use Image;
+use DateTimeZone;
+use Cache;
 
 use App\Setting;
 
@@ -21,7 +23,8 @@ class SettingController extends Controller
   */
   public function general()
   {
-    return view('mAdmin.settings.general');
+    $timezonelist = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+    return view('mAdmin.settings.general',compact('timezonelist'));
   }
 
   /*
@@ -29,16 +32,20 @@ class SettingController extends Controller
   */
   public function generalUpdate(Request $request)
   {
-
-    $updateSetting = $this->updateSetting([
+    $settings = [
       'site_name',
       'multilingual_system',
       'comment_system',
       'feature_post',
       'pagination_per_page',
+      'site_url',
+      'timezone',
       'about_footer',
-      'copyright_footer'],$request->all()
-    );
+      'copyright_footer'
+    ];
+
+    $updateSetting = $this->updateSetting($settings,$request->all()); //update data
+    $this->cacheClear($settings); //cache clear
 
     if($updateSetting){
       return redirect()->back()->with('success','Settings updated successfully!');
@@ -77,14 +84,14 @@ class SettingController extends Controller
       $site_favicon = ['site_favicon'=>$_site_favicon];
     }
 
+    $settings = [
+      'primary_font',
+      'secondary_font',
+      'site_color'
+    ];
+
     $updateSetting = $this->updateSetting(
-      array_merge([
-        'primary_font',
-        'secondary_font',
-        'site_color'
-      ],
-      $s_site_logo,
-      $s_site_favicon),
+      array_merge($settings,$s_site_logo,$s_site_favicon),
 
       array_merge([
         'primary_font'=>$request->primary_font,
@@ -94,6 +101,8 @@ class SettingController extends Controller
       $site_logo,
       $site_favicon)
     );
+
+    $this->cacheClear($settings); //cache clear
 
     if($updateSetting){
       return redirect()->back()->with('success','Settings updated successfully!');
@@ -117,13 +126,16 @@ class SettingController extends Controller
   public function socialUpdate(Request $request)
   {
 
-    $updateSetting = $this->updateSetting([
+    $settings= [
       'facebook_link',
       'twitter_link',
       'instagram_link',
       'pinterest_link',
-      'linkedin_link'],$request->all()
-    );
+      'linkedin_link'
+    ];
+
+    $updateSetting = $this->updateSetting($settings,$request->all());
+    $this->cacheClear($settings); //cache clear
 
     if($updateSetting){
       return redirect()->back()->with('success','Settings updated successfully!');
@@ -145,10 +157,13 @@ class SettingController extends Controller
   public function otherUpdate(Request $request)
   {
 
-    $updateSetting = $this->updateSetting([
+    $settings = [
       'google_analytics',
-      'custom_head_code'],$request->all()
-    );
+      'custom_head_code'
+    ];
+
+    $updateSetting = $this->updateSetting($settings,$request->all());
+    $this->cacheClear($settings); //cache clear
 
     if($updateSetting){
       return redirect()->back()->with('success','Settings updated successfully!');
@@ -171,8 +186,7 @@ class SettingController extends Controller
   */
   public function emailUpdate(Request $request)
   {
-
-    $updateSetting = $this->updateSetting([
+    $settings = [
       'email_protocol',
       'email_title',
       'email_address',
@@ -180,49 +194,60 @@ class SettingController extends Controller
       'email_title',
       'email_username',
       'email_password'
-    ],$request->all()
-  );
+    ];
 
-  if($updateSetting){
-    return redirect()->back()->with('success','Settings updated successfully!');
-  }
+    $updateSetting = $this->updateSetting($settings,$request->all());
+    $this->cacheClear($settings); //cache clear
 
-}
-
-/*
-* updateSetting
-*/
-private function updateSetting($datas,$request){
-
-  if(count($datas)){
-    foreach ($datas as $data) {
-      Setting::where('key',$data)->update(['value'=>$request[$data]]);
+    if($updateSetting){
+      return redirect()->back()->with('success','Settings updated successfully!');
     }
-    return true;
-  }else{
-    return false;
-  }
-}
 
-/*
-* imageStore
-*/
-private function imageStore($file){
-  //Validation
-  $validator = Validator::make(['f'=>$file], [
-    'f' => 'max:10000|mimes:jpg,jpeg,gif,bmp,png,svg'
-  ]);
-
-  if($validator->fails()){
-    return false;
   }
 
-  $fileName = $file->getClientOriginalName();
-  $fileExt = strtolower($file->getClientOriginalExtension());
-  $directory = '/files/site';
-  $file->move(public_path($directory),$fileName);
-  return "$directory/$fileName";
-}
+  /*
+  * setting cache clear
+  */
+  private function cacheClear($keys){
+    foreach ($keys as $key) {
+      Cache::forget("setting.{$key}");
+    }
+  }
+  
+  /*
+  * updateSetting
+  */
+  private function updateSetting($datas,$request){
+
+    if(count($datas)){
+      foreach ($datas as $data) {
+        Setting::where('key',$data)->update(['value'=>$request[$data]]);
+      }
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  /*
+  * imageStore
+  */
+  private function imageStore($file){
+    //Validation
+    $validator = Validator::make(['f'=>$file], [
+      'f' => 'max:10000|mimes:jpg,jpeg,gif,bmp,png,svg'
+    ]);
+
+    if($validator->fails()){
+      return false;
+    }
+
+    $fileName = $file->getClientOriginalName();
+    $fileExt = strtolower($file->getClientOriginalExtension());
+    $directory = '/files/site';
+    $file->move(public_path($directory),$fileName);
+    return "$directory/$fileName";
+  }
 
 
 }

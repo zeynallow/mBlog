@@ -4,6 +4,7 @@ use App\Locale;
 use App\Post;
 use App\Category;
 use App\Setting;
+use Cache;
 
 /**
 * get other locales
@@ -85,7 +86,10 @@ if (!function_exists('getNavCategories')) {
 if (!function_exists('getSetting')) {
   function getSetting($key)
   {
-    $get = Setting::where('key',$key)->first();
-    return $get->value;
+    $value = Cache::rememberForever("setting.{$key}", function () use ($key) {
+      $get = Setting::where('key',$key)->first();
+      return $get->value;
+    });
+    return $value;
   }
 }

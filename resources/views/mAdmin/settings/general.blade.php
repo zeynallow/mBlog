@@ -33,6 +33,28 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
+                  Site URL
+                </div>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" name="site_url" value="{{ getSetting('site_url') }}" placeholder="">
+                </div>
+              </div>
+
+              <div class="row mt-5">
+                <div class="col-md-4">
+                  Timezone
+                </div>
+                <div class="col-md-8">
+                  <select class="form-control" name="timezone">
+                    @foreach ($timezonelist as $key => $timezone)
+                      <option value="{{$timezone}}" {{(getSetting('timezone') == $timezone) ? 'selected' : ''}}>{{$timezone}}</option>
+                    @endforeach
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mt-5">
+                <div class="col-md-4">
                   Multilingual system
                 </div>
                 <div class="col-md-4">
