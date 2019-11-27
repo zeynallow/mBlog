@@ -2,20 +2,23 @@
 <html class="no-js" lang="{{ app()->getLocale() }}">
 
 <head>
+
+  @meta_tags
+  
+  <meta name="author" content="mBlog - MazzBlog">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="mBlog - MazzBlog">
 
-  <title>mBlog</title>
-
+  @if(getSetting('fb_app_id'))
+    <meta property="fb:app_id" content="{{getSetting('fb_app_id')}}">
+  @endif
+  <link rel="canonical" href="{{url()->current()}}">
   <!-- favicon -->
   @if(getSetting('site_favicon'))
     <link rel="shortcut icon" type="image/x-icon" href="{{getSetting('site_favicon')}}">
   @endif
+
+
 
   <!-- style css -->
   <link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">

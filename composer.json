@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2",
         "browner12/helpers": "^3.0",
+        "butschster/meta-tags": "^1.4",
         "fideloper/proxy": "^4.0",
         "joedixon/laravel-translation": "^1.0",
         "laravel/framework": "^6.2",
