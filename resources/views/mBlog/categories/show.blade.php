@@ -42,6 +42,10 @@
             </div>
           @endif
 
+          <div class="view-all text-center mt-40">
+            {{$posts}}
+          </div>
+
         </div>
         <!-- Single Post End -->
       </div>
@@ -51,23 +55,5 @@
 </div>
 <!-- Blog Section End -->
 
-<!-- Call To Action Section Start -->
-<div class="cta-one black-bg ptb-75">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="cta-content clearfix">
-          <div class="pull-left">
-            <h1>We'd love to hear about your project</h1>
-          </div>
-          <div class="pull-right mr-100">
-            <a href="contact.html" class="btn">Start project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Call To Action Section End -->
 
 @endsection

@@ -2958,3 +2958,18 @@ h6 {
     color: #dc3545;
     font-size:12px;
   }
+
+
+  .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    color: #fff;
+    background-color: #ff214f;
+    border-color: #ff214f;
+  }
+
+  .pagination>li>a, .pagination>li>span {
+    color: #ff214f;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    font-size: 16px;
+    border-radius: 0px!important;
+  }

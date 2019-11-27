@@ -47,10 +47,8 @@
             </div>
           @endif
 
-
-
-          <div class="view-all text-center">
-            <a class="btn theme-btn mt-80" id="load-more-btn" href="javascript:void(0)">Load More</a>
+          <div class="view-all text-center mt-40">
+            {{$lastPosts}}
           </div>
         </div>
 
