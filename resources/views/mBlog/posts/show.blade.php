@@ -46,9 +46,24 @@
 
               {!!$post->post_data()[0]->text!!}
 
-              <div class="tag mt-50">
-                <strong>Tags:</strong> <a href="#">Corporate,</a> <a href="#">HTML,</a><a href="#">WordPress,</a><a href="#">Design</a>
+              <div class="row mt-50">
+                <div class="col-md-8">
+                  <div class="tag">
+                    <strong>Tags:</strong> <a href="#">Corporate,</a> <a href="#">HTML,</a><a href="#">WordPress,</a><a href="#">Design</a>
+                  </div>
+                </div>
+                <div class="col-md-4 text-right">
+                  <ul class="share-social">
+                    <li><span class="social-share"><i class="zmdi zmdi-share"></i></span></li>
+                    <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}" class="social-button"><i class="zmdi zmdi-facebook"></i></a></li>
+                    <li><a target="_blank" href="https://twitter.com/intent/tweet?text=my share text&amp;url={{url()->current()}}" class="social-button"><span class="zmdi zmdi-twitter"></span></a></li>
+                    <li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url()->current()}}" class="social-button"><span class="zmdi zmdi-linkedin"></span></a></li>
+                    <li><a target="_blank" href="https://wa.me/?text={{url()->current()}}" class="social-button"><span class="zmdi zmdi-whatsapp"></span></a></li>
+                  </ul>
+                </div>
               </div>
+
+
             </div>
 
             @if(getSetting('comment_system'))

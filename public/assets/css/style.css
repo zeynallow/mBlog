@@ -2964,3 +2964,16 @@ h6 {
     font-size: 16px;
     border-radius: 0px!important;
   }
+
+  ul.share-social li{
+    display: inline-block;
+  }
+  span.social-share{
+    font-size:25px;
+    padding-right: 10px;
+  }
+  a.social-button {
+    color: #535353;
+    font-size: 20px;
+    padding-right: 10px;
+  }
