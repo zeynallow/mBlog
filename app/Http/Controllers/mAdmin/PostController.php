@@ -71,7 +71,6 @@ class PostController extends Controller
         PostData::create([
           'title'=> $title,
           'text'=> $request->text[$key],
-          'keywords'=> ($request->keywords[$key]) ? $request->keywords[$key] : '',
           'locale'=> $key,
           'post_id'=> $post->id
         ]);
@@ -136,7 +135,6 @@ class PostController extends Controller
         ->update([
           'title'=> $title,
           'text'=> $request->text[$key],
-          'keywords'=> ($request->keywords[$key]) ? $request->keywords[$key] : '',
           'locale'=> $key
         ]);
       }
@@ -147,7 +145,6 @@ class PostController extends Controller
           PostData::create([
             'title'=> $n_title,
             'text'=> $request->n_text[$key],
-            'keywords'=> ($request->n_keywords[$key]) ? $request->n_keywords[$key] : '',
             'locale'=> $key,
             'post_id'=> $id
           ]);

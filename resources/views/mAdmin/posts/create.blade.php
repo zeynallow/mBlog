@@ -68,10 +68,6 @@
                       <textarea name="text[{{getDefaultLocale()->code}}]" class="form-control my-editor">{!! old('text.en'.getDefaultLocale()->code) !!}</textarea>
                     </div>
 
-                    <div class="form-group">
-                      <label for="keywords_{{getDefaultLocale()->code}}">Keywords</label>
-                      <input type="text" class="form-control" name="keywords[{{getDefaultLocale()->code}}]" value="{{ old('keywords.'.getDefaultLocale()->code) }}" id="keywords_{{getDefaultLocale()->code}}" placeholder="With comma">
-                    </div>
                   </div>
                 @endif
 
@@ -161,10 +157,6 @@
     <div class="form-group">\
     <label for="text_tr">Content</label>\
     <textarea class="form-control my-editor" name="text['+ lang +']" id="text_'+ lang +'"></textarea>\
-    </div>\
-    <div class="form-group">\
-    <label for="keywords_tr">Keywords</label>\
-    <input type="text" class="form-control" name="keywords['+ lang +']" id="keywords_'+ lang +'" placeholder="With comma">\
     </div>\
     </div>');
     $('textarea.my-editor').ckeditor(options);

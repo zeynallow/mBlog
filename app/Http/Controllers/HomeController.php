@@ -14,15 +14,20 @@ class HomeController extends Controller
   */
   public function home(){
 
+    $featuredPosts = NULL;
+
     $lastPosts = Post::where('publish',1)
     ->orderBy('created_at','desc')
-    ->paginate(10);
+    ->paginate(getSetting('pagination_per_page'));
 
-    $featuredPosts = Post::where('publish',1)
-    ->where('featured',1)
-    ->orderBy('created_at','desc')
-    ->limit(6)
-    ->get();
+    if(getSetting('feature_post')){
+      $featuredPosts = Post::where('publish',1)
+      ->where('featured',1)
+      ->orderBy('created_at','desc')
+      ->limit(6)
+      ->get();
+    }
+
 
     return view('mBlog.pages.home',compact('lastPosts','featuredPosts'));
   }

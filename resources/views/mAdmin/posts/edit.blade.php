@@ -78,10 +78,6 @@
                         <label for="text_{{$post_data->locale}}">Content</label>
                         <textarea name="text[{{$post_data->locale}}]" class="form-control my-editor">{!! $post_data->text !!}</textarea>
                       </div>
-                      <div class="form-group">
-                        <label for="keywords_{{$post_data->locale}}">Keywords</label>
-                        <input type="text" class="form-control" name="keywords[{{$post_data->locale}}]" value="{{$post_data->keywords}}" id="keywords_{{$post_data->locale}}" placeholder="With comma">
-                      </div>
 
                     </div>
                   @endforeach
@@ -173,10 +169,6 @@
     <div class="form-group">\
     <label for="text_tr">Content</label>\
     <textarea class="form-control my-editor" name="n_text['+ lang +']" id="text_'+ lang +'"></textarea>\
-    </div>\
-    <div class="form-group">\
-    <label for="keywords_tr">Keywords</label>\
-    <input type="text" class="form-control" name="n_keywords['+ lang +']" id="keywords_'+ lang +'" placeholder="With comma">\
     </div>\
     </div>');
     $('textarea.my-editor').ckeditor(options);

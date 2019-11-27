@@ -17,17 +17,24 @@
             <div class="col-xs-12">
               <div class="breadcrumbs-menu">
                 <h2>{{$post->post_data()[0]->title}}</h2>
-                <ul class="clearfix">
-                  <li>{{$post->created_at->diffForHumans()}}<span>|</span></li>
-                  <li>{!!($post->author) ? $post->author->name . '<span>|</span>' : ''!!}</li>
-                  <li>{{($post->category) ? $post->category->category_data()[0]->title : ''}}</li>
-                  <li>{!!($post->subcategory) ? '<span>|</span>' . $post->subcategory->category_data()[0]->title : ''!!}</li>
+                <ul class="clearfix pull-left">
+                  @if($post->category)
+                    <li><a href="{{route('category.index', $post->category->slug)}}"><i class="zmdi zmdi-apps"></i> {{$post->category->category_data()[0]->title}}</a></li>
+                  @endif
+                  @if($post->subcategory)
+                    <li><a href="{{route('subcategory.index', [$post->category->slug,$post->subcategory->slug])}}"><span class="zmdi zmdi-chevron-right"></span>{{$post->subcategory->category_data()[0]->title}}</a></li>
+                  @endif
+                </ul>
+                <ul class="pull-right">
+                  <li><i class="zmdi zmdi-calendar"></i> {{$post->created_at->diffForHumans()}}<span>|</span></li>
+                  <li><i class="zmdi zmdi-account"></i> {{($post->author) ? $post->author->name  : '' }} <span>|</span></li>
+                  <li><i class="zmdi zmdi-eye"></i> {{$post->views}}</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="blog-post clearfix pt-40 pr-20">
+          <div class="blog-post clearfix pt-40">
 
             @if($post->cover)
               <div class="thumb mb-60">

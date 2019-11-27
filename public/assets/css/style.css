@@ -2260,9 +2260,6 @@ h6 {
     color: #222429;
     font-weight: 600;
   }
-  .breadcrumbs-menu {
-    display: inline-block;
-  }
   .breadcrumbs-menu ul {
     padding-left: 1px;
   }

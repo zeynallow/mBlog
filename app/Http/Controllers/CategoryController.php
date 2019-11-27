@@ -25,7 +25,7 @@ class CategoryController extends Controller
     $posts = Post::where('category_id',$category->id)
     ->where('publish',1)
     ->orderBy('created_at','desc')
-    ->paginate(10);
+    ->paginate(getSetting('pagination_per_page'));
 
     return view('mBlog.categories.show',compact('category','posts'));
   }
@@ -55,7 +55,7 @@ class CategoryController extends Controller
     ->where('subcategory_id',$subcategory->id)
     ->where('publish',1)
     ->orderBy('created_at','desc')
-    ->paginate(10);
+    ->paginate(getSetting('pagination_per_page'));
 
     return view('mBlog.categories.show',compact('category','posts'));
   }

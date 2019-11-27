@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('category_id')->index();
             $table->integer('subcategory_id')->nullable();
+            $table->integer('views')->default(0);
             $table->boolean('featured');
             $table->timestamps();
         });

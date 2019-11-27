@@ -18,6 +18,8 @@ class PostController extends Controller
       abort(404);
     }
 
+    $post->increment('views');
+
     return view('mBlog.posts.show',compact('post'));
   }
 
