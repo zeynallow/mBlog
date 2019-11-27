@@ -17,6 +17,8 @@ Route::group(['prefix' => 'mAdmin'], function() {
 
   Route::group(['middleware'=>'auth'], function() {
 
+    Route::get('/dashboard', 'mAdmin\MainController@index')->name('mAdmin.index');
+    
     // Posts
     Route::group(['prefix' => 'posts'], function() {
       Route::get('/', 'mAdmin\PostController@index')->name('mAdmin.posts.index');
@@ -63,6 +65,7 @@ Route::group(['prefix' => 'mAdmin'], function() {
 
 // Auth
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/login/user', 'Auth\LoginController@loginUser')->name('login.xhr');
 
 Route::get('/', 'HomeController@home')->name('home');

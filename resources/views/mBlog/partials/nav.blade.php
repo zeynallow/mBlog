@@ -36,24 +36,20 @@
             @endisset
           @endforeach
         @endif
-        <!-- BLOG END -->
         <li><a href="javascript:void(0)">Contact Us</a></li>
-        <!-- CONTACT END -->
 
-        @if(getSetting('multilingual_system'))
+        @if(auth()->user())
           <li class="dropdown">
             <a href="javascript:void(0);">
-              {{mb_strtoupper(\App::getLocale())}} <span class="caret"></span>
+              <i class="zmdi zmdi-account"></i> {{auth()->user()->name}} <span class="caret"></span>
             </a>
-            @if(getLocalesWithout(\App::getLocale()))
-              <ul>
-                @foreach (getLocalesWithout(\App::getLocale()) as $key => $locale)
-                  <li><a href="{{route('change.lang',$locale->code)}}">{{$locale->name}}</a></li>
-                @endforeach
-              </ul>
-            </li>
-          @endif
+            <ul>
+              <li><a target="_blank" href="{{route('mAdmin.index')}}">Admin panel</a></li>
+              <li><a href="{{route('logout')}}">Logout</a></li>
+            </ul>
+          </li>
         @endif
+
       </ul>
     </div>
   </nav>
