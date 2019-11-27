@@ -4,7 +4,6 @@ use App\Locale;
 use App\Post;
 use App\Category;
 use App\Setting;
-use Cache;
 
 /**
 * get other locales
