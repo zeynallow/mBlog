@@ -85,8 +85,6 @@ class SettingController extends Controller
     }
 
     $settings = [
-      'primary_font',
-      'secondary_font',
       'site_color'
     ];
 
@@ -94,8 +92,6 @@ class SettingController extends Controller
       array_merge($settings,$s_site_logo,$s_site_favicon),
 
       array_merge([
-        'primary_font'=>$request->primary_font,
-        'secondary_font'=>$request->secondary_font,
         'site_color'=>$request->site_color
       ],
       $site_logo,
@@ -213,7 +209,7 @@ class SettingController extends Controller
       Cache::forget("setting.{$key}");
     }
   }
-  
+
   /*
   * updateSetting
   */

@@ -1,34 +1,4 @@
 @extends('mAdmin.layouts.app')
-@push('css')
-  <style media="screen">
-  .custom-checkbox {
-    position: relative;
-    float: left;
-    margin-right: 30px;
-  }
-  .regular-checkbox {
-    display: none;
-  }
-  .regular-checkbox+label {
-    background-color: #ddd;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 -15px 10px -12px rgba(0,0,0,0.05);
-    padding: 15px;
-    border-radius: 2px;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    margin: 0;
-  }
-  .regular-checkbox:checked+label:after {
-    content: '\2714';
-    font-size: 22px;
-    position: absolute;
-    top: -2px;
-    left: 7.5px;
-    color: #fff;
-  }
-  </style>
-@endpush
 @section('content')
 
   <div class="content-wrapper">
@@ -51,39 +21,6 @@
 
             <form class="forms-sample" method="post" action="{{ route('mAdmin.settings.visualUpdate') }}" enctype="multipart/form-data">
               @csrf
-              @php
-              $fonts = [
-                'Poppins',
-                'Montserrat'
-              ];
-              @endphp
-              <div class="row">
-                <div class="col-md-4">
-                  Primary Font
-                </div>
-                <div class="col-md-8">
-                  <select class="form-control" name="primary_font">
-
-                    @foreach ($fonts as $key => $font)
-                      <option value="{{$font}}" {{(getSetting('primary_font') == $font) ? 'selected' : ''}}>{{$font}}</option>
-                    @endforeach
-
-                  </select>
-                </div>
-              </div>
-
-              <div class="row mt-5">
-                <div class="col-md-4">
-                  Secondary Font
-                </div>
-                <div class="col-md-8">
-                  <select class="form-control" name="secondary_font">
-                    @foreach ($fonts as $key => $font)
-                      <option value="{{$font}}" {{(getSetting('secondary_font') == $font) ? 'selected' : ''}}>{{$font}}</option>
-                    @endforeach
-                  </select>
-                </div>
-              </div>
 
               <div class="row mt-5">
                 <div class="col-md-4">
