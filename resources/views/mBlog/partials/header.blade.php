@@ -21,8 +21,19 @@
                 <button id="close" type="submit"><i class="zmdi zmdi-search"></i></button>
               </form>
             </div>
+
+            <div class="login-box pull-right">
+              @if(!auth()->user())
+                <button data-toggle="modal" data-target="#loginModal"><i class="zmdi zmdi-account"></i></button>
+              @else
+                {{auth()->user()->name}}<i class="zmdi zmdi-account"></i>
+              @endif
+            </div>
+
+
             @include('mBlog.partials.nav')
           </div>
+
         </div>
       </div>
     </div>

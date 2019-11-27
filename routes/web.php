@@ -15,11 +15,6 @@
 //mAdmin Routes
 Route::group(['prefix' => 'mAdmin'], function() {
 
-  //Auth
-  Route::get('login', 'mAdmin\AuthController@showLoginForm')->name('login');
-  Route::post('login', 'mAdmin\AuthController@login');
-  Route::get('logout', 'mAdmin\AuthController@logout')->name('logout');
-
   Route::group(['middleware'=>'auth'], function() {
 
     // Posts
@@ -66,7 +61,9 @@ Route::group(['prefix' => 'mAdmin'], function() {
 
 });
 
-
+// Auth
+Auth::routes();
+Route::post('/login/user', 'Auth\LoginController@loginUser')->name('login.xhr');
 
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/home', 'HomeController@home')->name('home');

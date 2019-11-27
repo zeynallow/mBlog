@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Request;
+use Illuminate\Http\Request;
 use Auth;
 
 class LoginController extends Controller
@@ -45,5 +45,32 @@ class LoginController extends Controller
   public function logout(Request $request) {
     Auth::logout();
     return redirect('/login');
+  }
+
+  /**
+  * Login With XHR
+  */
+  public function loginUser(Request $request)
+  {
+
+    $request->validate([
+      'email'=>'required|email',
+      'password'=>'required'
+    ]);
+
+    // Attempt Login
+    if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+      $msg = array(
+        'status'  => 'success',
+        'message' => 'Login Successful'
+      );
+      return response()->json($msg);
+    } else {
+      $msg = array(
+        'status'  => 'error',
+        'message' => 'E-mail or Password is wrong'
+      );
+      return response()->json($msg);
+    }
   }
 }

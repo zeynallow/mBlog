@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
   <!-- modernizr js -->
   <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
-
+  @stack('css')
 </head>
 
 <body>
@@ -43,12 +43,15 @@
   @yield('content')
 
   @include('mBlog.partials.footer')
+  @include('mBlog.partials.login')
+
 
   <!-- All JS Here -->
   <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
   <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
   <script src="{{ asset('assets/js/plugins.js') }}"></script>
   <script src="{{ asset('assets/js/main.js') }}"></script>
+  @stack('js')
 </body>
 
 

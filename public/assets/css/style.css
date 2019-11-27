@@ -1440,6 +1440,21 @@ h6 {
   .header-style-1 .is-sticky .mainmenu li a {
     line-height: 70px;
   }
+  .login-box{
+    position: relative;
+  }
+  .login-box > button {
+    color: #2c2c2c;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 110px;
+    border:none;
+    background: transparent;
+    margin-left: 30px;
+    font-weight: 700;
+    width: 15px;
+    text-align: right;
+  }
 
   /* Mobile Menu
   --------------*/
@@ -2925,3 +2940,20 @@ h6 {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
+  .color-black{
+    color:#000!important;
+  }
+  .modal-header{
+    border:none;
+  }
+  .modal-title{
+    color: #000;
+    text-transform: uppercase;
+  }
+  .is-invalid{
+    border-color: #dc3545!important;
+  }
+  span.invalid-feedback {
+    color: #dc3545;
+    font-size:12px;
+}

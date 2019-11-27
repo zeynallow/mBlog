@@ -78,7 +78,7 @@
                         <strong class="alert-with-btn">Please login website</strong>
                       </div>
                       <div class="col-md-4">
-                        <a href="contact.html" class="btn theme-btn"><i class="zmdi zmdi-account"></i> Login</a>
+                        <a data-toggle="modal" data-target="#loginModal" class="btn theme-btn"><i class="zmdi zmdi-account"></i> Login</a>
                       </div>
                     </div>
                   </div>

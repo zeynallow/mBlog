@@ -8,7 +8,9 @@
   </div>
   <div class="navbar-collapse collapse ">
     <ul class="navigation">
+
       <li><a href="{{ route('home') }}">Home</a></li>
+
       @if(getNavCategories())
         @foreach (getNavCategories() as $key => $nav_category)
           @isset($nav_category->category_data()[0])
@@ -52,8 +54,6 @@
             </li>
           @endif
         @endif
-
       </ul>
-
     </div>
   </nav>
