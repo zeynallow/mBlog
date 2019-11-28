@@ -24,7 +24,6 @@
   if (searchBoxI.length) {
     searchBoxI.on('click', function() {
       $(this).parent().toggleClass('active-search');
-      return false;
     });
   }
 
@@ -119,26 +118,6 @@
               slidesToScroll: 1
             }
           }]
-        });
-      }
-      var testmonialItem = $('.testimonial-item');
-      if (testmonialItem.length) {
-        testmonialItem.slick({
-          dots: false,
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 4000
-        });
-      }
-
-      /*
-      CounterUp ACTIVE
-      ================================ */
-      var cunterActive = $('.counter');
-      if (cunterActive.length) {
-        cunterActive.counterUp({
-          delay: 50,
-          time: 3000
         });
       }
 

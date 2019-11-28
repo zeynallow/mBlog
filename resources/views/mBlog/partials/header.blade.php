@@ -20,8 +20,8 @@
           <div class="right">
             <div class="search-box pull-right">
               <i class="zmdi zmdi-search"></i>
-              <form action="#">
-                <input type="text" name="search" placeholder="Search..." />
+              <form action="{{route('search')}}" method="get">
+                <input type="text" name="q" placeholder="Search..." />
                 <button id="close" type="submit"><i class="zmdi zmdi-search"></i></button>
               </form>
             </div>

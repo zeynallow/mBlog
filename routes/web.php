@@ -109,6 +109,7 @@ Route::post('/login/user', 'Auth\LoginController@loginUser')->name('login.xhr');
 // Home
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/search', 'HomeController@search')->name('search');
 Route::get('/changeLang/{locale}', 'HomeController@changeLang')->name('change.lang');
 
 // Posts

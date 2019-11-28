@@ -39,6 +39,38 @@ class HomeController extends Controller
     return view('mBlog.pages.home',compact('lastPosts','featuredPosts'));
   }
 
+
+  /*
+  * Search Result
+  */
+  public function search(Request $request){
+
+    if(!isset($request->q)){
+      return redirect()->route('home');
+    }
+
+    $search_query = $request->q;
+
+    //Get Last Posts
+    $_result = Post::leftJoin('post_data','posts.id','=','post_data.post_id');
+    $_result->where('posts.publish',1);
+
+    $_result->where(function($query) use ($search_query){
+      $query->where('post_data.title','LIKE','%'.$search_query.'%')
+      ->orWhere('post_data.text','LIKE','%'.$search_query.'%');
+    });
+
+    $_result->orderBy('created_at','desc');
+    $result = $_result->paginate(getSetting('pagination_per_page'));
+
+    //Meta Tags
+    Meta::setTitle("Search Result | $search_query")
+    ->setDescription(getSetting('meta_description'))
+    ->setKeywords(getSetting('meta_keywords'));
+
+    return view('mBlog.pages.search_result',compact('search_query','result'));
+  }
+
   /*
   * Change Language (Locale Change)
   */
