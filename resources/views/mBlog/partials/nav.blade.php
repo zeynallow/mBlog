@@ -60,6 +60,7 @@
             </a>
             <ul>
               <li><a target="_blank" href="{{route('mAdmin.index')}}">Admin panel</a></li>
+              <li><a href="{{route('profile')}}">Profile</a></li>
               <li><a href="{{route('logout')}}">Logout</a></li>
             </ul>
           </li>

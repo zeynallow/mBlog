@@ -106,6 +106,12 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/login/user', 'Auth\LoginController@loginUser')->name('login.xhr');
 
+Route::group(['middleware'=>'auth'], function() {
+  //Profile
+  Route::get('/profile', 'ProfileController@index')->name('profile');
+  Route::post('/profile', 'ProfileController@update')->name('profile.update');
+});
+
 // Home
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/home', 'HomeController@home')->name('home');
