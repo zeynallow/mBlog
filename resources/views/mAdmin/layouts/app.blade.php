@@ -54,10 +54,6 @@
               <span class="nav-profile-name">{{ auth()->user()->name }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="mdi mdi-settings text-primary"></i>
-                Settings
-              </a>
               <a class="dropdown-item" href="{{ route('logout') }}">
                 <i class="mdi mdi-logout text-primary"></i>
                 Logout

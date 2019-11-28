@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Other settings</h4>
+            <h4 class="card-title">SEO settings</h4>
             <hr/>
 
             @if ($errors->any())
@@ -19,33 +19,24 @@
               </div>
             @endif
 
-            <form class="forms-sample" method="post" action="{{ route('mAdmin.settings.otherUpdate') }}">
+            <form class="forms-sample" method="post" action="{{ route('mAdmin.settings.seoUpdate') }}">
               @csrf
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Facebook APP ID
+                  Description
                 </div>
                 <div class="col-md-8">
-                  <input type="text" class="form-control" name="fb_app_id" value="{{ getSetting('fb_app_id') }}">
+                  <input type="text" class="form-control" name="meta_description" value="{{ getSetting('meta_description') }}">
                 </div>
               </div>
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Google Analytics Code
+                  Keywords
                 </div>
                 <div class="col-md-8">
-                  <textarea class="form-control" rows="8" name="google_analytics">{{ getSetting('google_analytics') }}</textarea>
-                </div>
-              </div>
-
-              <div class="row mt-5">
-                <div class="col-md-4">
-                  Custom Head Code
-                </div>
-                <div class="col-md-8">
-                  <textarea class="form-control" rows="8" name="custom_head_code">{{ getSetting('custom_head_code') }}</textarea>
+                  <input type="text" class="form-control" name="meta_keywords" value="{{ getSetting('meta_keywords') }}">
                 </div>
               </div>
 

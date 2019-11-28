@@ -58,6 +58,13 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href="{{ route('mAdmin.comments.index') }}">
+        <i class="mdi mdi-circle-outline menu-icon"></i>
+        <span class="menu-title">Comments</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="ui-basic">
         <i class="mdi mdi-circle-outline menu-icon"></i>
         <span class="menu-title">Users</span>
@@ -70,7 +77,6 @@
         </ul>
       </div>
     </li>
-
 
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="ui-basic">
@@ -85,6 +91,7 @@
           <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.social') }}">Social</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.other') }}">Other</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.email') }}">E-mail</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.seo') }}">SEO</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('languages.index') }}">{{ __('translation::translation.languages') }}</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('languages.translations.index', config('app.locale')) }}">{{ __('translation::translation.translations') }}</a></li>
         </ul>

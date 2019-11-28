@@ -61,11 +61,13 @@ Route::group(['prefix' => 'mAdmin'], function() {
       Route::get('/social', 'mAdmin\SettingController@social')->name('mAdmin.settings.social');
       Route::get('/email', 'mAdmin\SettingController@email')->name('mAdmin.settings.email');
       Route::get('/other', 'mAdmin\SettingController@other')->name('mAdmin.settings.other');
+      Route::get('/seo', 'mAdmin\SettingController@seo')->name('mAdmin.settings.seo');
 
       Route::post('/', 'mAdmin\SettingController@generalUpdate')->name('mAdmin.settings.generalUpdate');
       Route::post('/visual', 'mAdmin\SettingController@visualUpdate')->name('mAdmin.settings.visualUpdate');
       Route::post('/social', 'mAdmin\SettingController@socialUpdate')->name('mAdmin.settings.socialUpdate');
       Route::post('/other', 'mAdmin\SettingController@otherUpdate')->name('mAdmin.settings.otherUpdate');
+      Route::post('/seo', 'mAdmin\SettingController@seoUpdate')->name('mAdmin.settings.seoUpdate');
       Route::post('/email', 'mAdmin\SettingController@emailUpdate')->name('mAdmin.settings.emailUpdate');
     });
 
@@ -87,6 +89,12 @@ Route::group(['prefix' => 'mAdmin'], function() {
       Route::post('update/{ads_id}', 'mAdmin\AdsController@update')->name('mAdmin.ads.update');
       Route::get('enable/{ads_id}', 'mAdmin\AdsController@enable')->name('mAdmin.ads.enable');
       Route::get('disable/{ads_id}', 'mAdmin\AdsController@disable')->name('mAdmin.ads.disable');
+    });
+
+    // Comments
+    Route::group(['prefix' => 'comments'], function() {
+      Route::get('/', 'mAdmin\CommentController@index')->name('mAdmin.comments.index');
+      Route::get('delete/{comment_id}', 'mAdmin\CommentController@destroy')->name('mAdmin.comments.destroy');
     });
 
   });

@@ -25,6 +25,16 @@ class PostComment extends Model
   }
 
   /**
+  * The belongs to Relationship
+  *
+  * @var array
+  */
+  public function post()
+  {
+    return $this->belongsTo('App\Post');
+  }
+
+  /**
   * The has Many Relationship
   *
   * @var array

@@ -155,7 +155,37 @@ class SettingController extends Controller
 
     $settings = [
       'google_analytics',
-      'custom_head_code'
+      'custom_head_code',
+      'fb_app_id'
+    ];
+
+    $updateSetting = $this->updateSetting($settings,$request->all());
+    $this->cacheClear($settings); //cache clear
+
+    if($updateSetting){
+      return redirect()->back()->with('success','Settings updated successfully!');
+    }
+
+  }
+
+
+  /*
+  * seo
+  */
+  public function seo()
+  {
+    return view('mAdmin.settings.seo');
+  }
+
+  /*
+  * seoUpdate
+  */
+  public function seoUpdate(Request $request)
+  {
+
+    $settings = [
+      'meta_keywords',
+      'meta_description'
     ];
 
     $updateSetting = $this->updateSetting($settings,$request->all());
