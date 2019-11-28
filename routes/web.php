@@ -69,6 +69,15 @@ Route::group(['prefix' => 'mAdmin'], function() {
       Route::post('/email', 'mAdmin\SettingController@emailUpdate')->name('mAdmin.settings.emailUpdate');
     });
 
+    // ADS
+    Route::group(['prefix' => 'ads'], function() {
+      Route::get('/', 'mAdmin\AdsController@index')->name('mAdmin.ads.index');
+      Route::get('edit/{ads_id}', 'mAdmin\AdsController@edit')->name('mAdmin.ads.edit');
+      Route::post('update/{ads_id}', 'mAdmin\AdsController@update')->name('mAdmin.ads.update');
+      Route::get('enable/{ads_id}', 'mAdmin\AdsController@enable')->name('mAdmin.ads.enable');
+      Route::get('disable/{ads_id}', 'mAdmin\AdsController@disable')->name('mAdmin.ads.disable');
+    });
+
   });
 
 });

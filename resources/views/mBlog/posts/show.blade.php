@@ -1,6 +1,10 @@
 @extends('mBlog.layouts.app')
 @section('content')
 
+  <div class="text-center pb-50">
+    {!! getAds('post_top') !!}
+  </div>
+
   <!-- Blog Section Start -->
   <div class="blog-area blog-details white-bg pt-40 pb-120 clearfix">
     <div class="container">
@@ -104,10 +108,17 @@
 
           </div>
           <!-- Single Post End -->
+
         </div>
         <!-- Sidebar End -->
       </div>
     </div>
+
+    <div class="text-center pt-40">
+      {!! getAds('post_bottom') !!}
+    </div>
   </div>
   <!-- Blog Section End -->
+
+
 @endsection

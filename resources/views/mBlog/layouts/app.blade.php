@@ -4,7 +4,7 @@
 <head>
 
   @meta_tags
-  
+
   <meta name="author" content="mBlog - MazzBlog">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

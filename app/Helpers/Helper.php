@@ -4,6 +4,7 @@ use App\Locale;
 use App\Post;
 use App\Category;
 use App\Setting;
+use App\Ads;
 
 /**
 * get other locales
@@ -90,5 +91,19 @@ if (!function_exists('getSetting')) {
       return $get->value;
     });
     return $value;
+  }
+}
+
+/**
+* get ads
+*/
+if (!function_exists('getAds')) {
+  function getAds($position)
+  {
+    $get = Ads::where('ads_position',$position)->where('publish',1)->first();
+    if($get){
+      return $get->ads_code;
+    }
+
   }
 }

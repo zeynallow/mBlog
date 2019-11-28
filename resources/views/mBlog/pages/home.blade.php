@@ -19,6 +19,11 @@
     </section>
   @endif
 
+  <div class="text-center pb-50">
+    {!! getAds('home_top') !!}
+  </div>
+
+
   <div class="blog-area white-bg">
     <div class="container">
       <div class="row">
@@ -50,9 +55,19 @@
           <div class="view-all text-center mt-40">
             {{$lastPosts}}
           </div>
+
+
+          <div class="text-center pb-50">
+            {!! getAds('home_bottom') !!}
+          </div>
+
         </div>
 
       </div>
+
+
     </div>
   </div>
+
+
 @endsection

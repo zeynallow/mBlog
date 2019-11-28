@@ -51,6 +51,13 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href="{{ route('mAdmin.ads.index') }}">
+        <i class="mdi mdi-circle-outline menu-icon"></i>
+        <span class="menu-title">Ads</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="ui-basic">
         <i class="mdi mdi-circle-outline menu-icon"></i>
         <span class="menu-title">Settings</span>

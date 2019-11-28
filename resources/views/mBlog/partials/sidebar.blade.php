@@ -31,20 +31,9 @@
       </ul>
     </div>
   </div>
-  <div class="widget">
-    <div class="widget-title mb-10">
-      <h4 class="mb-5">tags</h4>
-    </div>
-    <div class="tags ">
-      <a href="javascript:void(0)">Design</a>
-      <a href="javascript:void(0)">Development</a>
-      <a href="javascript:void(0)">HTML</a>
-      <a href="javascript:void(0)">WordPress</a>
-      <a href="javascript:void(0)">Minimal</a>
-      <a href="javascript:void(0)">Corporate</a>
-      <a href="javascript:void(0)">Business</a>
-      <a href="javascript:void(0)">Bloger</a>
-      <a href="javascript:void(0)">New</a>
-    </div>
+
+  <div class="text-center">
+    {!! getAds('sidebar') !!}
   </div>
+
 </div>
