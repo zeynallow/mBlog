@@ -69,6 +69,17 @@ Route::group(['prefix' => 'mAdmin'], function() {
       Route::post('/email', 'mAdmin\SettingController@emailUpdate')->name('mAdmin.settings.emailUpdate');
     });
 
+
+    // User
+    Route::group(['prefix' => 'users'], function() {
+      Route::get('/', 'mAdmin\UserController@index')->name('mAdmin.users.index');
+      Route::get('create', 'mAdmin\UserController@create')->name('mAdmin.users.create');
+      Route::post('store', 'mAdmin\UserController@store')->name('mAdmin.users.store');
+      Route::get('edit/{post_id}', 'mAdmin\UserController@edit')->name('mAdmin.users.edit');
+      Route::post('update/{post_id}', 'mAdmin\UserController@update')->name('mAdmin.users.update');
+      Route::get('delete/{post_id}', 'mAdmin\UserController@destroy')->name('mAdmin.users.destroy');
+    });
+
     // ADS
     Route::group(['prefix' => 'ads'], function() {
       Route::get('/', 'mAdmin\AdsController@index')->name('mAdmin.ads.index');

@@ -58,6 +58,21 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="ui-basic">
+        <i class="mdi mdi-circle-outline menu-icon"></i>
+        <span class="menu-title">Users</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="users">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.users.create') }}">Create User</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.users.index') }}">All Users</a></li>
+        </ul>
+      </div>
+    </li>
+
+
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="ui-basic">
         <i class="mdi mdi-circle-outline menu-icon"></i>
         <span class="menu-title">Settings</span>
