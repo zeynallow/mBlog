@@ -152,7 +152,7 @@
 
 
   /* Slug Generate */
-  $("#title_en").keyup(function(){
+  $("#title_{{getDefaultLocale()->code}}").keyup(function(){
     var slug = slugify($(this).val());
     $("#slug").val(slug);
   });
@@ -167,7 +167,7 @@
     <input type="text" class="form-control" name="n_title['+ lang +']" id="title_'+ lang +'" placeholder="Title">\
     </div>\
     <div class="form-group">\
-    <label for="text_tr">Content</label>\
+    <label for="text_'+ lang +'">Content</label>\
     <textarea class="form-control my-editor" name="n_text['+ lang +']" id="text_'+ lang +'"></textarea>\
     </div>\
     </div>');

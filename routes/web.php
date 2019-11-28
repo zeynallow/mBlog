@@ -18,7 +18,7 @@ Route::group(['prefix' => 'mAdmin'], function() {
   Route::group(['middleware'=>'auth'], function() {
 
     Route::get('/dashboard', 'mAdmin\MainController@index')->name('mAdmin.index');
-    
+
     // Posts
     Route::group(['prefix' => 'posts'], function() {
       Route::get('/', 'mAdmin\PostController@index')->name('mAdmin.posts.index');
@@ -29,6 +29,16 @@ Route::group(['prefix' => 'mAdmin'], function() {
       Route::get('delete/{post_id}', 'mAdmin\PostController@destroy')->name('mAdmin.posts.destroy');
       Route::get('setAsFeature/{post_id}', 'mAdmin\PostController@setAsFeature')->name('mAdmin.posts.setAsFeature');
       Route::get('removeFeature/{post_id}', 'mAdmin\PostController@removeFeature')->name('mAdmin.posts.removeFeature');
+    });
+
+    // Pages
+    Route::group(['prefix' => 'pages'], function() {
+      Route::get('/', 'mAdmin\PageController@index')->name('mAdmin.pages.index');
+      Route::get('create', 'mAdmin\PageController@create')->name('mAdmin.pages.create');
+      Route::post('store', 'mAdmin\PageController@store')->name('mAdmin.pages.store');
+      Route::get('edit/{post_id}', 'mAdmin\PageController@edit')->name('mAdmin.pages.edit');
+      Route::post('update/{post_id}', 'mAdmin\PageController@update')->name('mAdmin.pages.update');
+      Route::get('delete/{post_id}', 'mAdmin\PageController@destroy')->name('mAdmin.pages.destroy');
     });
 
     // Categories
@@ -68,6 +78,7 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/login/user', 'Auth\LoginController@loginUser')->name('login.xhr');
 
+// Home
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/changeLang/{locale}', 'HomeController@changeLang')->name('change.lang');
@@ -75,6 +86,9 @@ Route::get('/changeLang/{locale}', 'HomeController@changeLang')->name('change.la
 // Posts
 Route::get('/post/{post_id}/{slug}', 'PostController@show')->name('post.show');
 Route::post('/post/commentStore', 'PostController@commentStore')->name('post.commentStore');
+
+// Pages
+Route::get('/page/{slug}', 'PageController@show')->name('page.show');
 
 // Categories
 Route::get('/{category_slug}', 'CategoryController@get_category')->name('category.index');

@@ -36,7 +36,7 @@
 
               <ul class="nav nav-tabs" id="selectLang">
                 @if(getDefaultLocale())
-                  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#en-content">{{getDefaultLocale()->name}}</a></li>
+                  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#{{getDefaultLocale()->code}}-content">{{getDefaultLocale()->name}}</a></li>
                 @endif
               </ul>
 
@@ -103,7 +103,7 @@
 @push('js')
   <script>
   /* Slug Generate */
-  $("#title_en").keyup(function(){
+  $("#title_{{getDefaultLocale()->code}}").keyup(function(){
     var slug = slugify($(this).val());
     $("#slug").val(slug);
   });

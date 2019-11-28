@@ -37,6 +37,20 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#pages" aria-expanded="false" aria-controls="ui-basic">
+        <i class="mdi mdi-circle-outline menu-icon"></i>
+        <span class="menu-title">Pages</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="pages">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.pages.create') }}">Create Page</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.pages.index') }}">All Pages</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="ui-basic">
         <i class="mdi mdi-circle-outline menu-icon"></i>
         <span class="menu-title">Settings</span>

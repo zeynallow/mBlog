@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Create post</h4>
+            <h4 class="card-title">Create page</h4>
             <hr/>
 
             @if ($errors->any())
@@ -19,27 +19,9 @@
               </div>
             @endif
 
-            <form class="forms-sample" method="post" action="{{ route('mAdmin.posts.store') }}">
+            <form class="forms-sample" method="post" action="{{ route('mAdmin.pages.store') }}">
               @csrf
 
-              <div class="form-group">
-                <label for="category">Category</label>
-                <select class="form-control" name="category_id" id="category">
-                  <option value="">Select...</option>
-                  @if($categories)
-                    @foreach ($categories as $key => $value)
-                      <option value="{{$value->id}}">{{($value->category_data()[0]) ? $value->category_data()[0]->title : ''}}</option>
-                    @endforeach
-                  @endif
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="subcategory">Sub-Category</label>
-                <select class="form-control" name="subcategory_id" id="subcategory">
-                  <option value="">Select...</option>
-                </select>
-              </div>
 
               <ul class="nav nav-tabs" id="selectLang">
                 @if(getDefaultLocale())
@@ -78,13 +60,6 @@
                 <input type="text" class="form-control" name="slug" id="slug" value="{{ old('slug') }}" placeholder="">
               </div>
 
-              <div class="form-check form-check-flat form-check-primary">
-                <label class="form-check-label">
-                  <input type="checkbox" name="featured" class="form-check-input" {{(old('featured')) ? 'checked' : ''}}>
-                  Featured
-                  <i class="input-helper"></i>
-                </label>
-              </div>
 
               <div class="form-check form-check-flat form-check-primary">
                 <label class="form-check-label">
@@ -94,24 +69,9 @@
                 </label>
               </div>
 
-              <div class="row" style="padding-bottom:20px;">
-                <div class="col-md-8">
-                  <div class="input-group">
-                    <span class="input-group-btn">
-                      <button type="button" id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                        <i class="fa fa-picture-o"></i> Cover image
-                      </button>
-                    </span>
-                    <input id="thumbnail" style="display:none;" name="cover" class="form-control" type="text">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <img id="holder" style="margin-top:15px;max-height:100px;">
-                </div>
-              </div>
 
               <div class="form-group">
-                <button type="submit" class="btn btn-success mr-2">Create Post</button>
+                <button type="submit" class="btn btn-success mr-2">Create Page</button>
               </div>
             </form>
 
@@ -161,24 +121,6 @@
     </div>');
     $('textarea.my-editor').ckeditor(options);
   }
-
-  /* Category Select */
-  $('#category').change(function(){
-    var category_id = $(this).val();
-    $("#subcategory").empty().html('<option value="">Select...</option>');
-
-    $.ajax({
-      url:"{{ route('mAdmin.categories.getSubCategoryForSelect',['category_id'=>'']) }}/"+ category_id,
-      success:function(data){
-        $.each(data, function( index, value ) {
-          $("#subcategory").append('<option value="'+ value.category_id +'">'+ value.title +'</option>');
-        });
-      },
-      error:function(data){
-        console.log("error",data);
-      }
-    })
-  });
 
 </script>
 @endpush

@@ -32,7 +32,7 @@ class CategoryController extends Controller
     ->paginate(getSetting('pagination_per_page'));
 
     //Meta Tags
-    Meta::prependTitle($category->category_data()[0]->title)
+    Meta::setTitle($category->category_data()[0]->title)
     ->setDescription($category->category_data()[0]->meta_description)
     ->setKeywords($category->category_data()[0]->meta_keywords);
 
@@ -72,7 +72,7 @@ class CategoryController extends Controller
     ->paginate(getSetting('pagination_per_page'));
 
     //Meta Tags
-    Meta::prependTitle($category->category_data()[0]->title)
+    Meta::setTitle($category->category_data()[0]->title)
     ->setDescription($category->category_data()[0]->meta_description)
     ->setKeywords($category->category_data()[0]->meta_keywords);
 

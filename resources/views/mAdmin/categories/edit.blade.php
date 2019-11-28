@@ -112,7 +112,7 @@
 @push('js')
   <script>
   /* Slug Generate */
-  $("#title_en").keyup(function(){
+  $("#title_{{getDefaultLocale()->code}}").keyup(function(){
     var slug = slugify($(this).val());
     $("#slug").val(slug);
   });

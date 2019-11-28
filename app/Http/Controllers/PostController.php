@@ -27,7 +27,7 @@ class PostController extends Controller
     $post->increment('views');
 
     //Meta Tags
-    Meta::prependTitle($post->post_data()[0]->title)
+    Meta::setTitle($post->post_data()[0]->title)
     ->setDescription(strip_tags($post->post_data()[0]->text))
     ->addMeta('image',['content'=> getSetting('site_url') . $post->cover]);
 

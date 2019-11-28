@@ -756,11 +756,6 @@ h6 {
     font-weight: 700;
     letter-spacing: 0.40px;
   }
-  .btn.theme-btn:hover {
-    -webkit-box-shadow: 0px 12px 20px 0px rgba(255, 33, 79, 0.86);
-    box-shadow: 0px 12px 20px 0px rgba(255, 33, 79, 0.86);
-    color: #ffffff;
-  }
 
   /*Screen Support
   --------------------*/
@@ -2523,16 +2518,7 @@ h6 {
     -webkit-box-shadow: 0 12px 20px rgba(34, 36 , 41, .30);
     box-shadow: 0 12px 20px rgba(34, 36 , 41, .30);
   }
-  .single-pricing.standard .btn.theme-btn,
-  .single-pricing .btn.theme-btn:hover {
-    background-color: #0494b1;
-    -webkit-box-shadow: 0 12px 20px 0 rgba(255, 33, 79, 0.5);
-    box-shadow: 0 12px 20px 0 rgba(255, 33, 79, 0.5);
-  }
-  .single-pricing.standard .btn.theme-btn:hover{
-    -webkit-box-shadow: 0 12px 20px 0 rgba(255, 33, 79, 0.86);
-    box-shadow: 0 12px 20px 0 rgba(255, 33, 79, 0.86);
-  }
+
   .single-pricing.standard ,
   .single-pricing:hover {
     -webkit-box-shadow: 0 15px 30px 0 rgba(21, 21, 22, 0.1);
