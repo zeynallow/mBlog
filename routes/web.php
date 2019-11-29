@@ -15,7 +15,7 @@
 //mAdmin Routes
 Route::group(['prefix' => 'mAdmin'], function() {
 
-  Route::group(['middleware'=>'auth'], function() {
+  Route::group(['middleware'=>['auth','mAdmin']], function() {
 
     Route::get('/dashboard', 'mAdmin\MainController@index')->name('mAdmin.index');
 

@@ -17,6 +17,9 @@ use App\Setting;
 class SettingController extends Controller
 {
 
+  public function __construct(){
+    $this->middleware('OnlyAdmin');
+  }
 
   /*
   * general

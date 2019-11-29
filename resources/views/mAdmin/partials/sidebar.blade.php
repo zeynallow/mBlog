@@ -77,26 +77,27 @@
         </ul>
       </div>
     </li>
-
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="ui-basic">
-        <i class="mdi mdi-circle-outline menu-icon"></i>
-        <span class="menu-title">Settings</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="settings">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.general') }}">General</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.visual') }}">Visual</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.social') }}">Social</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.other') }}">Other</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.email') }}">E-mail</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.seo') }}">SEO</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('languages.index') }}">{{ __('translation::translation.languages') }}</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('languages.translations.index', config('app.locale')) }}">{{ __('translation::translation.translations') }}</a></li>
-        </ul>
-      </div>
-    </li>
+    @if(auth()->user()->role_id == 1)
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="ui-basic">
+          <i class="mdi mdi-circle-outline menu-icon"></i>
+          <span class="menu-title">Settings</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="settings">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.general') }}">General</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.visual') }}">Visual</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.social') }}">Social</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.other') }}">Other</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.email') }}">E-mail</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.seo') }}">SEO</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('languages.index') }}">{{ __('translation::translation.languages') }}</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('languages.translations.index', config('app.locale')) }}">{{ __('translation::translation.translations') }}</a></li>
+          </ul>
+        </div>
+      </li>
+    @endif
 
   </ul>
 </nav>
