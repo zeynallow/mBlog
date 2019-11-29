@@ -17,7 +17,7 @@ class CreatePageDataTable extends Migration
       $table->bigIncrements('id');
       $table->integer('page_id')->unsigned();
       $table->string('locale')->index();
-      
+
       $table->string('title');
       $table->text('text');
 

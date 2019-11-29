@@ -15,7 +15,7 @@ class CreatePostDataTable extends Migration
   {
     Schema::create('post_data', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->integer('post_id')->unsigned();
+      $table->integer('post_id')->unsigned()->index();
       $table->string('locale')->index();
 
       $table->string('title');

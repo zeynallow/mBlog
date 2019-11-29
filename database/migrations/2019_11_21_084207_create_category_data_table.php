@@ -15,7 +15,7 @@ class CreateCategoryDataTable extends Migration
     {
         Schema::create('category_data', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('category_id')->unsigned();
+            $table->integer('category_id')->unsigned()->index();
             $table->string('locale')->index();
             $table->string('title');
             $table->string('meta_description')->nullable();

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Auth;
 use App\User;
+use App\UserRole;
 
 class UserController extends Controller
 {
@@ -30,7 +31,8 @@ class UserController extends Controller
   */
   public function create()
   {
-    return view('mAdmin.users.create');
+    $user_roles = UserRole::all();
+    return view('mAdmin.users.create',compact('user_roles'));
   }
 
   /**
@@ -52,6 +54,7 @@ class UserController extends Controller
     //Create User
     $user = User::create([
       'name'=> $request->name,
+      'role_id'=> $request->role_id,
       'email'=> $request->email,
       'password'=> Hash::make($request->password)
     ]);
@@ -61,7 +64,7 @@ class UserController extends Controller
     }else{
       return redirect()->back()->with('error','Something went error...');
     }
-    
+
   }
 
   /**
@@ -73,8 +76,8 @@ class UserController extends Controller
   public function edit($id)
   {
     $user = User::findOrFail($id);
-
-    return view('mAdmin.users.edit',compact('user'));
+    $user_roles = UserRole::all();
+    return view('mAdmin.users.edit',compact('user','user_roles'));
   }
 
   /**
@@ -108,6 +111,7 @@ class UserController extends Controller
     $user = User::where('id',$id)
     ->update(array_merge([
       'name'=> $request->name,
+      'role_id'=> $request->role_id,
       'email'=> $request->email
     ],$change_password)
   );

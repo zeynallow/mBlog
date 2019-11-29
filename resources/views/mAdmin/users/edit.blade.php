@@ -23,6 +23,18 @@
               @csrf
 
               <div class="form-group">
+                <label for="role_id">Role</label>
+                <select class="form-control" id="role_id" name="role_id">
+                  <option value="0">Select...</option>
+                  @if($user_roles)
+                    @foreach ($user_roles as $key => $user_role)
+                      <option value="{{$user_role->id}}" {{($user_role->id == $user->role_id) ? 'selected' : ''}}>{{$user_role->role_name}}</option>
+                    @endforeach
+                  @endif
+                </select>
+              </div>
+
+              <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{$user->name}}">
               </div>

@@ -25,6 +25,7 @@
                   <th>ID</th>
                   <th>Name</th>
                   <th>E-mail</th>
+                  <th>Role</th>
                   <th>Created at</th>
                   <th></th>
                 </tr>
@@ -37,6 +38,7 @@
                       <td>{{$user->id}}</td>
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
+                      <td>{{($user->role) ? $user->role->role_name : ''}}</td>
                       <td>{{$user->created_at}}</td>
                       <td>
                         <a href="{{ route('mAdmin.users.edit',$user->id)}}" class="badge badge-success"><i class="mdi mdi-pencil"></i></a>
@@ -47,7 +49,7 @@
                 @endif
               </tbody>
             </table>
-            
+
             <div style="padding:10px;">
               {{$users}}
             </div>
