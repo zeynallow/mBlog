@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Butschster\Head\Facades\Meta;
 use Auth;
 
 class LoginController extends Controller
@@ -37,6 +38,17 @@ class LoginController extends Controller
   public function __construct()
   {
     $this->middleware('guest')->except('logout');
+  }
+
+  public function showLoginForm()
+  {
+
+    //Meta Tags
+    Meta::setTitle('Sign In')
+    ->setDescription(getSetting('meta_description'))
+    ->setKeywords(getSetting('meta_keywords'));
+
+    return view('auth.login');
   }
 
   /**

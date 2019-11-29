@@ -36,10 +36,14 @@
                 @enderror
               </div>
               <a class="color-black" href="/password/reset">Forgot Password</a>
-              <div class="form-group mt-10">
-                <button type="submit" class="btn theme-btn">
+              <div class="form-group mt-10 text-center">
+                <button type="submit" class="form-control btn theme-btn">
                   Sign In
                 </button>
+              </div>
+              <div class="text-center">
+                <div>or</div>
+                <a class="color-black" href="/register">Sign Up </a>
               </div>
             </form>
           </div>

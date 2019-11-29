@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn theme-btn">
+                    <button type="submit" class="form-control btn theme-btn">
                       Register
                     </button>
                 </div>

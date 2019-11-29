@@ -4,7 +4,11 @@
       <strong>{{ $comment->user->name }}</strong>
       <small class="pull-right">{{$comment->created_at->diffForHumans()}}</small>
       <p>{{ $comment->body }}</p>
-      <button type="button" class="sm-btn" onclick="commentReply({{$comment->id}})"><i class="zmdi zmdi-mail-reply"></i>Reply</button>
+      @if(auth()->check())
+        <button type="button" class="sm-btn" onclick="commentReply({{$comment->id}})"><i class="zmdi zmdi-mail-reply"></i>Reply</button>
+      @else
+        <button type="button" class="sm-btn" data-toggle="modal" data-target="#loginModal"><i class="zmdi zmdi-mail-reply"></i>Reply</button>
+      @endif
     </div>
 
     <form class="custom-input" id="comment_reply_{{$comment->id}}" method="post" action="{{ route('post.commentStore') }}" style="display:none;">

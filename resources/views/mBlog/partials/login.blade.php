@@ -28,10 +28,15 @@
           </div>
           <a class="color-black" href="/password/reset">Forgot Password</a>
           <div class="form-group  text-center mt-10">
-            <button type="submit" class="btn theme-btn">
+            <button type="submit" class="form-control btn theme-btn">
               Sign In
             </button>
           </div>
+          <div class="text-center">
+            <div>or</div>
+            <a class="color-black" href="/register">Sign Up </a>
+          </div>
+
 
         </form>
       </div>

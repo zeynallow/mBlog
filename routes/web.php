@@ -110,6 +110,9 @@ Route::group(['middleware'=>'auth'], function() {
   //Profile
   Route::get('/profile', 'ProfileController@index')->name('profile');
   Route::post('/profile', 'ProfileController@update')->name('profile.update');
+
+  //Post Comment
+  Route::post('/post/commentStore', 'PostController@commentStore')->name('post.commentStore');
 });
 
 // Home
@@ -120,7 +123,6 @@ Route::get('/changeLang/{locale}', 'HomeController@changeLang')->name('change.la
 
 // Posts
 Route::get('/post/{post_id}/{slug}', 'PostController@show')->name('post.show');
-Route::post('/post/commentStore', 'PostController@commentStore')->name('post.commentStore');
 
 // Pages
 Route::get('/page/{slug}', 'PageController@show')->name('page.show');
