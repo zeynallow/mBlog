@@ -8,7 +8,7 @@
       <a href="{{ route('post.show',['post_id'=>$post->id,'slug'=>$post->slug]) }}"><h3>{{$post->post_data()[0]->title}}</h3></a>
       <h6>{{$post->created_at->diffForHumans()}}  | {{($post->author) ? $post->author->name : ''}}</h6>
       <p>{!! str_limit($post->post_data()[0]->text,100) !!}</p>
-      <a class="read-more mt-25" href="{{ route('post.show',['post_id'=>$post->id,'slug'=>$post->slug]) }}">read more</a>
+      <a class="read-more mt-25" href="{{ route('post.show',['post_id'=>$post->id,'slug'=>$post->slug]) }}">@lang('site.read_more')</a>
     </div>
   </div>
 </div>

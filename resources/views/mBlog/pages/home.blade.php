@@ -35,7 +35,7 @@
         <div class="col-xs-12 col-sm-8 col-md-9 mobi-mb-50">
 
           <div class="section-title">
-            <h2>Last posts</h2>
+            <h2>@lang('site.last_posts')</h2>
           </div>
 
           @if($lastPosts && count($lastPosts))
@@ -48,7 +48,7 @@
             </div>
           @else
             <div class="alert alert-info mt-40">
-              No Posts
+              @lang('site.no_posts')
             </div>
           @endif
 

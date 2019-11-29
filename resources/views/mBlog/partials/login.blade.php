@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h5 class="modal-title" id="loginModalLabel">Sign In</h5>
+        <h5 class="modal-title" id="loginModalLabel">@lang('site.sign_in')</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -18,23 +18,23 @@
           @csrf
 
           <div class="form-group">
-            <label for="l_email">E-mail</label>
+            <label for="l_email">@lang('site.email')</label>
             <input id="l_email" type="email" name="email" value=""  autocomplete="email" autofocus>
           </div>
 
           <div class="form-group">
-            <label for="l_password">Password</label>
+            <label for="l_password">@lang('site.password')</label>
             <input id="l_password" type="password" name="password"  autocomplete="current-password">
           </div>
-          <a class="color-black" href="/password/reset">Forgot Password</a>
+          <a class="color-black" href="/password/reset">@lang('site.forgot_password')</a>
           <div class="form-group  text-center mt-10">
             <button type="submit" class="form-control btn theme-btn">
-              Sign In
+              @lang('site.sign_in')
             </button>
           </div>
           <div class="text-center">
-            <div>or</div>
-            <a class="color-black" href="/register">Sign Up </a>
+            <div>@lang('site.or')</div>
+            <a class="color-black" href="/register">@lang('site.sign_up')</a>
           </div>
 
 
@@ -62,7 +62,7 @@
       },
       error: function (data){
         $(".print-error-msg").show();
-        $(".print-error-msg").html('Something went error..')
+        $(".print-error-msg").html('@lang('site.something_went_error')')
       }
     });
     return false;

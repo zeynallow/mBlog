@@ -5,9 +5,9 @@
       <small class="pull-right">{{$comment->created_at->diffForHumans()}}</small>
       <p>{{ $comment->body }}</p>
       @if(auth()->check())
-        <button type="button" class="sm-btn" onclick="commentReply({{$comment->id}})"><i class="zmdi zmdi-mail-reply"></i>Reply</button>
+        <button type="button" class="sm-btn" onclick="commentReply({{$comment->id}})"><i class="zmdi zmdi-mail-reply"></i>@lang('site.reply')</button>
       @else
-        <button type="button" class="sm-btn" data-toggle="modal" data-target="#loginModal"><i class="zmdi zmdi-mail-reply"></i>Reply</button>
+        <button type="button" class="sm-btn" data-toggle="modal" data-target="#loginModal"><i class="zmdi zmdi-mail-reply"></i>@lang('site.reply')</button>
       @endif
     </div>
 
@@ -19,7 +19,7 @@
         <input type="hidden" name="parent_id" value="{{ $comment->id }}" />
       </div>
       <div class="form-group">
-        <button type="submit" class="btn theme-btn mt-20">Reply</button>
+        <button type="submit" class="btn theme-btn mt-20">@lang('site.reply')</button>
       </div>
     </form>
 

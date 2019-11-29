@@ -28,7 +28,7 @@
         <div class="col-xs-12 col-sm-4 col-md-3">
           <div class="footer-widget social-media">
             <div class="title mb-20">
-              <h4>Social Networks</h4>
+              <h4>@lang('site.social_networks')</h4>
             </div>
             <div class="social-link">
               <ul class=" d-inblock">

@@ -5,7 +5,7 @@
     <div class="row pt-40">
       <div class="col-xs-12">
         <div class="breadcrumbs-menu text-center">
-          <h2>Sign Up</h2>
+          <h2>@lang('site.sign_up')</h2>
         </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
           @csrf
 
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">@lang('site.name')</label>
 
               <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                 @error('name')
@@ -26,7 +26,7 @@
             </div>
 
             <div class="form-group">
-              <label for="email">E-mail</label>
+              <label for="email">@lang('site.email')</label>
               <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                 @error('email')
                   <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
               </div>
 
               <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">@lang('site.password')</label>
                   <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                     @error('password')
@@ -47,13 +47,13 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="password-confirm">Confirm Password</label>
+                  <label for="password-confirm">@lang('site.confirm_password')</label>
                     <input id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
                 </div>
 
                 <div class="form-group">
                     <button type="submit" class="form-control btn theme-btn">
-                      Register
+                      @lang('site.sign_up')
                     </button>
                 </div>
               </form>

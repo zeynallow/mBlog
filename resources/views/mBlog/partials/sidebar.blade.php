@@ -1,7 +1,7 @@
 <div class="sidebar white-bg">
   <div class="widget mb-40">
     <div class="widget-title mb-10">
-      <h4 class="mb-5">Categories</h4>
+      <h4 class="mb-5">@lang('site.categories')</h4>
     </div>
     <div class="category">
       @if(getMainCategories())
@@ -17,7 +17,7 @@
   </div>
   <div class="widget mb-40">
     <div class="widget-title mb-10">
-      <h4 class="mb-5">Popular Posts</h4>
+      <h4 class="mb-5">@lang('site.popular_posts')</h4>
     </div>
     <div class="posts">
       <ul>

@@ -74,29 +74,29 @@
               <div class="comment-box">
 
                 @if($post->comments && count($post->comments))
-                  <h3 class="mb-30">Comments</h3>
+                  <h3 class="mb-30">@lang('site.comments')</h3>
                   @include('mBlog.posts._comments', ['comments' => $post->comments, 'post_id' => $post->id])
                 @endif
 
 
-                <h3 class="mb-30 mt-30">Leave a Comment</h3>
+                <h3 class="mb-30 mt-30">@lang('site.leave_a_comment')</h3>
 
                 @if(auth()->check())
                   <form class="custom-input" action="{{ route('post.commentStore') }}" method="post">
                     @csrf
                     <input type="hidden" name="post_id" value="{{ $post->id }}" />
-                    <textarea name="body" id="comment" rows="2" placeholder="Your Comment"></textarea>
-                    <button class="btn theme-btn mt-20" type="submit" name="submit">Post a Comment</button>
+                    <textarea name="body" id="comment" rows="2" placeholder="@lang('site.your_comment')"></textarea>
+                    <button class="btn theme-btn mt-20" type="submit" name="submit">@lang('site.post_a_comment')</button>
                   </form>
                 @else
 
                   <div class="alert alert-info">
                     <div class="row">
                       <div class="col-md-8">
-                        <strong class="alert-with-btn">Please login website</strong>
+                        <strong class="alert-with-btn">@lang('site.please_login_website')</strong>
                       </div>
                       <div class="col-md-4">
-                        <a data-toggle="modal" data-target="#loginModal" class="btn theme-btn"><i class="zmdi zmdi-account"></i> Login</a>
+                        <a data-toggle="modal" data-target="#loginModal" class="btn theme-btn"><i class="zmdi zmdi-account"></i> @lang('site.sign_in')</a>
                       </div>
                     </div>
                   </div>

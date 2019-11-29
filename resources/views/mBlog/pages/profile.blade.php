@@ -5,7 +5,7 @@
     <div class="row pt-40">
       <div class="col-xs-12">
         <div class="breadcrumbs-menu text-center">
-          <h2>Update Profile</h2>
+          <h2>@lang('site.update_profile')</h2>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
           @csrf
 
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">@lang('site.name')</label>
 
             <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>
               @error('name')
@@ -43,7 +43,7 @@
             </div>
 
             <div class="form-group">
-              <label for="email">E-mail</label>
+              <label for="email">@lang('site.email')</label>
               <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email">
                 @error('email')
                   <span class="invalid-feedback" role="alert">
@@ -53,8 +53,8 @@
               </div>
 
               <div class="form-group">
-                <label for="password">Password</label>
-                <input id="password" placeholder="Leave empty to keep the same" type="password" class="@error('password') is-invalid @enderror" name="password" autocomplete="new-password">
+                <label for="password">@lang('site.password')</label>
+                <input id="password" placeholder="@lang('site.leave_empty_to_keep_the_same')" type="password" class="@error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
                   @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -64,13 +64,13 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="password-confirm">Confirm Password</label>
+                  <label for="password-confirm">@lang('site.confirm_password')</label>
                   <input id="password-confirm" type="password" name="password_confirmation" autocomplete="new-password">
                 </div>
 
                 <div class="form-group">
                   <button type="submit" class="btn theme-btn">
-                    Update
+                    @lang('site.update')
                   </button>
                 </div>
               </form>

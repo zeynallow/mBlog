@@ -21,12 +21,8 @@
             <div class="col-xs-12">
               <div class="breadcrumbs-menu">
                 <h2>
-                  Search Result: {{$search_query}}
+                  @lang('site.search_result'): {{$search_query}}
                 </h2>
-                {{-- <ul class="clearfix">
-                  <li><a href="index.html">Home</a><span>|</span> </li>
-                  <li>{{($category->category_data()) ? $category->category_data()[0]->title : ''}}</li>
-                </ul> --}}
               </div>
             </div>
           </div>
@@ -41,7 +37,7 @@
             </div>
           @else
             <div class="alert alert-info mt-40">
-              No Result
+              @lang('site.no_result')
             </div>
           @endif
 

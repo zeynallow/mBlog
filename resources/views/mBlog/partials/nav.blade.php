@@ -9,7 +9,7 @@
   <div class="navbar-collapse collapse ">
     <ul class="navigation">
 
-      <li><a href="{{ route('home') }}">Home</a></li>
+      <li><a href="{{ route('home') }}">@lang('site.home')</a></li>
 
       @if(getNavCategories())
         @foreach (getNavCategories() as $key => $nav_category)
@@ -36,7 +36,6 @@
             @endisset
           @endforeach
         @endif
-        <li><a href="javascript:void(0)">Contact Us</a></li>
 
         @if(getSetting('multilingual_system'))
           <li class="dropdown">
@@ -59,9 +58,9 @@
               <i class="zmdi zmdi-account"></i> {{auth()->user()->name}} <span class="caret"></span>
             </a>
             <ul>
-              <li><a target="_blank" href="{{route('mAdmin.index')}}">Admin panel</a></li>
-              <li><a href="{{route('profile')}}">Profile</a></li>
-              <li><a href="{{route('logout')}}">Logout</a></li>
+              <li><a target="_blank" href="{{route('mAdmin.index')}}">@lang('site.admin_panel')</a></li>
+              <li><a href="{{route('profile')}}">@lang('site.profile')</a></li>
+              <li><a href="{{route('logout')}}">@lang('site.logout')</a></li>
             </ul>
           </li>
         @endif

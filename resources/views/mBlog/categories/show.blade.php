@@ -26,7 +26,7 @@
                   @endisset
                 </h2>
                 <ul class="clearfix">
-                  <li><a href="index.html">Home</a><span>|</span> </li>
+                  <li><a href="index.html">@lang('site.home')</a><span>|</span> </li>
                   <li>{{($category->category_data()) ? $category->category_data()[0]->title : ''}}</li>
                 </ul>
               </div>
@@ -43,7 +43,7 @@
             </div>
           @else
             <div class="alert alert-info mt-40">
-              No Posts
+              @lang('site.no_posts')
             </div>
           @endif
 
@@ -55,7 +55,7 @@
           <div class="text-center pb-50">
             {!! getAds('category_bottom') !!}
           </div>
-          
+
         </div>
         <!-- Single Post End -->
       </div>
