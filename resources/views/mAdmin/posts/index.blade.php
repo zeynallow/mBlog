@@ -61,8 +61,8 @@
                           !!}
 
                           {!!$post->featured ?
-                            '<a href="'.route('mAdmin.posts.removeFeature',$post->id).'"  class="badge badge-success">@lang('admin.remove_featured')</a>' :
-                            '<a href="'.route('mAdmin.posts.setAsFeature',$post->id).'" class="badge badge-info">@lang('admin.set_as_featured')</a>'
+                            '<a href="'.route('mAdmin.posts.removeFeature',$post->id).'"  class="badge badge-success">'.trans('admin.remove_featured').'</a>' :
+                            '<a href="'.route('mAdmin.posts.setAsFeature',$post->id).'" class="badge badge-info">'.trans('admin.set_as_featured').'</a>'
                           !!}
 
                         </td>

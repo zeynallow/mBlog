@@ -40,7 +40,7 @@
                 <tr>
                   <th class="w-1/5 uppercase font-thin">{{ __('translation::translation.group_single') }}</th>
                   <th class="w-1/5 uppercase font-thin">{{ __('translation::translation.key') }}</th>
-                  <th class="uppercase font-thin">{{ config('app.locale') }}</th>
+                  <th class="uppercase font-thin">EN</th>
                   <th class="uppercase font-thin">{{ $language }}</th>
                 </tr>
               </thead>
@@ -52,11 +52,11 @@
 
                     @foreach($translations as $key => $value)
 
-                      @if(!is_array($value[config('app.locale')]))
+                      @if(!is_array($value['en']))
                         <tr>
                           <td>{{ $group }}</td>
                           <td>{{ $key }}</td>
-                          <td>{{ $value[config('app.locale')] }}</td>
+                          <td>{{ $value['en'] }}</td>
                           <td>
                             <translation-input
                             initial-translation="{{ $value[$language] }}"

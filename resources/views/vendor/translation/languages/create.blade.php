@@ -22,7 +22,7 @@
                   @include('translation::forms.text', ['field' => 'locale', 'label' => __('translation::translation.locale'), ])
 
                 </div>
-                
+
               </fieldset>
 
 
