@@ -60,7 +60,7 @@
     <li class="nav-item">
       <a class="nav-link" href="{{ route('mAdmin.comments.index') }}">
         <i class="mdi mdi-circle-outline menu-icon"></i>
-        <span class="menu-title">@lang('admin.comments')</span>
+        <span class="menu-title">@lang('admin.comment')</span>
       </a>
     </li>
 

@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array (
   'add' => '+ Ajouter',
   'add_language' => 'Ajouter une nouvelle langue',
   'add_translation' => 'Ajouter une traduction',
@@ -49,4 +49,4 @@ return [
   'value' => 'Valeur',
   'value_label' => 'Valeur',
   'value_placeholder' => 'Par exemple : Les clés doivent être une seule chaîne',
-];
+);

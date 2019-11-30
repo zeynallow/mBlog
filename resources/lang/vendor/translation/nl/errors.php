@@ -1,6 +1,6 @@
 <?php
 
-return [
-    'language_exists' => 'De taal { :language } bestaat al',
-    'key_exists' => 'De vertaalsleutel { :key } bestaat al',
-];
+return array (
+  'key_exists' => 'De vertaalsleutel { :key } bestaat al',
+  'language_exists' => 'De taal { :language } bestaat al',
+);

@@ -1,53 +1,37 @@
 <?php
 
 return array (
-  //Home
-  'home' => 'Home',
+  'admin_panel' => 'Admin panel',
   'categories' => 'Categories',
-  'popular_posts' => 'Popular Posts',
-
-  //Posts
-  'no_posts' => 'No Posts',
+  'comments' => 'Comments',
+  'confirm_password' => 'Confirm Password',
+  'email' => 'E-mail',
+  'forgot_password' => 'Forgot Password',
+  'home' => 'Home',
   'last_posts' => 'Last posts',
+  'leave_a_comment' => 'Leave a Comment',
+  'leave_empty_to_keep_the_same' => 'Leave empty to keep the same',
+  'logout' => 'Logout',
+  'name' => 'Name',
+  'no_posts' => 'No Posts',
+  'no_result' => 'No Result',
+  'or' => 'or',
+  'password' => 'Password',
+  'please_confirm_your_password_before_continuing' => 'Please confirm your password before continuing.',
+  'please_login_website' => 'Please login website',
+  'popular_posts' => 'Popular Posts',
+  'post_a_comment' => 'Post a Comment',
+  'profile' => 'Profile',
   'read_more' => 'read more',
   'reply' => 'Reply',
-  'comments' => 'Comments',
-  'leave_a_comment' => 'Leave a Comment',
-  'post_a_comment' => 'Post a Comment',
-  'your_comment' => 'Your Comment',
-
-  //Profile
-  'update_profile' => 'Update Profile',
-  'name' => 'Name',
-  'email' => 'E-mail',
-  'password' => 'Password',
-  'leave_empty_to_keep_the_same' => 'Leave empty to keep the same',
-  'confirm_password' => 'Confirm Password',
-  'update' => 'Update',
-
-  //Search
-  'search_result' => 'Search Result',
-  'no_result' => 'No Result',
-
-  //Footer
-  'social_networks' => 'Social Networks',
-
-  //Auth
-  'sign_in' => 'Sign In',
-  'forgot_password' => 'Forgot Password',
-  'or' => 'or',
-  'sign_up' => 'Sign Up',
   'reset_password' => 'Reset Password',
+  'search_result' => 'Search Result',
   'send_password_reset_link' => 'Send Password Reset Link',
-  'please_confirm_your_password_before_continuing' => 'Please confirm your password before continuing.',
-
-  //Alert
+  'sign_in' => 'Sign In',
+  'sign_up' => 'Sign Up',
+  'social_networks' => 'Social Networks',
   'something_went_error' => 'Something went error..',
-  'please_login_website' => 'Please login website',
-
-  // Menu
-  'admin_panel' => 'Admin panel',
-  'profile' => 'Profile',
-  'logout' => 'Logout',
-
-  );
+  'update' => 'Update',
+  'update_profile' => 'Update Profile',
+  'your_comment' => 'Your Comment',
+);

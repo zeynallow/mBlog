@@ -43,5 +43,6 @@
     "Verify Email Address": "ईमेल पत्ता सत्यापित करा",
     "Whoops!": "अरेरे!",
     "Whoops, something went wrong on our servers.": "अरेरे, आमच्या सर्व्हरवर काहीतरी चूक झाली.",
-    "You are receiving this email because we received a password reset request for your account.": "आपल्याला हे ईमेल प्राप्त झाले कारण आम्हाला आपल्या खात्यासाठी संकेतशब्द रीसेट विनंती मिळाली."
-  }
+    "You are receiving this email because we received a password reset request for your account.": "आपल्याला हे ईमेल प्राप्त झाले कारण आम्हाला आपल्या खात्यासाठी संकेतशब्द रीसेट विनंती मिळाली.",
+    "laravel-filemanager::lfm": ""
+}

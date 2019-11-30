@@ -63,7 +63,7 @@
                             language="{{ $language }}"
                             group="{{ $group }}"
                             translation-key="{{ $key }}"
-                            route="{{ config('translation.ui_url') }}">
+                            route="mAdmin/languages">
                           </translation-input>
                         </td>
                       </tr>
