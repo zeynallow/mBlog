@@ -47,8 +47,8 @@
                       <td>
                         {!!
                           $category->show_on_menu ?
-                          '<a href="'.route('mAdmin.categories.hideFromMenu',$category->id).'" class="badge badge-success">@lang('admin.hide_from_menu')</a>' :
-                          '<a href="'.route('mAdmin.categories.showOnMenu',$category->id).'" class="badge badge-info">@lang('admin.add_to_menu')</a>'
+                          '<a href="'.route('mAdmin.categories.hideFromMenu',$category->id).'" class="badge badge-success">'.trans('admin.hide_from_menu').'</a>' :
+                          '<a href="'.route('mAdmin.categories.showOnMenu',$category->id).'" class="badge badge-info">'.trans('admin.add_to_menu').'</a>'
                           !!}
                         </td>
                         <td>{{$category->menu_position}}</td>
