@@ -99,7 +99,7 @@ class SettingController extends Controller
       $site_favicon)
     );
 
-    $this->cacheClear($settings); //cache clear
+    $this->cacheClear(array_merge($settings,$s_site_logo,$s_site_favicon)); //cache clear
 
     if($updateSetting){
       return redirect()->back()->with('success','Settings updated successfully!');
@@ -283,7 +283,7 @@ class SettingController extends Controller
     }
 
   }
-  
+
   /*
   * deleteLanguage
   */
