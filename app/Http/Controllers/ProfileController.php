@@ -15,7 +15,7 @@ class ProfileController extends Controller
   * Profile
   */
   public function index(){
-    
+
     $featuredPosts = NULL;
 
     $user = Auth::user();

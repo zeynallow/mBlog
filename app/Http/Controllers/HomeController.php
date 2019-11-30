@@ -64,7 +64,7 @@ class HomeController extends Controller
     $result = $_result->paginate(getSetting('pagination_per_page'));
 
     //Meta Tags
-    Meta::setTitle("Search Result | $search_query")
+    Meta::setTitle(trans('site.search_result') . " | $search_query")
     ->setDescription(getSetting('meta_description'))
     ->setKeywords(getSetting('meta_keywords'));
 
