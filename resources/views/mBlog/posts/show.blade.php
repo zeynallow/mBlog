@@ -51,12 +51,7 @@
               {!!$post->post_data()[0]->text!!}
 
               <div class="row mt-50">
-                <div class="col-md-8">
-                  <div class="tag">
-                    <strong>Tags:</strong> <a href="#">Corporate,</a> <a href="#">HTML,</a><a href="#">WordPress,</a><a href="#">Design</a>
-                  </div>
-                </div>
-                <div class="col-md-4 text-right">
+                <div class="col-md-12 text-right">
                   <ul class="share-social">
                     <li><span class="social-share"><i class="zmdi zmdi-share"></i></span></li>
                     <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}" class="social-button"><i class="zmdi zmdi-facebook"></i></a></li>
