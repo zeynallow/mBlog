@@ -27,6 +27,11 @@ class AppServiceProvider extends ServiceProvider
 
     //load config
     Config::set('app.name',getSetting('site_name'));
+
+    if(getDefaultLocale()){
+      Config::set('app.locale',getDefaultLocale()->code);
+    }
+
     Config::set('app.timezone',getSetting('timezone'));
     Config::set('app.url',getSetting('site_url'));
     Config::set('mail.host',getSetting('email_host'));

@@ -26,6 +26,16 @@ if (!function_exists('getLocalesWithout')) {
   }
 }
 
+/**
+* check locale
+*/
+if (!function_exists('checkLocale')) {
+  function checkLocale($code)
+  {
+    return Locale::where('code',$code)->count();
+  }
+}
+
 
 /**
 * get default locale

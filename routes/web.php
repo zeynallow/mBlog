@@ -62,6 +62,8 @@ Route::group(['prefix' => 'mAdmin'], function() {
       Route::get('/email', 'mAdmin\SettingController@email')->name('mAdmin.settings.email');
       Route::get('/other', 'mAdmin\SettingController@other')->name('mAdmin.settings.other');
       Route::get('/seo', 'mAdmin\SettingController@seo')->name('mAdmin.settings.seo');
+      Route::get('/addLanguage/{code}', 'mAdmin\SettingController@addLanguage')->name('mAdmin.settings.addLanguage');
+      Route::get('/deleteLanguage/{code}', 'mAdmin\SettingController@deleteLanguage')->name('mAdmin.settings.deleteLanguage');
 
       Route::post('/', 'mAdmin\SettingController@generalUpdate')->name('mAdmin.settings.generalUpdate');
       Route::post('/visual', 'mAdmin\SettingController@visualUpdate')->name('mAdmin.settings.visualUpdate');
@@ -69,8 +71,9 @@ Route::group(['prefix' => 'mAdmin'], function() {
       Route::post('/other', 'mAdmin\SettingController@otherUpdate')->name('mAdmin.settings.otherUpdate');
       Route::post('/seo', 'mAdmin\SettingController@seoUpdate')->name('mAdmin.settings.seoUpdate');
       Route::post('/email', 'mAdmin\SettingController@emailUpdate')->name('mAdmin.settings.emailUpdate');
-    });
 
+      Route::get('/locale/{code}', 'mAdmin\SettingController@localeUpdate')->name('mAdmin.settings.localeUpdate');
+    });
 
     // User
     Route::group(['prefix' => 'users'], function() {

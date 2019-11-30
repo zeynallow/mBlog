@@ -4,6 +4,7 @@ namespace App\Http\Controllers\mAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 use Config;
 use App;
 use Auth;
@@ -13,13 +14,10 @@ use DateTimeZone;
 use Cache;
 
 use App\Setting;
+use App\Locale;
 
 class SettingController extends Controller
 {
-
-  public function __construct(){
-    $this->middleware('OnlyAdmin');
-  }
 
   /*
   * general
@@ -244,6 +242,65 @@ class SettingController extends Controller
   }
 
   /*
+  * localeUpdate
+  */
+  public function localeUpdate($code){
+    $resetLocale = Locale::where(['default'=>1])->update(['default'=>0]);
+
+    if($resetLocale){
+
+      $update = Locale::where('code',$code)
+      ->update(['default'=>1]);
+
+      if($update){
+        return redirect()->back()->with('success','Language changed successfully!');
+      }else{
+        return redirect()->back()->with('error','Something went error...');
+      }
+
+    }else{
+      return redirect()->back()->with('error','Something went error...');
+    }
+
+  }
+
+
+  /*
+  * addLanguage
+  */
+  public function addLanguage($code)
+  {
+    $create = Locale::create([
+      'code'=>$code,
+      'name'=>$code,
+      'default'=>0
+    ]);
+
+    if($create){
+      return redirect()->back()->with('success','Language added successfully!');
+    }else{
+      return redirect()->back()->with('error','Something went error...');
+    }
+
+  }
+  
+  /*
+  * deleteLanguage
+  */
+  public function deleteLanguage($code)
+  {
+    $delete = Locale::where('code',$code)->delete();
+
+    if($delete){
+      return redirect()->back()->with('success','Language deleted successfully!');
+    }else{
+      return redirect()->back()->with('error','Something went error...');
+    }
+
+  }
+
+
+  /*
   * updateSetting
   */
   private function updateSetting($datas,$request){
@@ -277,6 +334,7 @@ class SettingController extends Controller
     $file->move(public_path($directory),$fileName);
     return "$directory/$fileName";
   }
+
 
 
 }
