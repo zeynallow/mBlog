@@ -176,7 +176,7 @@ class CategoryController extends Controller
     $getSubCategory=[];
     $getCategory = Category::select('id')->where('parent_id',$category_id)->get();
     foreach ($getCategory as $key => $category) {
-      $getSubCategory[] = $category->category_data[0];
+      $getSubCategory[] = $category->category_data()[0];
     }
     return response()->json($getSubCategory,201);
   }

@@ -132,6 +132,17 @@ class UserController extends Controller
 */
 public function destroy($id)
 {
+
+  //check admin
+  $check = User::where('id',$id)->first();
+  if($check->role_id == 1){
+    $admins = User::where('role_id',1)->count();
+    if($admins <= 1){
+      return redirect()->back()->with('error','Something went error...');
+    }
+  }
+
+
   $delete = User::where('id',$id)->delete();
 
   if($delete){
@@ -139,6 +150,7 @@ public function destroy($id)
   }else{
     return redirect()->back()->with('error','Something went error...');
   }
+
 
 }
 

@@ -18,22 +18,22 @@
                 </ul>
               </div>
             @endif
+            @if($posts && count($posts))
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>@lang('admin.id')</th>
+                    <th>@lang('admin.cover')</th>
+                    <th>@lang('admin.post')</th>
+                    <th>@lang('admin.author')</th>
+                    <th></th>
+                    <th>@lang('admin.created_at')</th>
+                    <th></th>
+                  </tr>
+                </thead>
 
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>@lang('admin.id')</th>
-                  <th>@lang('admin.cover')</th>
-                  <th>@lang('admin.post')</th>
-                  <th>@lang('admin.author')</th>
-                  <th></th>
-                  <th>@lang('admin.created_at')</th>
-                  <th></th>
-                </tr>
-              </thead>
+                <tbody>
 
-              <tbody>
-                @if($posts)
                   @foreach ($posts as $key => $post)
                     <tr>
                       <td>{{$post->id}}</td>
@@ -58,28 +58,33 @@
                           {!!$post->featured ?
                             '<a href="'.route('mAdmin.posts.removeFeature',$post->id).'"  class="badge badge-success">'.trans('admin.remove_featured').'</a>' :
                             '<a href="'.route('mAdmin.posts.setAsFeature',$post->id).'" class="badge badge-info">'.trans('admin.set_as_featured').'</a>'
-                          !!}
+                            !!}
 
-                        </td>
-                        <td>{{$post->created_at}}</td>
-                        <td>
-                          <a href="{{ route('mAdmin.posts.edit',$post->id)}}" class="badge badge-success"><i class="mdi mdi-pencil"></i></a>
-                          <a href="{{ route('mAdmin.posts.destroy',$post->id)}}" class="badge badge-danger confirm-delete-alert"><i class="mdi mdi-delete"></i></a>
-                        </td>
-                      </tr>
-                    @endforeach
-                  @endif
-                </tbody>
-              </table>
+                          </td>
+                          <td>{{$post->created_at}}</td>
+                          <td>
+                            <a href="{{ route('mAdmin.posts.edit',$post->id)}}" class="badge badge-success"><i class="mdi mdi-pencil"></i></a>
+                            <a href="{{ route('mAdmin.posts.destroy',$post->id)}}" class="badge badge-danger confirm-delete-alert"><i class="mdi mdi-delete"></i></a>
+                          </td>
+                        </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
 
-              <div style="padding:10px;">
-                {{$posts}}
+                @else
+                  <div class="alert alert-info">
+                    No posts
+                  </div>
+                @endif
+
+                <div style="padding:10px;">
+                  {{$posts}}
+                </div>
+
+
               </div>
-
-
             </div>
           </div>
         </div>
       </div>
-    </div>
-  @endsection
+    @endsection

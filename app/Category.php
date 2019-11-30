@@ -41,7 +41,7 @@ class Category extends Model
     if(isset($data[0])){
       return $data;
     }else{
-      $data = CategoryData::where('category_id',$this->parent_id)->first();
+      return CategoryData::where('category_id',$this->parent_id)->first();
     }
   }
 

@@ -19,20 +19,21 @@
               </div>
             @endif
 
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>@lang('admin.id')</th>
-                  <th>@lang('admin.category_name')</th>
-                  <th>@lang('admin.parent_category')</th>
-                  <th></th>
-                  <th>@lang('admin.menu_position')</th>
-                  <th></th>
-                </tr>
-              </thead>
 
-              <tbody>
-                @if($categories)
+            @if($categories && count($categories))
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>@lang('admin.id')</th>
+                    <th>@lang('admin.category_name')</th>
+                    <th>@lang('admin.parent_category')</th>
+                    <th></th>
+                    <th>@lang('admin.menu_position')</th>
+                    <th></th>
+                  </tr>
+                </thead>
+
+                <tbody>
                   @foreach ($categories as $key => $category)
                     <tr>
                       <td>{{$category->id}}</td>
@@ -58,18 +59,22 @@
                         </td>
                       </tr>
                     @endforeach
-                  @endif
                 </tbody>
               </table>
-
-              <div style="padding:10px;">
-                {{$categories}}
+            @else
+              <div class="alert alert-info">
+                No categories
               </div>
+            @endif
 
-
+            <div style="padding:10px;">
+              {{$categories}}
             </div>
+
+
           </div>
         </div>
       </div>
     </div>
-  @endsection
+  </div>
+@endsection

@@ -19,19 +19,19 @@
               </div>
             @endif
 
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>@lang('admin.id')</th>
-                  <th>@lang('admin.page')</th>
-                  <th></th>
-                  <th>@lang('admin.created_at')</th>
-                  <th></th>
-                </tr>
-              </thead>
+            @if($pages && count($pages))
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>@lang('admin.id')</th>
+                    <th>@lang('admin.page')</th>
+                    <th></th>
+                    <th>@lang('admin.created_at')</th>
+                    <th></th>
+                  </tr>
+                </thead>
 
-              <tbody>
-                @if($pages)
+                <tbody>
                   @foreach ($pages as $key => $page)
                     <tr>
                       <td>{{$page->id}}</td>
@@ -54,9 +54,14 @@
                         </td>
                       </tr>
                     @endforeach
-                  @endif
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
+              @else
+                <div class="alert alert-info">
+                  No Pages
+                </div>
+              @endif
+
 
               <div style="padding:10px;">
                 {{$pages}}

@@ -114,7 +114,7 @@
                         <i class="fa fa-picture-o"></i> @lang('admin.cover_image')
                       </button>
                     </span>
-                    <input id="thumbnail" style="display:none;" name="cover" class="form-control" type="text">
+                    <input id="thumbnail" style="display:none;" value="{{($post->cover) ? $post->cover : '' }}" name="cover" class="form-control" type="text">
                   </div>
                 </div>
                 <div class="col-md-4">
