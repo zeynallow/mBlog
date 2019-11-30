@@ -37,6 +37,9 @@ return array (
   'forgot_password' => 'Forgot Password',
   'or' => 'or',
   'sign_up' => 'Sign Up',
+  'reset_password' => 'Reset Password',
+  'send_password_reset_link' => 'Send Password Reset Link',
+  'please_confirm_your_password_before_continuing' => 'Please confirm your password before continuing.',
 
   //Alert
   'something_went_error' => 'Something went error..',
@@ -46,8 +49,5 @@ return array (
   'admin_panel' => 'Admin panel',
   'profile' => 'Profile',
   'logout' => 'Logout',
-
-  //
-
 
   );

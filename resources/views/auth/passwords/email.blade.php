@@ -5,7 +5,7 @@
     <div class="row pt-40">
       <div class="col-xs-12">
         <div class="breadcrumbs-menu text-center">
-          <h2>Reset Password</h2>
+          <h2>@lang('site.reset_password')</h2>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
           @csrf
 
           <div class="form-group">
-            <label for="email">E-mail</label>
+            <label for="email">@lang('site.email')</label>
             <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
               @error('email')
@@ -33,7 +33,7 @@
 
             <div class="form-group">
               <button type="submit" class="form-control btn theme-btn">
-                Send Password Reset Link
+                @lang('site.send_password_reset_link')
               </button>
             </div>
           </form>

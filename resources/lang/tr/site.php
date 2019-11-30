@@ -2,52 +2,52 @@
 
 return array (
   //Home
-  'home' => 'Home',
+  'home' => 'Ana sayfa',
   'categories' => 'Kategoriler',
-  'popular_posts' => 'Popular Posts',
+  'popular_posts' => 'Popüler içerikler',
 
   //Posts
-  'no_posts' => 'No Posts',
-  'last_posts' => 'Last posts',
-  'read_more' => 'read more',
-  'reply' => 'Reply',
-  'comments' => 'Comments',
-  'leave_a_comment' => 'Leave a Comment',
-  'post_a_comment' => 'Post a Comment',
-  'your_comment' => 'Your Comment',
+  'no_posts' => 'İçerikler bulunamadı',
+  'last_posts' => 'Son içerikler',
+  'read_more' => 'daha fazla',
+  'reply' => 'Cevapla',
+  'comments' => 'Yorumlar',
+  'leave_a_comment' => 'Yorum Yap',
+  'post_a_comment' => 'Yorum Gönder',
+  'your_comment' => 'Senin yorumun',
 
   //Profile
-  'update_profile' => 'Update Profile',
-  'name' => 'Name',
+  'update_profile' => 'Profili Güncelle',
+  'name' => 'Ad',
   'email' => 'E-mail',
-  'password' => 'Password',
-  'leave_empty_to_keep_the_same' => 'Leave empty to keep the same',
-  'confirm_password' => 'Confirm Password',
-  'update' => 'Update',
+  'password' => 'Şifre',
+  'leave_empty_to_keep_the_same' => 'Aynı tutmak için boş bırakın',
+  'confirm_password' => 'Şifreyi Onayla',
+  'update' => 'Güncelle',
 
   //Search
-  'search_result' => 'Search Result',
-  'no_result' => 'No Result',
+  'search_result' => 'Arama sonuçları',
+  'no_result' => 'Sonuç yok',
 
   //Footer
-  'social_networks' => 'Social Networks',
+  'social_networks' => 'Sosyal ağlar',
 
   //Auth
-  'sign_in' => 'Sign In',
-  'forgot_password' => 'Forgot Password',
-  'or' => 'or',
-  'sign_up' => 'Sign Up',
+  'sign_in' => 'Oturum aç',
+  'forgot_password' => 'Parolanızı mı unuttunuz',
+  'or' => 'veya',
+  'sign_up' => 'Kaydol',
+  'reset_password' => 'Şifreyi yenile',
+  'send_password_reset_link' => 'Parola Sıfırlama Bağlantısını Gönder',
+  'please_confirm_your_password_before_continuing' => 'Lütfen devam etmeden önce şifrenizi onaylayın.',
 
   //Alert
-  'something_went_error' => 'Something went error..',
-  'please_login_website' => 'Please login website',
+  'something_went_error' => 'Bir şeyler yanlış gitti ...',
+  'please_login_website' => 'Lütfen giriş yapın',
 
   // Menu
   'admin_panel' => 'Admin panel',
-  'profile' => 'Profile',
-  'logout' => 'Logout',
-
-  //
-
+  'profile' => 'Profil',
+  'logout' => 'Çıkış Yap',
 
   );
