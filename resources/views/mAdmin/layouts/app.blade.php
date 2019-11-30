@@ -70,7 +70,7 @@
     <div class="container-fluid page-body-wrapper">
       @include('mAdmin.partials.sidebar')
       <!-- partial -->
-      <div class="main-panel">
+      <div class="main-panel" id="app">
 
         @yield('body')
         @yield('content')

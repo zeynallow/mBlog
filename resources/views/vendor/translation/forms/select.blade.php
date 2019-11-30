@@ -1,6 +1,6 @@
 <div class="select-group">
 
-    <select name="{{ $name }}" @if(isset($submit) && $submit) v-on:change="submit" @endif>
+    <select class="form-control" name="{{ $name }}" @if(isset($submit) && $submit) v-on:change="submit" @endif>
         @if(isset($optional) && $optional)<option value> ----- </option>@endif
         @foreach($items as $key => $value)
             @if(is_numeric($key))

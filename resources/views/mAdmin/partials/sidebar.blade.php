@@ -93,7 +93,6 @@
             <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.email') }}">E-mail</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ route('mAdmin.settings.seo') }}">SEO</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ route('languages.index') }}">{{ __('translation::translation.languages') }}</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{ route('languages.translations.index', config('app.locale')) }}">{{ __('translation::translation.translations') }}</a></li>
           </ul>
         </div>
       </li>

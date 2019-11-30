@@ -4,51 +4,46 @@
 
   @if(count($languages))
     <div class="content-wrapper">
-      <div class="panel">
+      <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
 
-        <div class="panel-header">
+              <h4 class="card-title">{{ __('translation::translation.languages') }}</h4>
 
-          {{ __('translation::translation.languages') }}
+                <a href="{{ route('languages.create') }}" class="btn btn-success pull-right">
+                  {{ __('translation::translation.add') }}
+                </a>
 
-          <div class="flex flex-grow justify-end items-center">
+                <table class="table">
 
-            <a href="{{ route('languages.create') }}" class="button">
-              {{ __('translation::translation.add') }}
-            </a>
+                  <thead>
+                    <tr>
+                      <th>{{ __('translation::translation.language_name') }}</th>
+                      <th>{{ __('translation::translation.locale') }}</th>
+                    </tr>
+                  </thead>
 
+                  <tbody>
+                    @foreach($languages as $language => $name)
+                      <tr>
+                        <td>
+                          {{ $name }}
+                        </td>
+                        <td>
+                          <a href="{{ route('languages.translations.index', $language) }}">
+                            {{ $language }}
+                          </a>
+                        </td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+
+
+            </div>
           </div>
-
         </div>
-
-        <div class="panel-body">
-
-          <table>
-
-            <thead>
-              <tr>
-                <th>{{ __('translation::translation.language_name') }}</th>
-                <th>{{ __('translation::translation.locale') }}</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              @foreach($languages as $language => $name)
-                <tr>
-                  <td>
-                    {{ $name }}
-                  </td>
-                  <td>
-                    <a href="{{ route('languages.translations.index', $language) }}">
-                      {{ $language }}
-                    </a>
-                  </td>
-                </tr>
-              @endforeach
-            </tbody>
-          </table>
-
-        </div>
-
       </div>
     </div>
 

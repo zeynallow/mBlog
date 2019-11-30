@@ -2,40 +2,40 @@
 
 @section('body')
   <div class="content-wrapper">
-    <div class="panel">
+    <div class="row">
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
 
-      <div class="panel-header">
+            <h4 class="card-title">{{ __('translation::translation.add_language') }}</h4>
 
-        {{ __('translation::translation.add_language') }}
+            <form action="{{ route('languages.store') }}" method="POST">
 
-      </div>
+              <fieldset>
 
-      <form action="{{ route('languages.store') }}" method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-        <fieldset>
+                <div class="panel-body p-4">
 
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  @include('translation::forms.text', ['field' => 'name', 'label' => __('translation::translation.language_name'), ])
 
-          <div class="panel-body p-4">
+                  @include('translation::forms.text', ['field' => 'locale', 'label' => __('translation::translation.locale'), ])
 
-            @include('translation::forms.text', ['field' => 'name', 'label' => __('translation::translation.language_name'), ])
+                </div>
+                
+              </fieldset>
 
-            @include('translation::forms.text', ['field' => 'locale', 'label' => __('translation::translation.locale'), ])
+
+              <button class="btn btn-success">
+                {{ __('translation::translation.save') }}
+              </button>
+
+
+            </form>
 
           </div>
-
-        </fieldset>
-
-        <div class="panel-footer flex flex-row-reverse">
-
-          <button class="button button-blue">
-            {{ __('translation::translation.save') }}
-          </button>
-
         </div>
-
-      </form>
-
+      </div>
     </div>
   </div>
 
