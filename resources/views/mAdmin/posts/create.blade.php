@@ -123,8 +123,8 @@
 @endsection
 @push('js')
   <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js')}}"></script>
-  <script src="{{ asset('/mAdmin/vendors/ckeditor/ckeditor.js')}}"></script>
-  <script src="{{ asset('/mAdmin/vendors/ckeditor/adapters/jquery.js')}}"></script>
+  <script src="{{ asset('/mAdmin_assets/vendors/ckeditor/ckeditor.js')}}"></script>
+  <script src="{{ asset('/mAdmin_assets/vendors/ckeditor/adapters/jquery.js')}}"></script>
   <script>
   /* File Manager */
   $('#lfm').filemanager('image');

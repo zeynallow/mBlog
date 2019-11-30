@@ -8,29 +8,29 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>mAdmin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="{{ asset('mAdmin/vendors/mdi/css/materialdesignicons.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('mAdmin/vendors/base/vendor.bundle.base.css') }}">
+  <link rel="stylesheet" href="{{ asset('mAdmin_assets/vendors/mdi/css/materialdesignicons.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('mAdmin_assets/vendors/base/vendor.bundle.base.css') }}">
   <!-- endinject -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{ asset('mAdmin/css/style.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('mAdmin/vendors/sweetalert2/sweetalert2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('mAdmin_assets/css/style.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('mAdmin_assets/vendors/sweetalert2/sweetalert2.min.css') }}">
   <!-- endinject -->
-  <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('mAdmin/css/images/apple-icon-57x57.png') }}">
-  <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('mAdmin/css/images/apple-icon-60x60.png') }}">
-  <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('mAdmin/css/images/apple-icon-72x72.png') }}">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('mAdmin/css/images/apple-icon-76x76.png') }}">
-  <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('mAdmin/css/images/apple-icon-114x114.png') }}">
-  <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('mAdmin/css/images/apple-icon-120x120.png') }}">
-  <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('mAdmin/css/images/apple-icon-144x144.png') }}">
-  <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('mAdmin/css/images/apple-icon-152x152.png') }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('mAdmin/css/images/apple-icon-180x180.png') }}">
-  <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('mAdmin/css/images/android-icon-192x192.png') }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('mAdmin/css/images/favicon-32x32.png') }}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('mAdmin/css/images/favicon-96x96.png') }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('mAdmin/css/images/favicon-16x16.png') }}">
-  <link rel="manifest" href="{{ asset('mAdmin/css/images/manifest.json') }}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('mAdmin_assets/images/apple-icon-57x57.png') }}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('mAdmin_assets/images/apple-icon-60x60.png') }}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('mAdmin_assets/images/apple-icon-72x72.png') }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('mAdmin_assets/images/apple-icon-76x76.png') }}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('mAdmin_assets/images/apple-icon-114x114.png') }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('mAdmin_assets/images/apple-icon-120x120.png') }}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('mAdmin_assets/images/apple-icon-144x144.png') }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('mAdmin_assets/images/apple-icon-152x152.png') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('mAdmin_assets/images/apple-icon-180x180.png') }}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('mAdmin_assets/images/android-icon-192x192.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('mAdmin_assets/images/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('mAdmin_assets/images/favicon-96x96.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('mAdmin_assets/images/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ asset('mAdmin_assets/images/manifest.json') }}">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="{{ asset('mAdmin_assets/images/ms-icon-144x144.png') }}">
   <meta name="theme-color" content="#ffffff">
   @stack('css')
 </head>
@@ -40,8 +40,8 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="{{route('mAdmin.index')}}"><img src="{{ asset('mAdmin/images/logo.svg') }}" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="{{route('mAdmin.index')}}"><img src="{{ asset('mAdmin/images/logo-mini.svg') }}" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="{{route('mAdmin.index')}}"><img src="{{ asset('mAdmin_assets/images/logo.svg') }}" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="{{route('mAdmin.index')}}"><img src="{{ asset('mAdmin_assets/images/logo-mini.svg') }}" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -90,12 +90,12 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="{{asset('mAdmin/vendors/base/vendor.bundle.base.js') }}"></script>
+  <script src="{{asset('mAdmin_assets/vendors/base/vendor.bundle.base.js') }}"></script>
   <!-- endinject -->
-  <script src="{{asset('mAdmin/js/off-canvas.js') }}"></script>
-  <script src="{{asset('mAdmin/js/hoverable-collapse.js') }}"></script>
-  <script src="{{asset('mAdmin/vendors/sweetalert2/sweetalert2.min.js')}}"></script>
-  <script src="{{asset('mAdmin/js/template.js') }}"></script>
+  <script src="{{asset('mAdmin_assets/js/off-canvas.js') }}"></script>
+  <script src="{{asset('mAdmin_assets/js/hoverable-collapse.js') }}"></script>
+  <script src="{{asset('mAdmin_assets/vendors/sweetalert2/sweetalert2.min.js')}}"></script>
+  <script src="{{asset('mAdmin_assets/js/template.js') }}"></script>
 
   @if($message = Session::get('success'))
     <script type="text/javascript">
