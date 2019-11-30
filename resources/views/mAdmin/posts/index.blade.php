@@ -25,7 +25,6 @@
                   <th>@lang('admin.id')</th>
                   <th>@lang('admin.cover')</th>
                   <th>@lang('admin.post')</th>
-                  <th>@lang('admin.category')</th>
                   <th>@lang('admin.author')</th>
                   <th></th>
                   <th>@lang('admin.created_at')</th>
@@ -47,10 +46,6 @@
                         @isset($post->post_data()[0])
                           {{$post->post_data()[0]->title}}
                         @endisset
-                      </td>
-                      <td>
-                        {{($post->category) ? $post->category->category_data()[0]->title : ''}}
-                        {{($post->subcategory) ? '/' . $post->subcategory->category_data()[0]->title : ''}}
                       </td>
                       <td>{{($post->author) ? $post->author->name : ''}}</td>
                       <td>

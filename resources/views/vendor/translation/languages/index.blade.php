@@ -74,6 +74,7 @@
 
               <tbody>
                 @foreach($languages as $language => $name)
+
                   <tr>
                     <td>
                       {{ $name }}
