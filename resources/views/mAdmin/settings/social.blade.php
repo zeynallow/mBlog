@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Social settings</h4>
+            <h4 class="card-title">@lang('admin.social_settings')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -24,7 +24,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Facebook Link
+                  Facebook
                 </div>
                 <div class="col-md-8">
                   <input type="text" class="form-control" name="facebook_link" value="{{ getSetting('facebook_link') }}" placeholder="">
@@ -33,7 +33,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Twitter Link
+                  Twitter
                 </div>
                 <div class="col-md-8">
                   <input type="text" class="form-control" name="twitter_link" value="{{ getSetting('twitter_link') }}" placeholder="">
@@ -42,7 +42,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Instagram Link
+                  Instagram
                 </div>
                 <div class="col-md-8">
                   <input type="text" class="form-control" name="instagram_link" value="{{ getSetting('instagram_link') }}" placeholder="">
@@ -51,7 +51,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Pinterest Link
+                  Pinterest
                 </div>
                 <div class="col-md-8">
                   <input type="text" class="form-control" name="pinterest_link" value="{{ getSetting('pinterest_link') }}" placeholder="">
@@ -60,7 +60,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  LinkedIn Link
+                  LinkedIn
                 </div>
                 <div class="col-md-8">
                   <input type="text" class="form-control" name="linkedin_link" value="{{ getSetting('linkedin_link') }}" placeholder="">
@@ -68,7 +68,7 @@
               </div>
 
               <div class="form-group">
-                <button type="submit" class="btn btn-success mr-2">Save</button>
+                <button type="submit" class="btn btn-success mr-2">@lang('admin.save')</button>
               </div>
 
             </form>

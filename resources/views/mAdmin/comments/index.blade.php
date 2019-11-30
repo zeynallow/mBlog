@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">All Comments</h4>
+            <h4 class="card-title">@lang('admin.all_comments')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -22,11 +22,11 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Comment</th>
-                  <th>Post</th>
-                  <th>User</th>
-                  <th>Created at</th>
+                  <th>@lang('admin.id')</th>
+                  <th>@lang('admin.comment')</th>
+                  <th>@lang('admin.post')</th>
+                  <th>@lang('admin.user')</th>
+                  <th>@lang('admin.created_at')</th>
                   <th></th>
                 </tr>
               </thead>

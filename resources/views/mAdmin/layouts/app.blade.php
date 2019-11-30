@@ -56,7 +56,7 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="{{ route('logout') }}">
                 <i class="mdi mdi-logout text-primary"></i>
-                Logout
+                @lang('admin.logout')
               </a>
             </div>
           </li>

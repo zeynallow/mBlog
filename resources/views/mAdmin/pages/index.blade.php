@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">All Pages</h4>
+            <h4 class="card-title">@lang('admin.all_pages')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -22,10 +22,10 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Page</th>
+                  <th>@lang('admin.id')</th>
+                  <th>@lang('admin.page')</th>
                   <th></th>
-                  <th>Created at</th>
+                  <th>@lang('admin.created_at')</th>
                   <th></th>
                 </tr>
               </thead>

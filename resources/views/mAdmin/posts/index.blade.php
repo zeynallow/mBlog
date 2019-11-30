@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">All Posts</h4>
+            <h4 class="card-title">@lang('admin.all_posts')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -22,13 +22,13 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Cover</th>
-                  <th>Post</th>
-                  <th>Category</th>
-                  <th>Author</th>
+                  <th>@lang('admin.id')</th>
+                  <th>@lang('admin.cover')</th>
+                  <th>@lang('admin.post')</th>
+                  <th>@lang('admin.category')</th>
+                  <th>@lang('admin.author')</th>
                   <th></th>
-                  <th>Created at</th>
+                  <th>@lang('admin.created_at')</th>
                   <th></th>
                 </tr>
               </thead>
@@ -61,8 +61,8 @@
                           !!}
 
                           {!!$post->featured ?
-                            '<a href="'.route('mAdmin.posts.removeFeature',$post->id).'"  class="badge badge-success">Remove Featured</a>' :
-                            '<a href="'.route('mAdmin.posts.setAsFeature',$post->id).'" class="badge badge-info">Set as Feature</a>'
+                            '<a href="'.route('mAdmin.posts.removeFeature',$post->id).'"  class="badge badge-success">@lang('admin.remove_featured')</a>' :
+                            '<a href="'.route('mAdmin.posts.setAsFeature',$post->id).'" class="badge badge-info">@lang('admin.set_as_featured')</a>'
                           !!}
 
                         </td>

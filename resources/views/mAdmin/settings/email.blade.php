@@ -7,7 +7,7 @@
 
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">E-mail settings</h4>
+            <h4 class="card-title">@lang('admin.email_settings')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -29,7 +29,7 @@
 
             <div class="row">
               <div class="col-md-4">
-                Protocol
+                @lang('admin.protocol')
               </div>
               <div class="col-md-8">
                 <select class="form-control" name="email_protocol">
@@ -42,7 +42,7 @@
 
             <div class="row mt-5">
               <div class="col-md-4">
-                Title
+                @lang('admin.title')
               </div>
               <div class="col-md-8">
                 <input type="text" class="form-control" name="email_title" value="{{getSetting('email_title')}}" placeholder="">
@@ -51,7 +51,7 @@
 
             <div class="row mt-5">
               <div class="col-md-4">
-                Host
+                @lang('admin.host')
               </div>
               <div class="col-md-8">
                 <input type="text" class="form-control" name="email_host" value="{{getSetting('email_host')}}" placeholder="">
@@ -60,7 +60,7 @@
 
             <div class="row mt-5">
               <div class="col-md-4">
-                Port
+                @lang('admin.port')
               </div>
               <div class="col-md-8">
                 <input type="text" class="form-control" name="email_port" value="{{getSetting('email_title')}}" placeholder="">
@@ -69,7 +69,7 @@
 
             <div class="row mt-5">
               <div class="col-md-4">
-                E-mail address
+                @lang('admin.email_address')
               </div>
               <div class="col-md-8">
                 <input type="text" class="form-control" name="email_address" value="{{getSetting('email_address')}}" placeholder="">
@@ -78,7 +78,7 @@
 
             <div class="row mt-5">
               <div class="col-md-4">
-                Username
+                @lang('admin.username')
               </div>
               <div class="col-md-8">
                 <input type="text" class="form-control" name="email_username" value="{{getSetting('email_username')}}" placeholder="">
@@ -87,7 +87,7 @@
 
             <div class="row mt-5">
               <div class="col-md-4">
-                Password
+                @lang('admin.password')
               </div>
               <div class="col-md-8">
                 <input type="password" class="form-control" name="email_password" value="{{getSetting('email_password')}}" placeholder="">
@@ -95,7 +95,7 @@
             </div>
 
             <div class="form-group">
-              <button type="submit" class="btn btn-success mr-2">Save</button>
+              <button type="submit" class="btn btn-success mr-2">@lang('admin.save')</button>
             </div>
 
           </form>

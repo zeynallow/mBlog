@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">All ADS</h4>
+            <h4 class="card-title">@lang('admin.all_ads')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -22,9 +22,9 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>Position and Size</th>
-                  <th>Code</th>
-                  <th>Status</th>
+                  <th>@lang('admin.position_and_size')</th>
+                  <th>@lang('admin.code')</th>
+                  <th>@lang('admin.status')</th>
                   <th></th>
                 </tr>
               </thead>

@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Edit ADS - {{$ads->description}}</h4>
+            <h4 class="card-title">@lang('admin.edit_ads') - {{$ads->description}}</h4>
             <hr/>
 
             @if ($errors->any())
@@ -23,20 +23,20 @@
               @csrf
 
               <div class="form-group">
-                <label for="ads_code">Code</label>
+                <label for="ads_code">@lang('admin.code')</label>
                 <textarea class="form-control" rows="6" name="ads_code" id="ads_code">{!!$ads->ads_code!!}</textarea>
               </div>
 
               <div class="form-check form-check-flat form-check-primary">
                 <label class="form-check-label">
                   <input type="checkbox" name="publish" class="form-check-input" {{($ads->publish) ? 'checked' : ''}}>
-                  Publish
+                  @lang('site.publish')
                   <i class="input-helper"></i>
                 </label>
               </div>
 
               <div class="form-group">
-                <button type="submit" class="btn btn-success mr-2">Update Ads</button>
+                <button type="submit" class="btn btn-success mr-2">@lang('admin.update_ads')</button>
               </div>
             </form>
 

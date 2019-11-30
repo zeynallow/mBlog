@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">SEO settings</h4>
+            <h4 class="card-title">@lang('admin.seo_settings')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -24,7 +24,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Description
+                  @lang('admin.description')
                 </div>
                 <div class="col-md-8">
                   <input type="text" class="form-control" name="meta_description" value="{{ getSetting('meta_description') }}">
@@ -33,7 +33,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Keywords
+                  @lang('admin.keywords')
                 </div>
                 <div class="col-md-8">
                   <input type="text" class="form-control" name="meta_keywords" value="{{ getSetting('meta_keywords') }}">
@@ -41,7 +41,7 @@
               </div>
 
               <div class="form-group">
-                <button type="submit" class="btn btn-success mr-2">Save</button>
+                <button type="submit" class="btn btn-success mr-2">@lang('admin.save')</button>
               </div>
 
             </form>

@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">All Users</h4>
+            <h4 class="card-title">@lang('admin.all_users')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -22,11 +22,11 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>E-mail</th>
-                  <th>Role</th>
-                  <th>Created at</th>
+                  <th>@lang('admin.id')</th>
+                  <th>@lang('admin.name')</th>
+                  <th>@lang('admin.email')</th>
+                  <th>@lang('admin.role')</th>
+                  <th>@lang('admin.created_at')</th>
                   <th></th>
                 </tr>
               </thead>

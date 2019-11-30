@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Create page</h4>
+            <h4 class="card-title">@lang('admin.create_page')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -32,7 +32,7 @@
               @if(getOtherLocales())
                 <ul class="nav pull-right">
                   @foreach (getOtherLocales() as $key => $locale)
-                    <li class="nav-item"><a style="margin: 5px;" onclick="addLang(this,'{{$locale->code}}','{{$locale->name}}')" class="btn btn-primary btn-sm" href="javascript:void(0)"><i class="mdi mdi-plus menu-icon"></i> Add {{$locale->name}}</a></li>
+                    <li class="nav-item"><a style="margin: 5px;" onclick="addLang(this,'{{$locale->code}}','{{$locale->name}}')" class="btn btn-primary btn-sm" href="javascript:void(0)"><i class="mdi mdi-plus menu-icon"></i> @lang('admin.add') {{$locale->name}}</a></li>
                   @endforeach
                 </ul>
               @endif
@@ -41,12 +41,12 @@
                 @if(getDefaultLocale())
                   <div id="{{getDefaultLocale()->code}}-content" class="tab-pane fade in active show">
                     <div class="form-group">
-                      <label for="title_{{getDefaultLocale()->code}}">Title</label>
-                      <input value="{{ old('title.'.getDefaultLocale()->code) }}" type="text" class="form-control" name="title[{{getDefaultLocale()->code}}]" id="title_{{getDefaultLocale()->code}}" placeholder="Title">
+                      <label for="title_{{getDefaultLocale()->code}}">@lang('admin.title')</label>
+                      <input value="{{ old('title.'.getDefaultLocale()->code) }}" type="text" class="form-control" name="title[{{getDefaultLocale()->code}}]" id="title_{{getDefaultLocale()->code}}" placeholder="@lang('admin.title')">
                     </div>
 
                     <div class="form-group">
-                      <label for="text_{{getDefaultLocale()->code}}">Content</label>
+                      <label for="text_{{getDefaultLocale()->code}}">@lang('admin.content')</label>
                       <textarea name="text[{{getDefaultLocale()->code}}]" class="form-control my-editor">{!! old('text.en'.getDefaultLocale()->code) !!}</textarea>
                     </div>
 
@@ -56,7 +56,7 @@
               </div>
 
               <div class="form-group">
-                <label for="slug">Slug</label>
+                <label for="slug">@lang('admin.slug')</label>
                 <input type="text" class="form-control" name="slug" id="slug" value="{{ old('slug') }}" placeholder="">
               </div>
 
@@ -64,14 +64,14 @@
               <div class="form-check form-check-flat form-check-primary">
                 <label class="form-check-label">
                   <input type="checkbox" name="publish" class="form-check-input" {{(old('publish')) ? 'checked' : ''}}>
-                  Publish
+                  @lang('admin.publish')
                   <i class="input-helper"></i>
                 </label>
               </div>
 
 
               <div class="form-group">
-                <button type="submit" class="btn btn-success mr-2">Create Page</button>
+                <button type="submit" class="btn btn-success mr-2">@lang('admin.create_page')</button>
               </div>
             </form>
 
@@ -111,11 +111,11 @@
     $("#selectLang").append('<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#'+ lang +'-content">'+ lang_name +'</a></li>');
     $("#selectLangContent").append('<div id="'+ lang +'-content" class="tab-pane fade">\
     <div class="form-group">\
-    <label for="title_'+ lang +'">Title</label>\
-    <input type="text" class="form-control" name="title['+ lang +']" id="title_'+ lang +'" placeholder="Title">\
+    <label for="title_'+ lang +'">@lang('admin.title')</label>\
+    <input type="text" class="form-control" name="title['+ lang +']" id="title_'+ lang +'" placeholder="@lang('admin.title')">\
     </div>\
     <div class="form-group">\
-    <label for="text_'+ lang +'">Content</label>\
+    <label for="text_'+ lang +'">@lang('admin.content')</label>\
     <textarea class="form-control my-editor" name="text['+ lang +']" id="text_'+ lang +'"></textarea>\
     </div>\
     </div>');

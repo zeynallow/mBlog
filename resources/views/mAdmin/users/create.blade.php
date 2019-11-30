@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Create User</h4>
+            <h4 class="card-title">@lang('admin.create_user')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -23,9 +23,9 @@
               @csrf
 
               <div class="form-group">
-                <label for="role_id">Role</label>
+                <label for="role_id">@lang('admin.role')</label>
                 <select class="form-control" id="role_id" name="role_id">
-                  <option value="0">Select...</option>
+                  <option value="0">@lang('admin.select')</option>
                   @if($user_roles)
                   @foreach ($user_roles as $key => $user_role)
                     <option value="{{$user_role->id}}">{{$user_role->role_name}}</option>
@@ -35,27 +35,27 @@
               </div>
 
               <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">@lang('admin.name')</label>
                 <input type="text" class="form-control" id="name" name="name" value="">
               </div>
 
               <div class="form-group">
-                <label for="email">E-mail</label>
+                <label for="email">@lang('admin.email')</label>
                 <input type="email" class="form-control" id="email" name="email" value="">
               </div>
 
               <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">@lang('admin.password')</label>
                 <input type="password" class="form-control" id="password" name="password" value="">
               </div>
 
               <div class="form-group">
-                <label for="password_confirmation">Confirm Password</label>
+                <label for="password_confirmation">@lang('admin.confirm_password')</label>
                 <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" value="">
               </div>
 
               <div class="form-group">
-                <button type="submit" class="btn btn-success mr-2">Create User</button>
+                <button type="submit" class="btn btn-success mr-2">@lang('admin.create_user')</button>
               </div>
             </form>
 

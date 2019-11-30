@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Visual settings</h4>
+            <h4 class="card-title">@lang('admin.visual_settings')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -24,7 +24,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Select color
+                  @lang('admin.select_color')
                 </div>
                 <div class="col-md-8">
                   <div class="row">
@@ -84,7 +84,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Logo
+                  @lang('admin.logo')
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
@@ -104,7 +104,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Favicon
+                  @lang('admin.favicon')
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
@@ -124,7 +124,7 @@
 
 
               <div class="form-group">
-                <button type="submit" class="btn btn-success mr-2">Save</button>
+                <button type="submit" class="btn btn-success mr-2">@lang('admin.save')</button>
               </div>
 
             </form>

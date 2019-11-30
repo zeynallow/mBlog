@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">All Categories</h4>
+            <h4 class="card-title">@lang('admin.all_categories')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -22,11 +22,11 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Category Name</th>
-                  <th>Parent Category</th>
+                  <th>@lang('admin.id')</th>
+                  <th>@lang('admin.category_name')</th>
+                  <th>@lang('admin.parent_category')</th>
                   <th></th>
-                  <th>Menu Position</th>
+                  <th>@lang('admin.menu_position')</th>
                   <th></th>
                 </tr>
               </thead>
@@ -47,8 +47,8 @@
                       <td>
                         {!!
                           $category->show_on_menu ?
-                          '<a href="'.route('mAdmin.categories.hideFromMenu',$category->id).'" class="badge badge-success">Hide from Menu</a>' :
-                          '<a href="'.route('mAdmin.categories.showOnMenu',$category->id).'" class="badge badge-info">Add to menu</a>'
+                          '<a href="'.route('mAdmin.categories.hideFromMenu',$category->id).'" class="badge badge-success">@lang('admin.hide_from_menu')</a>' :
+                          '<a href="'.route('mAdmin.categories.showOnMenu',$category->id).'" class="badge badge-info">@lang('admin.add_to_menu')</a>'
                           !!}
                         </td>
                         <td>{{$category->menu_position}}</td>

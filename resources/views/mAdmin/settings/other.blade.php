@@ -6,7 +6,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Other settings</h4>
+            <h4 class="card-title">@lang('admin.other_settings')</h4>
             <hr/>
 
             @if ($errors->any())
@@ -24,7 +24,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Facebook APP ID
+                  @lang('admin.facebook_app_id')
                 </div>
                 <div class="col-md-8">
                   <input type="text" class="form-control" name="fb_app_id" value="{{ getSetting('fb_app_id') }}">
@@ -33,7 +33,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Google Analytics Code
+                  @lang('admin.google_analytics')
                 </div>
                 <div class="col-md-8">
                   <textarea class="form-control" rows="8" name="google_analytics">{{ getSetting('google_analytics') }}</textarea>
@@ -42,7 +42,7 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
-                  Custom Head Code
+                  @lang('admin.custom_head_code')
                 </div>
                 <div class="col-md-8">
                   <textarea class="form-control" rows="8" name="custom_head_code">{{ getSetting('custom_head_code') }}</textarea>
@@ -50,7 +50,7 @@
               </div>
 
               <div class="form-group">
-                <button type="submit" class="btn btn-success mr-2">Save</button>
+                <button type="submit" class="btn btn-success mr-2">@lang('admin.save')</button>
               </div>
 
             </form>
