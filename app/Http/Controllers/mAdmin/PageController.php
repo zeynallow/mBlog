@@ -18,7 +18,7 @@ class PageController extends Controller
   */
   public function index()
   {
-    $pages=Page::paginate(10);
+    $pages=Page::orderBy('id','desc')->paginate(10);
 
     return view('mAdmin.pages.index',compact('pages'));
   }

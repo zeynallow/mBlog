@@ -38,9 +38,7 @@
                     <tr>
                       <td>{{$post->id}}</td>
                       <td>
-                        @if($post->cover)
-                          <img width="100" src="{{$post->cover}}" class="img-responsive">
-                        @endif
+                          <img width="100" src="{{ ($post->cover) ? $post->cover : '/assets/img/no-thumbnail.jpg' }}" class="img-responsive">
                       </td>
                       <td>
                         @isset($post->post_data()[0])

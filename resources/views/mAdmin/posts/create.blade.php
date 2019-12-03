@@ -88,7 +88,7 @@
 
               <div class="form-check form-check-flat form-check-primary">
                 <label class="form-check-label">
-                  <input type="checkbox" name="publish" class="form-check-input" {{(old('publish')) ? 'checked' : ''}}>
+                  <input type="checkbox" name="publish" class="form-check-input" checked>
                   @lang('admin.publish')
                   <i class="input-helper"></i>
                 </label>

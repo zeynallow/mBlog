@@ -6,7 +6,7 @@
       <div id="one-item" class="one-item project-image">
         @foreach ($featuredPosts as $key => $fpost)
           @isset($fpost->post_data()[0])
-            <div class="item" style="background-image:url('{{$fpost->cover}}')">
+            <div class="item" style="background-image:url('{{($fpost->cover) ? $fpost->cover : '/assets/img/no-thumbnail.jpg'}}')">
               <a href="{{ route('post.show',['post_id'=>$fpost->id,'slug'=>$fpost->slug]) }}">
                 <h3>{{$fpost->post_data()[0]->title}}</h3>
                 <h6>{{$fpost->created_at->diffForHumans()}} | {{($fpost->author) ? $fpost->author->name : ''}}</h6>
