@@ -41,7 +41,7 @@
           <div class="blog-post clearfix pt-40">
 
             @if($post->cover)
-              <div class="thumb mb-60">
+              <div class="mb-60">
                 <img src="{{$post->cover}}" alt="{{$post->post_data()[0]->title}}" />
               </div>
             @endif

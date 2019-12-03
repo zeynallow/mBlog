@@ -1787,6 +1787,8 @@ h6 {
   .thumb img,
   .single-portfolio img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
   }
   .vbox-overlay {
     cursor: url("../img/icons/close-x.png"), auto;
@@ -2299,6 +2301,10 @@ h6 {
     color: #5b5b5b;
     font-family: "Poppins",sans-serif;
     font-weight: 500;
+  }
+  .blog-text h3 {
+    height: 80px;
+    overflow: hidden;
   }
   .blog-text h6 {
     color: #9a9a9a;
