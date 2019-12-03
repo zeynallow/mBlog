@@ -8,7 +8,7 @@
 
         <div class="panel-header">
 
-          {{ __('translation::translation.translations') }}
+          {{ __('translation.translations') }}
 
           <div class="flex flex-grow justify-end items-center">
 
@@ -21,7 +21,7 @@
               @include('translation::forms.select', ['name' => 'group', 'items' => $groups, 'submit' => true, 'selected' => Request::get('group'), 'optional' => true])
 
               <a href="{{ route('languages.translations.create', $language) }}" class="button">
-                {{ __('translation::translation.add') }}
+                {{ __('translation.add') }}
               </a>
 
             </div>
@@ -38,8 +38,8 @@
 
               <thead>
                 <tr>
-                  <th class="w-1/5 uppercase font-thin">{{ __('translation::translation.group_single') }}</th>
-                  <th class="w-1/5 uppercase font-thin">{{ __('translation::translation.key') }}</th>
+                  <th class="w-1/5 uppercase font-thin">{{ __('translation.group_single') }}</th>
+                  <th class="w-1/5 uppercase font-thin">{{ __('translation.key') }}</th>
                   <th class="uppercase font-thin">EN</th>
                   <th class="uppercase font-thin">{{ $language }}</th>
                 </tr>

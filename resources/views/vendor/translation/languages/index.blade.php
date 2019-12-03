@@ -59,15 +59,15 @@
             <h4 class="card-title">Translations</h4>
 
             <a href="{{ route('languages.create') }}" class="btn btn-success pull-right">
-              {{ __('translation::translation.add') }}
+              {{ __('translation.add') }}
             </a>
 
             <table class="table">
 
               <thead>
                 <tr>
-                  <th>{{ __('translation::translation.language_name') }}</th>
-                  <th>{{ __('translation::translation.locale') }}</th>
+                  <th>{{ __('translation.language_name') }}</th>
+                  <th>{{ __('translation.locale') }}</th>
                   <th></th>
                 </tr>
               </thead>

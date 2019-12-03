@@ -1,11 +1,11 @@
 @if((sizeof($files) > 0) || (sizeof($directories) > 0))
 <table class="table table-responsive table-condensed table-striped hidden-xs table-list-view">
   <thead>
-    <th style='width:50%;'>{{ Lang::get('laravel-filemanager::lfm.title-item') }}</th>
-    <th>{{ Lang::get('laravel-filemanager::lfm.title-size') }}</th>
-    <th>{{ Lang::get('laravel-filemanager::lfm.title-type') }}</th>
-    <th>{{ Lang::get('laravel-filemanager::lfm.title-modified') }}</th>
-    <th>{{ Lang::get('laravel-filemanager::lfm.title-action') }}</th>
+    <th style='width:50%;'>{{ Lang::get('lfm.title-item') }}</th>
+    <th>{{ Lang::get('lfm.title-size') }}</th>
+    <th>{{ Lang::get('lfm.title-type') }}</th>
+    <th>{{ Lang::get('lfm.title-modified') }}</th>
+    <th>{{ Lang::get('lfm.title-action') }}</th>
   </thead>
   <tbody>
     @foreach($items as $item)
@@ -21,25 +21,25 @@
       <td>{{ $item->time }}</td>
       <td class="actions">
         @if($item->is_file)
-          <a href="javascript:download('{{ $item->name }}')" title="{{ Lang::get('laravel-filemanager::lfm.menu-download') }}">
+          <a href="javascript:download('{{ $item->name }}')" title="{{ Lang::get('lfm.menu-download') }}">
             <i class="fa fa-download fa-fw"></i>
           </a>
           @if($item->thumb)
-            <a href="javascript:fileView('{{ $item->url }}', '{{ $item->updated }}')" title="{{ Lang::get('laravel-filemanager::lfm.menu-view') }}">
+            <a href="javascript:fileView('{{ $item->url }}', '{{ $item->updated }}')" title="{{ Lang::get('lfm.menu-view') }}">
               <i class="fa fa-image fa-fw"></i>
             </a>
-            <a href="javascript:cropImage('{{ $item->name }}')" title="{{ Lang::get('laravel-filemanager::lfm.menu-crop') }}">
+            <a href="javascript:cropImage('{{ $item->name }}')" title="{{ Lang::get('lfm.menu-crop') }}">
               <i class="fa fa-crop fa-fw"></i>
             </a>
-            <a href="javascript:resizeImage('{{ $item->name }}')" title="{{ Lang::get('laravel-filemanager::lfm.menu-resize') }}">
+            <a href="javascript:resizeImage('{{ $item->name }}')" title="{{ Lang::get('lfm.menu-resize') }}">
               <i class="fa fa-arrows fa-fw"></i>
             </a>
           @endif
         @endif
-        <a href="javascript:rename('{{ $item->name }}')" title="{{ Lang::get('laravel-filemanager::lfm.menu-rename') }}">
+        <a href="javascript:rename('{{ $item->name }}')" title="{{ Lang::get('lfm.menu-rename') }}">
           <i class="fa fa-edit fa-fw"></i>
         </a>
-        <a href="javascript:trash('{{ $item->name }}')" title="{{ Lang::get('laravel-filemanager::lfm.menu-delete') }}">
+        <a href="javascript:trash('{{ $item->name }}')" title="{{ Lang::get('lfm.menu-delete') }}">
           <i class="fa fa-trash fa-fw"></i>
         </a>
       </td>
@@ -85,5 +85,5 @@
 </table>
 
 @else
-<p>{{ trans('laravel-filemanager::lfm.message-empty') }}</p>
+<p>{{ trans('lfm.message-empty') }}</p>
 @endif

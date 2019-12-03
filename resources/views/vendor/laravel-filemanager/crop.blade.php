@@ -30,9 +30,9 @@
       <br>
       <br>
 
-      <button class="btn btn-primary" onclick="performCrop()">{{ trans('laravel-filemanager::lfm.btn-crop') }}</button>
-      <button class="btn btn-primary" onclick="performCropNew()">{{ trans('laravel-filemanager::lfm.btn-copy-crop') }}</button>
-      <button class="btn btn-info" onclick="loadItems()">{{ trans('laravel-filemanager::lfm.btn-cancel') }}</button>
+      <button class="btn btn-primary" onclick="performCrop()">{{ trans('lfm.btn-crop') }}</button>
+      <button class="btn btn-primary" onclick="performCropNew()">{{ trans('lfm.btn-copy-crop') }}</button>
+      <button class="btn btn-info" onclick="loadItems()">{{ trans('lfm.btn-cancel') }}</button>
       <form id='cropForm'>
         <input type="hidden" id="img" name="img" value="{{ $img->name }}">
         <input type="hidden" id="working_dir" name="working_dir" value="{{ $working_dir }}">

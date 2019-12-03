@@ -7,7 +7,7 @@
         <div class="card">
           <div class="card-body">
 
-            <h4 class="card-title">{{ __('translation::translation.add_language') }}</h4>
+            <h4 class="card-title">{{ __('translation.add_language') }}</h4>
 
             <form action="{{ route('languages.store') }}" method="POST">
 
@@ -27,7 +27,7 @@
 
 
               <button class="btn btn-success">
-                {{ __('translation::translation.save') }}
+                {{ __('translation.save') }}
               </button>
 
 

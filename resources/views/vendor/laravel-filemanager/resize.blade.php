@@ -9,37 +9,37 @@
       <tbody>
         @if ($scaled)
         <tr>
-          <td>{{ trans('laravel-filemanager::lfm.resize-ratio') }}</td>
+          <td>{{ trans('lfm.resize-ratio') }}</td>
           <td>{{ number_format($ratio, 2) }}</td>
         </tr>
         <tr>
-          <td>{{ trans('laravel-filemanager::lfm.resize-scaled') }}</td>
+          <td>{{ trans('lfm.resize-scaled') }}</td>
           <td>
-            {{ trans('laravel-filemanager::lfm.resize-true') }}
+            {{ trans('lfm.resize-true') }}
           </td>
         </tr>
         @endif
         <tr>
-          <td>{{ trans('laravel-filemanager::lfm.resize-old-height') }}</td>
+          <td>{{ trans('lfm.resize-old-height') }}</td>
           <td>{{ $original_height }}px</td>
         </tr>
         <tr>
-          <td>{{ trans('laravel-filemanager::lfm.resize-old-width') }}</td>
+          <td>{{ trans('lfm.resize-old-width') }}</td>
           <td>{{ $original_width }}px</td>
         </tr>
         <tr>
-          <td>{{ trans('laravel-filemanager::lfm.resize-new-height') }}</td>
+          <td>{{ trans('lfm.resize-new-height') }}</td>
           <td><span id="height_display"></span></td>
         </tr>
         <tr>
-          <td>{{ trans('laravel-filemanager::lfm.resize-new-width') }}</td>
+          <td>{{ trans('lfm.resize-new-width') }}</td>
           <td><span id="width_display"></span></td>
         </tr>
       </tbody>
     </table>
 
-    <button class="btn btn-primary" onclick="doResize()">{{ trans('laravel-filemanager::lfm.btn-resize') }}</button>
-    <button class="btn btn-info" onclick="loadItems()">{{ trans('laravel-filemanager::lfm.btn-cancel') }}</button>
+    <button class="btn btn-primary" onclick="doResize()">{{ trans('lfm.btn-resize') }}</button>
+    <button class="btn btn-info" onclick="loadItems()">{{ trans('lfm.btn-cancel') }}</button>
 
     <input type="hidden" id="img" name="img" value="{{ $img->name }}">
     <input type="hidden" name="ratio" value="{{ $ratio }}"><br>

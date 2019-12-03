@@ -12,7 +12,7 @@
   <!-- iOS Safari -->
   <meta name="apple-mobile-web-app-status-bar-style" content="#75C7C3">
 
-  <title>{{ trans('laravel-filemanager::lfm.title-page') }}</title>
+  <title>{{ trans('lfm.title-page') }}</title>
   <link rel="shortcut icon" type="image/png" href="{{ asset('vendor/laravel-filemanager/img/folder.png') }}">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -28,7 +28,7 @@
   <div class="container-fluid" id="wrapper">
     <div class="panel panel-primary hidden-xs">
       <div class="panel-heading">
-        <h1 class="panel-title">{{ trans('laravel-filemanager::lfm.title-page') }}</h1>
+        <h1 class="panel-title">{{ trans('lfm.title-page') }}</h1>
       </div>
     </div>
     <div class="row">
@@ -47,37 +47,37 @@
             </button>
             <a class="navbar-brand clickable hide" id="to-previous">
               <i class="fa fa-arrow-left"></i>
-              <span class="hidden-xs">{{ trans('laravel-filemanager::lfm.nav-back') }}</span>
+              <span class="hidden-xs">{{ trans('lfm.nav-back') }}</span>
             </a>
-            <a class="navbar-brand visible-xs" href="#">{{ trans('laravel-filemanager::lfm.title-panel') }}</a>
+            <a class="navbar-brand visible-xs" href="#">{{ trans('lfm.title-panel') }}</a>
           </div>
           <div class="collapse navbar-collapse" id="nav-buttons">
             <ul class="nav navbar-nav navbar-right">
               <li>
                 <a class="clickable" id="thumbnail-display">
                   <i class="fa fa-th-large"></i>
-                  <span>{{ trans('laravel-filemanager::lfm.nav-thumbnails') }}</span>
+                  <span>{{ trans('lfm.nav-thumbnails') }}</span>
                 </a>
               </li>
               <li>
                 <a class="clickable" id="list-display">
                   <i class="fa fa-list"></i>
-                  <span>{{ trans('laravel-filemanager::lfm.nav-list') }}</span>
+                  <span>{{ trans('lfm.nav-list') }}</span>
                 </a>
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  {{ trans('laravel-filemanager::lfm.nav-sort') }} <span class="caret"></span>
+                  {{ trans('lfm.nav-sort') }} <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                   <li>
                     <a href="#" id="list-sort-alphabetic">
-                      <i class="fa fa-sort-alpha-asc"></i> {{ trans('laravel-filemanager::lfm.nav-sort-alphabetic') }}
+                      <i class="fa fa-sort-alpha-asc"></i> {{ trans('lfm.nav-sort-alphabetic') }}
                     </a>
                   </li>
                   <li>
                     <a href="#" id="list-sort-time">
-                      <i class="fa fa-sort-amount-asc"></i> {{ trans('laravel-filemanager::lfm.nav-sort-time') }}
+                      <i class="fa fa-sort-amount-asc"></i> {{ trans('lfm.nav-sort-time') }}
                     </a>
                   </li>
                 </ul>
@@ -97,12 +97,12 @@
           <a href="#"></a>
           <ul class="hide">
             <li>
-              <a href="#" id="add-folder" data-mfb-label="{{ trans('laravel-filemanager::lfm.nav-new') }}">
+              <a href="#" id="add-folder" data-mfb-label="{{ trans('lfm.nav-new') }}">
                 <i class="fa fa-folder"></i>
               </a>
             </li>
             <li>
-              <a href="#" id="upload" data-mfb-label="{{ trans('laravel-filemanager::lfm.nav-upload') }}">
+              <a href="#" id="upload" data-mfb-label="{{ trans('lfm.nav-upload') }}">
                 <i class="fa fa-upload"></i>
               </a>
             </li>
@@ -117,7 +117,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aia-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">{{ trans('laravel-filemanager::lfm.title-upload') }}</h4>
+          <h4 class="modal-title" id="myModalLabel">{{ trans('lfm.title-upload') }}</h4>
         </div>
         <div class="modal-body">
           <form action="{{ route('unisharp.lfm.upload') }}" role='form' id='uploadForm' name='uploadForm' method='post' enctype='multipart/form-data' class="dropzone">
@@ -125,7 +125,7 @@
 
               <div class="controls text-center">
                 <div class="input-group" style="width: 100%">
-                  <a class="btn btn-primary" id="upload-button">{{ trans('laravel-filemanager::lfm.message-choose') }}</a>
+                  <a class="btn btn-primary" id="upload-button">{{ trans('lfm.message-choose') }}</a>
                 </div>
               </div>
             </div>
@@ -135,7 +135,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('lfm.btn-close') }}</button>
         </div>
       </div>
     </div>
@@ -155,7 +155,7 @@
   <script>
     var route_prefix = "{{ url('/') }}";
     var lfm_route = "{{ url(config('lfm.url_prefix', config('lfm.prefix'))) }}";
-    var lang = {!! json_encode(trans('laravel-filemanager::lfm')) !!};
+    var lang = {!! json_encode(trans('lfm')) !!};
   </script>
   <script>{!! \File::get(base_path('vendor/unisharp/laravel-filemanager/public/js/script.js')) !!}</script>
   {{-- Use the line below instead of the above if you need to cache the script. --}}
@@ -179,12 +179,12 @@
       buttons: [
         {
           icon: 'fa fa-folder',
-          label: "{{ trans('laravel-filemanager::lfm.nav-new') }}",
+          label: "{{ trans('lfm.nav-new') }}",
           attrs: {id: 'add-folder'}
         },
         {
           icon: 'fa fa-upload',
-          label: "{{ trans('laravel-filemanager::lfm.nav-upload') }}",
+          label: "{{ trans('lfm.nav-upload') }}",
           attrs: {id: 'upload'}
         }
       ]

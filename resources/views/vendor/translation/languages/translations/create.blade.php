@@ -6,7 +6,7 @@
 
       <div class="panel-header">
 
-        {{ __('translation::translation.add_translation') }}
+        {{ __('translation.add_translation') }}
 
       </div>
 
@@ -26,7 +26,7 @@
 
             <div class="input-group">
 
-              <button v-on:click="toggleAdvancedOptions" class="text-blue">{{ __('translation::translation.advanced_options') }}</button>
+              <button v-on:click="toggleAdvancedOptions" class="text-blue">{{ __('translation.advanced_options') }}</button>
 
             </div>
 
@@ -44,7 +44,7 @@
         <div class="panel-footer flex flex-row-reverse">
 
           <button class="button button-blue">
-            {{ __('translation::translation.save') }}
+            {{ __('translation.save') }}
           </button>
 
         </div>
