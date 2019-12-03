@@ -25,6 +25,7 @@ return array (
   'read_more' => 'daha fazla',
   'reply' => 'Cevapla',
   'reset_password' => 'Şifreyi yenile',
+  'search' => 'Ara...',
   'search_result' => 'Arama sonuçları',
   'send_password_reset_link' => 'Parola Sıfırlama Bağlantısını Gönder',
   'sign_in' => 'Oturum aç',

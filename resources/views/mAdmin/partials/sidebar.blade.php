@@ -84,7 +84,7 @@
           <span class="menu-title">@lang('admin.settings')</span>
           <i class="menu-arrow"></i>
         </a>
-        <div class="collapse @if(request()->routeIs('mAdmin.settings*') || request()->routeIs('languages.index')) show @endif" id="settings">
+        <div class="collapse @if(request()->routeIs('mAdmin.settings*') || request()->routeIs('languages.*')) show @endif" id="settings">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item {{ request()->routeIs('mAdmin.settings.general') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('mAdmin.settings.general') }}">@lang('admin.general')</a></li>
             <li class="nav-item {{ request()->routeIs('mAdmin.settings.visual') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('mAdmin.settings.visual') }}">@lang('admin.visual')</a></li>
@@ -92,7 +92,7 @@
             <li class="nav-item {{ request()->routeIs('mAdmin.settings.other') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('mAdmin.settings.other') }}">@lang('admin.other')</a></li>
             <li class="nav-item {{ request()->routeIs('mAdmin.settings.email') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('mAdmin.settings.email') }}">@lang('admin.email')</a></li>
             <li class="nav-item {{ request()->routeIs('mAdmin.settings.seo') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('mAdmin.settings.seo') }}">@lang('admin.seo')</a></li>
-            <li class="nav-item {{ request()->routeIs('languages.index') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('languages.index') }}">@lang('admin.languages')</a></li>
+            <li class="nav-item {{ request()->routeIs('languages.*') ? 'active' : '' }}"> <a class="nav-link" href="{{ route('languages.index') }}">@lang('admin.languages')</a></li>
           </ul>
         </div>
       </li>

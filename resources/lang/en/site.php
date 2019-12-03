@@ -34,4 +34,5 @@ return array (
   'update' => 'Update',
   'update_profile' => 'Update Profile',
   'your_comment' => 'Your Comment',
+  'search' => 'Search...',
 );

@@ -101,4 +101,9 @@ return array (
   'users' => 'Users',
   'visual' => 'Visual',
   'visual_settings' => 'Visual settings',
+  'site_languages' => 'Site Languages',
+  'default' => 'Default',
+  'set_as_default' => 'Set as Default',
+  'translations' => 'Translations',
+  'add_to_site' => '+ Add to site',
 );

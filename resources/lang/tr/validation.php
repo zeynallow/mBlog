@@ -11,6 +11,16 @@ return array (
   'array' => ':attribute dizi olmalıdır.',
   'attributes' => 
   array (
+    'category_id' => 'Kategori',
+    'slug' => 'Link',
+    'text' => 
+    array (
+      '*' => 'İçerik',
+    ),
+    'title' => 
+    array (
+      '*' => 'Başlık',
+    ),
   ),
   'before' => ':attribute şundan daha önceki bir tarih olmalıdır :date.',
   'before_or_equal' => ':attribute tarihi :date tarihinden önce veya tarihine eşit olmalıdır.',
@@ -98,6 +108,7 @@ return array (
   'not_in' => 'Seçili :attribute geçersiz.',
   'not_regex' => ':attribute biçimi geçersiz.',
   'numeric' => ':attribute sayı olmalıdır.',
+  'password' => 'Şifre doğru değil',
   'present' => ':attribute alanı mevcut olmalıdır.',
   'regex' => ':attribute biçimi geçersiz.',
   'required' => ':attribute alanı gereklidir.',

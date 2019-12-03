@@ -11,6 +11,16 @@ return array (
   'array' => ':attribute massiv formatında olmalıdır',
   'attributes' => 
   array (
+    'category_id' => 'Kateqoriya',
+    'slug' => 'Link',
+    'text' => 
+    array (
+      '*' => 'Mətn',
+    ),
+    'title' => 
+    array (
+      '*' => 'Başlıq',
+    ),
   ),
   'before' => ':attribute :date tarixindən əvvəl olmalıdır',
   'before_or_equal' => ':attribute :date tarixindən əvvəl və ya bərabər olmalıdır',
@@ -98,6 +108,7 @@ return array (
   'not_in' => ' seçilmiş :attribute yanlışdır',
   'not_regex' => 'The :attribute format is invalid.',
   'numeric' => ' :attribute rəqəmlərdən ibarət olmalıdır',
+  'password' => 'Şifrə doğru deyil',
   'present' => ' :attribute iştirak etməlidir',
   'regex' => ' :attribute formatı yanlışdır',
   'required' => ' :attribute mütləqdir',

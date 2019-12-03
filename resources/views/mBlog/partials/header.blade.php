@@ -21,7 +21,7 @@
             <div class="search-box pull-right">
               <i class="zmdi zmdi-search"></i>
               <form action="{{route('search')}}" method="get">
-                <input type="text" name="q" placeholder="Search..." />
+                <input type="text" name="q" placeholder="@lang('site.search')" />
                 <button id="close" type="submit"><i class="zmdi zmdi-search"></i></button>
               </form>
             </div>

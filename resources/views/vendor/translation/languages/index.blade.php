@@ -11,13 +11,13 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Site Languages</h4>
+            <h4 class="card-title">@lang('admin.site_languages')</h4>
 
             <table class="table">
               <thead>
                 <tr>
-                  <th>Code</th>
-                  <th>Language</th>
+                  <th>@lang('admin.code')</th>
+                  <th>@lang('admin.language')</th>
                   <th></th>
                 </tr>
               </thead>
@@ -28,10 +28,10 @@
                     <td>{{$locale->name}}</td>
                     <td>
                       @if($locale->default)
-                        <span class="badge badge-success">Default</span>
+                        <span class="badge badge-success">@lang('admin.default')</span>
                       @else
                         <a href="{{route('mAdmin.settings.localeUpdate',$locale->code)}}">
-                          <span class="badge badge-info">Set as Default</span>
+                          <span class="badge badge-info">@lang('admin.set_as_default')</span>
                         </a>
                       @endif
                     </td>
@@ -56,7 +56,7 @@
         <div class="card">
           <div class="card-body">
 
-            <h4 class="card-title">Translations</h4>
+            <h4 class="card-title">@lang('admin.translations')</h4>
 
             <a href="{{ route('languages.create') }}" class="btn btn-success pull-right">
               {{ __('translation.add') }}
@@ -87,7 +87,7 @@
                     <td>
                       @if(!checkLocale($language))
                         <a href="{{route('mAdmin.settings.addLanguage',$language)}}">
-                          <span class="badge badge-success">+ Add to site</span>
+                          <span class="badge badge-success">@lang('admin.add_to_site')</span>
                         </a>
                       @endif
                     </td>
