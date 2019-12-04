@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body table-responsive">
             <h4 class="card-title">@lang('admin.all_posts')</h4>
             <hr/>
 

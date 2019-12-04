@@ -16,6 +16,7 @@
         "laravel/framework": "^6.2",
         "laravel/helpers": "^1.1",
         "laravel/tinker": "^1.0",
+        "rachidlaasri/laravel-installer": "^4.0",
         "unisharp/laravel-filemanager": "~1.8"
     },
     "require-dev": {
