@@ -12,6 +12,7 @@
 */
 
 
+
 //mAdmin Routes
 Route::group(['prefix' => 'mAdmin'], function() {
 
@@ -117,6 +118,7 @@ Route::group(['middleware'=>'auth'], function() {
   //Post Comment
   Route::post('/post/commentStore', 'PostController@commentStore')->name('post.commentStore');
 });
+
 
 // Home
 Route::get('/', 'HomeController@home')->name('home');

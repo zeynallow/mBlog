@@ -24,12 +24,8 @@ class AppServiceProvider extends ServiceProvider
   */
   public function boot()
   {
-    // 
-    // $checkInstall = file_exists(storage_path('installed'));
     //
-    // if(!$checkInstall){
-    //   return redirect()->to('/install');
-    // }
+  
 
     //load config
     // Config::set('app.name',getSetting('site_name'));
