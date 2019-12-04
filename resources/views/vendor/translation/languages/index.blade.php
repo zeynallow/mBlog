@@ -17,7 +17,7 @@
               <thead>
                 <tr>
                   <th>@lang('admin.code')</th>
-                  <th>@lang('admin.language')</th>
+                  <th>@lang('admin.languages')</th>
                   <th></th>
                 </tr>
               </thead>
@@ -35,59 +35,10 @@
                         </a>
                       @endif
                     </td>
-                    <td><a href="{{route('mAdmin.settings.deleteLanguage',$locale->code)}}">
-                      <span class="badge badge-danger"><i class="mdi mdi-delete"></i></span>
-                    </a>
-                  </td>
-                </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <br/>
-  <br/>
-  @if(count($languages))
-    <div class="row">
-      <div class="col-md-12 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-body">
-
-            <h4 class="card-title">@lang('admin.translations')</h4>
-
-            <a href="{{ route('languages.create') }}" class="btn btn-success pull-right">
-              {{ __('translation.add') }}
-            </a>
-
-            <table class="table">
-
-              <thead>
-                <tr>
-                  <th>{{ __('translation.language_name') }}</th>
-                  <th>{{ __('translation.locale') }}</th>
-                  <th></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                @foreach($languages as $language => $name)
-
-                  <tr>
                     <td>
-                      {{ $name }}
-                    </td>
-                    <td>
-                      <a href="{{ route('languages.translations.index', $language) }}">
-                        {{ $language }}
-                      </a>
-                    </td>
-                    <td>
-                      @if(!checkLocale($language))
-                        <a href="{{route('mAdmin.settings.addLanguage',$language)}}">
-                          <span class="badge badge-success">@lang('admin.add_to_site')</span>
+                      @if(!$locale->default)
+                        <a href="{{route('mAdmin.settings.deleteLanguage',$locale->code)}}">
+                          <span class="badge badge-danger"><i class="mdi mdi-delete"></i></span>
                         </a>
                       @endif
                     </td>
@@ -95,14 +46,66 @@
                 @endforeach
               </tbody>
             </table>
-
-
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-@endif
+    <br/>
+    <br/>
+    @if(count($languages))
+      <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+
+              <h4 class="card-title">@lang('admin.translations')</h4>
+
+              <a href="{{ route('languages.create') }}" class="btn btn-success pull-right">
+                {{ __('translation.add') }}
+              </a>
+
+              <table class="table">
+
+                <thead>
+                  <tr>
+                    <th>{{ __('translation.language_name') }}</th>
+                    <th>{{ __('translation.locale') }}</th>
+                    <th></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  @foreach($languages as $language => $name)
+
+                    <tr>
+                      <td>
+                        {{ $name }}
+                      </td>
+                      <td>
+                        <a href="{{ route('languages.translations.index', $language) }}">
+                          {{ $language }}
+                        </a>
+                      </td>
+                      <td>
+                        @if(!checkLocale($language))
+                          <a href="{{route('mAdmin.settings.addLanguage',$language)}}">
+                            <span class="badge badge-success">@lang('admin.add_to_site')</span>
+                          </a>
+                        @endif
+                      </td>
+                    </tr>
+                  @endforeach
+                </tbody>
+              </table>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  @endif
 
 @endsection

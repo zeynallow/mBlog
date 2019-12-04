@@ -38,7 +38,7 @@
                     <tr>
                       <td>{{$post->id}}</td>
                       <td>
-                          <img width="100" src="{{ ($post->cover) ? $post->cover : '/assets/img/no-thumbnail.jpg' }}" class="img-responsive">
+                          <img width="100" src="{{ ($post->cover) ? url($post->cover) : url('/assets/img/no-thumbnail.jpg') }}" class="img-responsive">
                       </td>
                       <td>
                         @isset($post->post_data()[0])

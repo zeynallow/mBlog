@@ -6,9 +6,9 @@
         <div class="col-xs-12 col-sm-2 col-md-2">
           <div class="left">
             <div class="logo">
-              <a href="/">
+              <a href="{{route('home')}}">
                 @if(getSetting('site_logo'))
-                  <img src="{{getSetting('site_logo')}}" alt="{{getSetting('site_name')}}" />
+                  <img src="{{asset(getSetting('site_logo'))}}" alt="{{getSetting('site_name')}}" />
                 @else
                   {{getSetting('site_name')}}
                 @endif

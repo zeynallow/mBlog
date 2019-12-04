@@ -290,6 +290,13 @@ class SettingController extends Controller
   */
   public function deleteLanguage($code)
   {
+
+    $checkLang = Locale::count();
+
+    if($checkLang <= 1){
+      return redirect()->back()->with('error','Something went error...');
+    }
+    
     $delete = Locale::where('code',$code)->delete();
 
     if($delete){

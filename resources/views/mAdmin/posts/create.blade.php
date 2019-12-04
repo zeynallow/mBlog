@@ -125,16 +125,20 @@
   <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js')}}"></script>
   <script src="{{ asset('/mAdmin_assets/vendors/ckeditor/ckeditor.js')}}"></script>
   <script src="{{ asset('/mAdmin_assets/vendors/ckeditor/adapters/jquery.js')}}"></script>
+
   <script>
+  var lfm_url = "{{url('/mAdmin/filemanager')}}";
   /* File Manager */
-  $('#lfm').filemanager('image');
+  $('#lfm').filemanager('image',{
+    prefix:lfm_url
+  });
 
   /* CK Editor */
   var options = {
-    filebrowserImageBrowseUrl: '/mAdmin/filemanager?type=Images',
-    filebrowserImageUploadUrl: '/mAdmin/filemanager/upload?type=Images&_token=',
-    filebrowserBrowseUrl: '/mAdmin/filemanager?type=Files',
-    filebrowserUploadUrl: '/mAdmin/filemanager/upload?type=Files&_token='
+    filebrowserImageBrowseUrl: '{{url('/mAdmin/filemanager?type=Images')}}',
+    filebrowserImageUploadUrl: '{{url('/mAdmin/filemanager/upload?type=Images&_token=')}}',
+    filebrowserBrowseUrl: '{{url('/mAdmin/filemanager?type=Files')}}',
+    filebrowserUploadUrl: '{{url('/mAdmin/filemanager/upload?type=Files&_token=')}}'
   };
   $('textarea.my-editor').ckeditor(options);
 

@@ -15,7 +15,7 @@
   <link rel="canonical" href="{{url()->current()}}">
   <!-- favicon -->
   @if(getSetting('site_favicon'))
-    <link rel="shortcut icon" type="image/x-icon" href="{{getSetting('site_favicon')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset(getSetting('site_favicon'))}}">
   @endif
 
 

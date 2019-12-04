@@ -36,7 +36,7 @@
 
             @if($post->cover)
               <div class="mb-60">
-                <img src="{{$post->cover}}" alt="{{$post->post_data()[0]->title}}" />
+                <img src="{{url($post->cover)}}" alt="{{$post->post_data()[0]->title}}" />
               </div>
             @endif
 

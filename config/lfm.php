@@ -1,5 +1,4 @@
 <?php
-
 return [
     /*
     |--------------------------------------------------------------------------
@@ -15,7 +14,7 @@ return [
     'middlewares' => ['web', 'auth'],
 
     // The url to this package. Change it if necessary.
-    'url_prefix' => 'mAdmin/filemanager',
+    'url_prefix' => '/mAdmin/filemanager',
 
     /*
     |--------------------------------------------------------------------------
