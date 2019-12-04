@@ -1,16 +1,21 @@
 @extends('mBlog.layouts.app')
 @section('content')
 
-  <div class="text-center pt-30 pb-30">
+  <div class="text-center pb-50">
     {!! getAds('category_top') !!}
   </div>
 
   <!-- Blog Section Start -->
-  <div class="blog-area pt-40 clearfix">
+  <div class="blog-area  pt-40 pb-120 clearfix">
     <div class="container">
       <div class="row">
 
-        <div class="col-xs-12 col-sm-12 col-md-12 mobi-mb-50">
+        <div class="col-xs-12 col-sm-4 col-md-3 hide-mobile">
+          @include('mBlog.partials.sidebar')
+        </div>
+        <!-- Sidebar End -->
+
+        <div class="col-xs-12 col-sm-8 col-md-9 mobi-mb-50">
 
           <div class="row">
             <div class="col-xs-12">

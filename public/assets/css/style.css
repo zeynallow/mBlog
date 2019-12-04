@@ -11,7 +11,7 @@ body {
   line-height: 22px;
   font-weight: 400;
   color: #939393;
-  background-color: #ffffff;
+  background: #f4f4f4 !important;
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   -webkit-overflow-scrolling: touch;
@@ -119,7 +119,7 @@ h2 {
   font-size: 30px;
 }
 h3 {
-  font-size: 22px;
+  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
 }
@@ -1389,6 +1389,7 @@ h6 {
     position: absolute;
     top: 0;
     width: 100%;
+    background-color: #fff;
     z-index: 99;
     left: 0;
   }
@@ -1419,7 +1420,7 @@ h6 {
     box-shadow: 0 1px 4px rgba(2, 3, 3, 0.1);
   }
   .is-sticky .menu-hover-1 ul li a::after {
-    top: 36px;
+    top: 45px;
   }
 
   .header-style-1 .is-sticky .search-box > i,
@@ -1493,7 +1494,6 @@ h6 {
       width: 100%;
     }
     .mainmenu .navbar-collapse {
-      height: 300px;
       position: absolute;
       right: 0;
       top: 25px;
@@ -1528,7 +1528,7 @@ h6 {
     .navbar-toggle {
       position: absolute;
       right: 35px;
-      top: -45px;
+      top: -55px;
     }
     .header-top .navbar-collapse {
       background: #fff none repeat scroll 0 0;
@@ -1576,7 +1576,7 @@ h6 {
       height: 90px;
     }
     .header-style-1 .header-top {
-      padding-top: 22px;
+      padding-top: 10px;
     }
     .dropdown ul a i {
       display: none;
@@ -1646,7 +1646,7 @@ h6 {
       line-height: 50px;
       position: absolute;
       right: 0;
-      top: -45px;
+      top: -55px;
     }
     .search-box form {
       margin-top: 5px;
@@ -1778,6 +1778,25 @@ h6 {
   .portfolio-menu.hover-1 li::after {
     top: 7px;
     margin-left: -6px;
+  }
+
+  .blog-post {
+    border: 1px solid #dedede;
+    background-color: #fff;
+    height: 500px;
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+  .blog-text{
+    padding:20px;
+    margin-top: auto;
+    /* display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between; */
+    height: calc(100% - 200px);
   }
 
   /*
@@ -2313,10 +2332,16 @@ h6 {
   .blog-text p {
     color: #818181;
   }
+  .i-blog-post{
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #dedede;
+  }
   .blog-text a.read-more {
     border-bottom: 1px solid #5b5b5b;
     color: #5b5b5b;
-    display: inline-block;
+    position: absolute;
+    bottom: 40px;
     font-family: "Montserrat",sans-serif;
     font-size: 12px;
     font-weight: 700;
@@ -2326,6 +2351,9 @@ h6 {
   }
   .blog-text a.read-more:hover {
     border-color: #0494b1;
+  }
+  .widget{
+    padding:20px;
   }
   .widget .tags a:hover,
   .widget .posts li a:hover,
@@ -2342,39 +2370,8 @@ h6 {
 
 
   /* Sidebar */
-  .widget .search form {
-    position: relative;
-  }
-  .widget .search input {
-    border:0;
-    border-bottom: 1px solid #d2d2d2;
-    border-radius: 0;
-    color: #969696;
-    font-size: 13px;
-    line-height: 30px;
-    padding: 0;
-    width: 100%;
-  }
-  .widget .search button {
-    background: transparent none repeat scroll 0 0;
-    border: 0 none;
-    height: 32px;
-    line-height: 30px;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 30px;
-  }
-  .widget .search button i {
-    color: #848484;
-    font-size: 15px;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+  .sidebar{
+    border: 1px solid #dedede;
   }
   .search button:hover i {
     color: #0494b1;

@@ -14,7 +14,7 @@
     <form class="custom-input" id="comment_reply_{{$comment->id}}" method="post" action="{{ route('post.commentStore') }}" style="display:none;">
       @csrf
       <div class="form-group">
-        <input type="text" name="body" placeholder="Your reply" required/>
+        <input type="text" name="body" placeholder="Your reply"/>
         <input type="hidden" name="post_id" value="{{ $post_id }}" />
         <input type="hidden" name="parent_id" value="{{ $comment->id }}" />
       </div>

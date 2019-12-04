@@ -23,9 +23,14 @@
     {!! getAds('home_top') !!}
   </div>
 
+
   <div class="blog-area ">
     <div class="container">
       <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-md-3 hide-mobile">
+          @include('mBlog.partials.sidebar')
+        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 mobi-mb-50">
 
@@ -37,7 +42,7 @@
             <div class="row">
               @foreach ($lastPosts as $key => $post)
                 @isset($post->post_data()[0])
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                     @include('mBlog.partials.post_grid')
                   </div>
                 @endisset
@@ -52,6 +57,7 @@
           <div class="view-all text-center mt-40">
             {{$lastPosts}}
           </div>
+
 
           <div class="text-center pb-50">
             {!! getAds('home_bottom') !!}

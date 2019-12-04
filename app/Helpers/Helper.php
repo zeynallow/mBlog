@@ -75,7 +75,7 @@ if (!function_exists('getMainCategories')) {
 if (!function_exists('getPopularPosts')) {
   function getPopularPosts()
   {
-    return Post::orderBy('views','desc')->take(10)->get();
+    return Post::orderBy('views','desc')->take(6)->get();
   }
 }
 

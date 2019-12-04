@@ -62,6 +62,7 @@ class HomeController extends Controller
 
     $_result->orderBy('created_at','desc');
     $result = $_result->paginate(getSetting('pagination_per_page'));
+    $result->appends(request()->query());
 
     //Meta Tags
     Meta::setTitle(trans('site.search_result') . " | $search_query")
