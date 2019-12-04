@@ -4,6 +4,7 @@
 /public/photos
 /public/files
 /storage/*.key
+/storage/installed
 /vendor
 .env
 .env.backup

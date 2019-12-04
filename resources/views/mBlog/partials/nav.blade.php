@@ -38,11 +38,12 @@
         @endif
 
         @if(getSetting('multilingual_system'))
-          <li class="dropdown">
-            <a href="javascript:void(0);">
-              {{mb_strtoupper(\App::getLocale())}} <span class="caret"></span>
-            </a>
-            @if(getLocalesWithout(\App::getLocale()))
+          @if(getLocalesWithout(\App::getLocale()) && count(getLocalesWithout(\App::getLocale())))
+            <li class="dropdown">
+              <a href="javascript:void(0);">
+                {{mb_strtoupper(\App::getLocale())}} <span class="caret"></span>
+              </a>
+
               <ul>
                 @foreach (getLocalesWithout(\App::getLocale()) as $key => $locale)
                   <li><a href="{{route('change.lang',$locale->code)}}">{{$locale->name}}</a></li>

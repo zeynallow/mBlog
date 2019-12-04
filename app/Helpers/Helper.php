@@ -85,7 +85,10 @@ if (!function_exists('getPopularPosts')) {
 if (!function_exists('getNavCategories')) {
   function getNavCategories()
   {
-    $get = Category::where('parent_id',0)->where('show_on_menu',1)->get();
+    $get = Category::where('parent_id',0)
+    ->where('show_on_menu',1)
+    ->orderBy('menu_position','asc')
+    ->get();
     return $get;
   }
 }
