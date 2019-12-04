@@ -130,6 +130,10 @@ Route::get('/post/{post_id}/{slug}', 'PostController@show')->name('post.show');
 // Pages
 Route::get('/page/{slug}', 'PageController@show')->name('page.show');
 
+// Sitemap
+Route::get('/sitemap.xml', 'SitemapController@index')->name('sitemap.index');
+Route::get('/sitemap/posts.xml', 'SitemapController@posts')->name('sitemap.posts');
+
 // Categories
 Route::get('/{category_slug}', 'CategoryController@get_category')->name('category.index');
 Route::get('/{category_slug}/{subcategory_slug}', 'CategoryController@get_subcategory')->name('subcategory.index');

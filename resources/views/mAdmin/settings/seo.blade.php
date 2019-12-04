@@ -19,6 +19,15 @@
               </div>
             @endif
 
+            <div class="row mt-5">
+              <div class="col-md-4">
+                Sitemap:
+              </div>
+              <div class="col-md-8">
+                <a href="{{route('sitemap.index')}}">{{route('sitemap.index')}}</a>
+              </div>
+            </div>
+
             <form class="forms-sample" method="post" action="{{ route('mAdmin.settings.seoUpdate') }}">
               @csrf
 
@@ -30,7 +39,7 @@
                   <input type="text" class="form-control" name="site_title" value="{{ getSetting('site_title') }}">
                 </div>
               </div>
-              
+
               <div class="row mt-5">
                 <div class="col-md-4">
                   @lang('admin.description')
