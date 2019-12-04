@@ -161,6 +161,11 @@ class SettingSeed extends Seeder
         ],
 
         [
+          'key' => 'site_title',
+          'value'=>'Home Page',
+        ],
+
+        [
           'key' => 'fb_app_id',
           'value'=>'',
         ],

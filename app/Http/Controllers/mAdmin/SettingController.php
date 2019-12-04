@@ -185,6 +185,7 @@ class SettingController extends Controller
   {
 
     $settings = [
+      'site_title',
       'meta_keywords',
       'meta_description'
     ];

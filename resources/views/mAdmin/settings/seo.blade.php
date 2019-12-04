@@ -24,6 +24,15 @@
 
               <div class="row mt-5">
                 <div class="col-md-4">
+                  @lang('admin.title')
+                </div>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" name="site_title" value="{{ getSetting('site_title') }}">
+                </div>
+              </div>
+              
+              <div class="row mt-5">
+                <div class="col-md-4">
                   @lang('admin.description')
                 </div>
                 <div class="col-md-8">

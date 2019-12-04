@@ -32,7 +32,7 @@ class HomeController extends Controller
     }
 
     //Meta Tags
-    Meta::setTitle('Home Page')
+    Meta::setTitle(getSetting('site_title'))
     ->setDescription(getSetting('meta_description'))
     ->setKeywords(getSetting('meta_keywords'));
 
