@@ -17,9 +17,9 @@ class Installer
   {
 
     $checkInstall = file_exists(storage_path('installed'));
-    $checkURI = request()->route()->uri('install');
+    $checkURI = $request->route()->getName();
 
-    if($checkURI == "install"){
+    if(strpos($checkURI, 'LaravelInstaller::') === 0){
       return $next($request);
     }
 
