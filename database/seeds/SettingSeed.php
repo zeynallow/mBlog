@@ -142,7 +142,7 @@ class SettingSeed extends Seeder
 
         [
           'key' => 'site_url',
-          'value'=>'',
+          'value'=>env('APP_URL'),
         ],
 
         [

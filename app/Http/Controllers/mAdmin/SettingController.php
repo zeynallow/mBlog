@@ -33,6 +33,7 @@ class SettingController extends Controller
   */
   public function generalUpdate(Request $request)
   {
+
     $settings = [
       'site_name',
       'multilingual_system',
@@ -204,7 +205,6 @@ class SettingController extends Controller
   */
   public function email()
   {
-    // $this->setEnv('MAIL_PORT',465);
     return view('mAdmin.settings.email');
   }
 
@@ -296,7 +296,7 @@ class SettingController extends Controller
     if($checkLang <= 1){
       return redirect()->back()->with('error','Something went error...');
     }
-    
+
     $delete = Locale::where('code',$code)->delete();
 
     if($delete){
