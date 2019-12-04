@@ -17,39 +17,48 @@ class AdsSeed extends Seeder
 
         [
           'ads_position' => 'home_top',
-          'description'=>'Home Top (728x90)'
+          'description'=>'Home Top (728x90)',
+          'publish'=>'1'
         ],
         [
           'ads_position' => 'home_bottom',
-          'description'=>'Home Bottom (728x90)'
+          'description'=>'Home Bottom (728x90)',
+          'publish'=>'1'
         ],
         [
           'ads_position' => 'sidebar',
-          'description'=>'Sidebar (300x250)'
+          'description'=>'Sidebar (300x250)',
+          'publish'=>'1'
         ],
         [
           'ads_position' => 'post_top',
-          'description'=>'Post Top (728x90)'
+          'description'=>'Post Top (728x90)',
+          'publish'=>'1'
         ],
         [
           'ads_position' => 'post_bottom',
-          'description'=>'Post Bottom (728x90)'
+          'description'=>'Post Bottom (728x90)',
+          'publish'=>'1'
         ],
         [
           'ads_position' => 'category_top',
-          'description'=>'Category Top (728x90)'
+          'description'=>'Category Top (728x90)',
+          'publish'=>'1'
         ],
         [
           'ads_position' => 'category_bottom',
-          'description'=>'Category Bottom (728x90)'
+          'description'=>'Category Bottom (728x90)',
+          'publish'=>'1'
         ],
         [
           'ads_position' => 'page_top',
-          'description'=>'Page Top (728x90)'
+          'description'=>'Page Top (728x90)',
+          'publish'=>'1'
         ],
         [
           'ads_position' => 'page_bottom',
-          'description'=>'Page Bottom (728x90)'
+          'description'=>'Page Bottom (728x90)',
+          'publish'=>'1'
         ],
 
       ]);

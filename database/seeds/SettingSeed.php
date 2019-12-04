@@ -16,11 +16,6 @@ class SettingSeed extends Seeder
       DB::table('settings')->insert([
 
         [
-          'key' => 'site_name',
-          'value'=>'mBlog',
-        ],
-
-        [
           'key' => 'multilingual_system',
           'value'=>'1',
         ],
